@@ -16,7 +16,12 @@
 
 	// The optional 'workspaceFolder' property is the path VS Code should open by default when
 	// connected. This is typically a file mount in .devcontainer/docker-compose.yml
-	"workspaceFolder": "/app/backend",
+	"workspaceFolder": "/app",
+	"extensions": [
+		"donjayamanne.githistory",
+		"xdebug.php-pack",
+		"TheNouillet.symfony-vscode"
+	]
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
@@ -28,7 +33,7 @@
 	// "shutdownAction": "none",
 
 	// Uncomment the next line to run commands after the container is created - for example installing curl.
-	"postCreateCommand": "composer install"
+	// "postCreateCommand": "cd backend && composer install"
 
 	// Uncomment to connect as a non-root user if you've added one. See https://aka.ms/vscode-remote/containers/non-root.
 	// "remoteUser": "vscode"
