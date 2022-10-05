@@ -27,16 +27,7 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/creaEvento'])
       }
     })
-    //Auth de google
-    this.loginForm = this.formBuilder.group({
-      email: ['', Validators.required],
-      password: ['', Validators.required],
-    });
-    this.socialAuthService.authState.subscribe((user) => {
-      this.socialUser = user;
-      this.isLoggedin = user != null;
-      console.log(this.socialUser);
-    });
+    
   }
   login(){
     this.auth.loginWithRedirect()

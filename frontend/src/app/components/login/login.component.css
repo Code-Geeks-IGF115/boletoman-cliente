@@ -72,10 +72,10 @@ body {
   max-width: 300px;
   width: 100%;
 }
-.input-register{
-  color: #803126;
+
+.login-wrapper .example-full-width{
+  width: 100%;
 }
-.login-wrapper .example-full-width,
 .login-wrapper .btn-block {
   width: 100%;
   color: rgb(211, 21, 21);
