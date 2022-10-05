@@ -69,14 +69,13 @@ symfony console make:crud EntityName
 ```
 *10. Bundles*
 ```
-composer require symfony/orm-pack
 composer require symfony/maker-bundle --dev
+composer require symfony/orm-pack
 composer require symfony/security-bundle
 composer require twig
 composer require symfony/form
 composer require symfony/validator doctrine/annotations
 composer require symfonycasts/verify-email-bundle symfony/mailer
-composer require mailgun-mailer
 ```
 *11. Comandos Terminal*
 ```
