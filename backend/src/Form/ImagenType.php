@@ -21,6 +21,7 @@ class ImagenType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Imagen::class,
+            'csrf_protection'=>false
         ]);
     }
 }
