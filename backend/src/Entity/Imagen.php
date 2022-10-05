@@ -17,7 +17,7 @@ class Imagen
     private ?string $descripcion = null;
 
     #[ORM\ManyToOne(inversedBy: 'imagens')]
-    #[ORM\JoinColumn(nullable: false)]
+    #[ORM\JoinColumn(nullable: true)]
     private ?Evento $evento = null;
 
     public function getId(): ?int
