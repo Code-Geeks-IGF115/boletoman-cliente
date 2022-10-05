@@ -30,6 +30,39 @@ symfony console make:migration
 ```
 symfony console doctrine:migrations:migrate
 ```
+*6. iniciar Servidor*
+```
+symfony server:start
+```
+*7. recuperar parametros del request*
+```
+$parametro=$request->get('parametro');
+$parametro=$request->get('parametro','valorPorDefecto');
+```
+*8. agregar servicio a controller*
+
+_alternativa 1: Contructor_
+```
+private $logger;
+public function __contruct(LoggerInterface $logger)
+{
+    $this->logger=$logger;
+}
+
+public function miController(Request $request)
+{
+    $this->logger->info("mensaje");
+    //revisar var/log/
+}
+```
+_alternativa 2: Argumentos_
+```
+public function miController(Request $request,LoggerInterface $logger)
+{
+    $this->logger->info("mensaje");
+    //revisar var/log/
+}
+```
 **BUG**
 
 En caso de que por error activen el soporte TLS pueden reconstruir el contenedor o pegar la siguiente url
