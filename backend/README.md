@@ -63,6 +63,10 @@ public function miController(Request $request,LoggerInterface $logger)
     //revisar var/log/
 }
 ```
+*9. Crear Crud Controlador*
+```
+symfony console make:crud EntityName
+```
 **BUG**
 
 En caso de que por error activen el soporte TLS pueden reconstruir el contenedor o pegar la siguiente url
