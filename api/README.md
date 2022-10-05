@@ -75,7 +75,7 @@ composer require symfony/security-bundle
 composer require twig
 composer require symfony/form
 composer require symfony/validator doctrine/annotations
-composer require symfonycasts/verify-email-bundle symfony/mailer
+//composer require symfonycasts/verify-email-bundle symfony/mailer
 ```
 *11. Comandos Terminal*
 ```
