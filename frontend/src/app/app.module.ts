@@ -18,7 +18,12 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 // Import the module from the SDK
 import { AuthModule } from '@auth0/auth0-angular';
 import { CreaEventoComponent } from './components/crea-evento/crea-evento.component';
-
+//Social media
+import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
+import {
+  GoogleLoginProvider,
+  FacebookLoginProvider
+} from 'angularx-social-login';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,13 +42,27 @@ import { CreaEventoComponent } from './components/crea-evento/crea-evento.compon
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
+    SocialLoginModule, 
     // Import the module into the application, with configuration
     AuthModule.forRoot({
       domain: 'boletoman.us.auth0.com',
       clientId: 'IOyYxoB4HkW78TfqTn72FR8KhuF3RDRS'
     }),
   ],
-  providers: [],
+  providers: [
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider('573091350225-98cajt278f660kel7soed9b35p8ec548.apps.googleusercontent.com'),
+          },
+        ],
+      } as SocialAuthServiceConfig,
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
