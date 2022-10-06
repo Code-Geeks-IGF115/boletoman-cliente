@@ -5,8 +5,9 @@ import { LoginComponent } from './components/login/login.component';
 import { CreaEventoComponent } from './components/crea-evento/crea-evento.component';
 
 const routes: Routes = [
-  {path:' ', redirectTo:'creaEvento',pathMatch: 'full'},
+  
   {path:'login', component: LoginComponent},
+  {path:' ', redirectTo:'login',pathMatch: 'full'},
   {path:'creaEvento', component: CreaEventoComponent},
   {path:'**', redirectTo:'login',pathMatch: 'full'},
 ];

@@ -1,9 +1,1 @@
 <p>crea-evento works!</p>
-<button mat-raised-button (click)="logOut()" color="accent">Salir</button>
-<!-- Para devolver foto de perfil, nombre y correo de la persona logeada 
-    Esto debe ir en el layout base en la barra de navegación-->
-  <div *ngIf="auth.user$ | async as user">
-    <img [src]="user.picture"  height="100px" >
-    <p>{{ user.name }}</p>
-    <p>{{ user.email }}</p>
-  </div>

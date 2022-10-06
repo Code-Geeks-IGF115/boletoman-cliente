@@ -13,16 +13,12 @@ import {MatInputModule} from '@angular/material/input';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
-/* Angular Flex Layout */
-
-// Import the module from the SDK
-import { AuthModule } from '@auth0/auth0-angular';
 import { CreaEventoComponent } from './components/crea-evento/crea-evento.component';
 //Social media
-import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
+import { SocialLoginModule, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
 import {
   GoogleLoginProvider,
-} from 'angularx-social-login';
+} from '@abacritt/angularx-social-login';
 
 
 @NgModule({
@@ -54,11 +50,16 @@ import {
         providers: [
           {
             id: GoogleLoginProvider.PROVIDER_ID,
-            provider: new GoogleLoginProvider('573091350225-98cajt278f660kel7soed9b35p8ec548.apps.googleusercontent.com'),
-          },
+            provider: new GoogleLoginProvider(
+              '573091350225-98cajt278f660kel7soed9b35p8ec548.apps.googleusercontent.com'
+            )
+          }
         ],
+        onError: (err) => {
+          console.error(err);
+        }
       } as SocialAuthServiceConfig,
-    },
+    }
   ],
   bootstrap: [AppComponent]
 })

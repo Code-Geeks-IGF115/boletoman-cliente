@@ -8,14 +8,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./crea-evento.component.css']
 })
 export class CreaEventoComponent implements OnInit {
-  sesionActiva = true;
-  constructor(public auth: AuthService, private router:Router) { }
+
+  constructor( private router:Router) { }
   
   ngOnInit(): void {
     
-  }
-  //metodo para cerrar secion
-  logOut(){
-    this.auth.logout();
   }
 }
