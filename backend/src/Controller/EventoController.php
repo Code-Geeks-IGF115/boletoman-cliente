@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\{Response, JsonResponse};
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Serializer\SerializerInterface;
 use Symfony\Component\Serializer\Normalizer\DateTimeNormalizer;
+use Psr\Log\LoggerInterface;
 
 #[Route('/evento')]
 class EventoController extends AbstractController
@@ -26,8 +27,10 @@ class EventoController extends AbstractController
     }
 
     #[Route('/new', name: 'app_evento_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, EventoRepository $eventoRepository): Response
+    public function new(Request $request, EventoRepository $eventoRepository, LoggerInterface $logger): Response
     {
+        $user = $this->getUser();
+        $logger->info($user->getEmail());
         $evento = new Evento();
         $form = $this->createForm(EventoType::class, $evento);
         $form->handleRequest($request);

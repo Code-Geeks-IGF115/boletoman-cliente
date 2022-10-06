@@ -17,6 +17,8 @@ security:
         main:
             lazy: true
             provider: app_user_provider
+            http_basic:
+                realm: Secured Area
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#the-firewall
@@ -29,6 +31,8 @@ security:
     access_control:
         # - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
+        - { path: ^/evento/, roles: ROLE_USER }
+        # - { path: ^/, roles: ROLE_USER }
 
 when@test:
     security:
