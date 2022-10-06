@@ -8,7 +8,6 @@ import { SalasDeEventoComponent } from './components/salas-de-evento/salas-de-ev
 const routes: Routes = [
   
   {path:' ', redirectTo:'creaEvento',pathMatch: 'full'},
-  {path:' ', redirectTo:'crearSala',pathMatch: 'full'},
   {path:'login', component: LoginComponent},
   {path:'creaEvento', component: CreaEventoComponent},
   {path:'crearSala', component: SalasDeEventoComponent},
