@@ -21,10 +21,8 @@ export class LoginComponent implements OnInit {
     this.authService.authState.subscribe((user) => {
       this.user = user;
       this.loggedIn = (user != null);
-      console.log(this.user);
-    });
-    if(this.loggedIn == null){
+      console.log(this.user.name);
       this.router.navigate(['/creaEvento'])
-    }
+    }); 
   }
 }

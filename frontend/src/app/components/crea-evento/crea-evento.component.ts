@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '@auth0/auth0-angular';
 import { Router } from '@angular/router';
+import {SocialAuthService,} from '@abacritt/angularx-social-login';
+
 
 @Component({
   selector: 'app-crea-evento',
@@ -9,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class CreaEventoComponent implements OnInit {
 
-  constructor( private router:Router) { }
+  constructor(private authService: SocialAuthService, private router: Router) { }
   
   ngOnInit(): void {
     
