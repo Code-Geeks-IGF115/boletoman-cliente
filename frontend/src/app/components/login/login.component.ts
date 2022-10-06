@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   loggedIn:any;
   //input password
   hide = true;
-  constructor(private authService: SocialAuthService) { }
+  constructor(private authService: SocialAuthService, private router: Router) { }
 
   ngOnInit() {
     this.authService.authState.subscribe((user) => {
@@ -23,5 +23,8 @@ export class LoginComponent implements OnInit {
       this.loggedIn = (user != null);
       console.log(this.user);
     });
+    if(this.loggedIn == null){
+      this.router.navigate(['/creaEvento'])
+    }
   }
 }
