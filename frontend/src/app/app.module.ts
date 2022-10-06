@@ -22,8 +22,9 @@ import { CreaEventoComponent } from './components/crea-evento/crea-evento.compon
 import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
 import {
   GoogleLoginProvider,
-  FacebookLoginProvider
 } from 'angularx-social-login';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,11 +44,7 @@ import {
     MatFormFieldModule,
     MatInputModule,
     SocialLoginModule, 
-    // Import the module into the application, with configuration
-    AuthModule.forRoot({
-      domain: 'boletoman.us.auth0.com',
-      clientId: 'IOyYxoB4HkW78TfqTn72FR8KhuF3RDRS'
-    }),
+  
   ],
   providers: [
     {
