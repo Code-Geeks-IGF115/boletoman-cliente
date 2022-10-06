@@ -1,7 +1,9 @@
 .largo{
-    width: 43%;
+    width: 45%;
 }
-
+body{
+    text-align: center;
+}
 .botonlargo{
 
     width: 20%;
