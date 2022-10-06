@@ -11,12 +11,14 @@ import {MatIconModule} from '@angular/material/icon';
 // Import the module from the SDK
 import { AuthModule } from '@auth0/auth0-angular';
 import { CreaEventoComponent } from './components/crea-evento/crea-evento.component';
+import { SalasDeEventoComponent } from './components/salas-de-evento/salas-de-evento.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    CreaEventoComponent
+    CreaEventoComponent,
+    SalasDeEventoComponent
   ],
   imports: [
     BrowserModule,
