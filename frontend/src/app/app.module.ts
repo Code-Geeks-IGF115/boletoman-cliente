@@ -19,13 +19,16 @@ import { SocialLoginModule, SocialAuthServiceConfig } from '@abacritt/angularx-s
 import {
   GoogleLoginProvider,
 } from '@abacritt/angularx-social-login';
+import {MatSelectModule} from '@angular/material/select';
+import { SalasDeEventoComponent } from './components/salas-de-evento/salas-de-evento.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    CreaEventoComponent
+    CreaEventoComponent,
+    SalasDeEventoComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +43,9 @@ import {
     MatFormFieldModule,
     MatInputModule,
     SocialLoginModule, 
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
   
   ],
   providers: [
@@ -60,6 +66,8 @@ import {
         }
       } as SocialAuthServiceConfig,
     }
+    
+    
   ],
   bootstrap: [AppComponent]
 })
