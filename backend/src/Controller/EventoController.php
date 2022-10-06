@@ -20,16 +20,9 @@ class EventoController extends AbstractController
         EventoRepository $eventoRepository, 
         SerializerInterface $serializer): JsonResponse
     {
-        // return $this->json([
-        //     'eventos' => $eventoRepository->findAll(),
-        // ]);
-        $data=$eventoRepository->findAll();
-        $eventos=$serializer->serialize($data, 'json', [
-            DateTimeNormalizer::FORMAT_KEY => 'Y-m-d H:i:s',
-        ]);
-        return new JsonResponse([
-            'eventos' => $eventos,
-        ],Response::HTTP_OK);
+        $eventos=$eventoRepository->findAll();
+        $result= $serializer->serialize(['eventos'=>$eventos],'json');
+        return JsonResponse::fromJsonString($result);
     }
 
     #[Route('/new', name: 'app_evento_new', methods: ['GET', 'POST'])]

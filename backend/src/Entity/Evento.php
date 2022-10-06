@@ -15,43 +15,33 @@ class Evento
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    #[Groups(['show_evento', 'list_evento'])]
     private ?int $id = null;
 
     #[ORM\Column(length: 50)]
-    #[Groups(['show_evento', 'list_evento'])]
     private ?string $nombre = null;
 
     #[ORM\Column(length: 255)]
-    #[Groups(['show_evento', 'list_evento'])]
     private ?string $descripcion = null;
 
     #[ORM\Column(length: 25)]
-    #[Groups(['show_evento', 'list_evento'])]
     private ?string $tipoDeEvento = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
-    #[Groups(['show_evento', 'list_evento'])]
     private ?\DateTimeInterface $fechaInicio = null;
 
     #[ORM\Column(type: Types::TIME_MUTABLE)]
-    #[Groups(['show_evento', 'list_evento'])]
     private ?\DateTimeInterface $horaInicio = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
-    #[Groups(['show_evento', 'list_evento'])]
     private ?\DateTimeInterface $fechaFin = null;
 
     #[ORM\Column(type: Types::TIME_MUTABLE)]
-    #[Groups(['show_evento', 'list_evento'])]
     private ?\DateTimeInterface $horaFin = null;
 
     #[ORM\OneToOne(mappedBy: 'evento', cascade: ['persist', 'remove'])]
-    #[Groups(['show_evento', 'list_evento'])]
     private ?SalaDeEventos $salaDeEventos = null;
 
     #[ORM\OneToMany(mappedBy: 'evento', targetEntity: Imagen::class, orphanRemoval: true)]
-    #[Groups(['show_evento', 'list_evento'])]
     private Collection $imagens;
 
     public function __construct()
