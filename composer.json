@@ -1,0 +1,5 @@
+{
+    "require": {
+        "sensio/framework-extra-bundle": "^6.2"
+    }
+}

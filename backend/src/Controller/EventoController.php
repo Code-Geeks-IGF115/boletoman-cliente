@@ -9,18 +9,26 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\{Response, JsonResponse};
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Serializer\SerializerInterface;
+use Symfony\Component\Serializer\Normalizer\DateTimeNormalizer;
 
 #[Route('/evento')]
 class EventoController extends AbstractController
 {
     #[Route('/', name: 'app_evento_index', methods: ['GET'])]
-    public function index(EventoRepository $eventoRepository): JsonResponse
+    public function index(
+        EventoRepository $eventoRepository, 
+        SerializerInterface $serializer): JsonResponse
     {
         // return $this->json([
         //     'eventos' => $eventoRepository->findAll(),
         // ]);
+        $data=$eventoRepository->findAll();
+        $eventos=$serializer->serialize($data, 'json', [
+            DateTimeNormalizer::FORMAT_KEY => 'Y-m-d H:i:s',
+        ]);
         return new JsonResponse([
-            'eventos' => $eventoRepository->findAll(),
+            'eventos' => $eventos,
         ],Response::HTTP_OK);
     }
 

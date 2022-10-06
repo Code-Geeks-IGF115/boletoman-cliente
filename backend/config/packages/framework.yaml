@@ -12,6 +12,10 @@ framework:
         cookie_samesite: lax
         storage_factory_id: session.storage.factory.native
 
+    serializer:
+        default_context:
+            enable_max_depth: true
+            
     #esi: true
     #fragments: true
     php_errors:
