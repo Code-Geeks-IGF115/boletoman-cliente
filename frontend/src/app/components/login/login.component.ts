@@ -3,12 +3,12 @@ import { Router } from '@angular/router';
 import {SocialAuthService,} from '@abacritt/angularx-social-login';
 import { SocialUser } from "angularx-social-login"
 import { SocialLoginModule } from '@abacritt/angularx-social-login';
-import { AuthService } from '@auth0/auth0-angular';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-  providers: [SocialLoginModule, AuthService]
+
 })
 export class LoginComponent implements OnInit {
   user:any;
@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
       this.user = user;
       this.loggedIn = (user != null);
       console.log(this.user.name);
-      this.router.navigate(['/creaEvento'])
+      //this.router.navigate(['/creaEvento'])
     }); 
   }
 }
