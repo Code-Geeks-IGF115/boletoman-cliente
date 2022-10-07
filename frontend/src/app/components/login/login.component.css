@@ -11,12 +11,17 @@
 
 .imagen{
     text-align: left;
+    padding-right:50px ;
+    
 }
 
 .centro{
     text-align: center;
+    padding-left: 200px;
+    padding-right:100px ;
 }
 
 .derecha{
     text-align: right;
+    padding-left: 200px;
 }
