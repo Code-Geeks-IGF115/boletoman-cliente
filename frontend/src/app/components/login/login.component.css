@@ -1,0 +1,22 @@
+.mat-toolbar{
+    background: #81268b;
+    color: #fff;
+    
+}
+.contenedor{
+    display: inline-flexbox;
+    width: 100%;
+    height: 100%;
+}
+
+.imagen{
+    text-align: left;
+}
+
+.centro{
+    text-align: center;
+}
+
+.derecha{
+    text-align: right;
+}

@@ -15,6 +15,8 @@ import {MatSelectModule} from '@angular/material/select';
 import { AuthModule } from '@auth0/auth0-angular';
 import { CreaEventoComponent } from './components/crea-evento/crea-evento.component';
 import { SalasDeEventoComponent } from './components/salas-de-evento/salas-de-evento.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+
 
 @NgModule({
   declarations: [
@@ -33,6 +35,7 @@ import { SalasDeEventoComponent } from './components/salas-de-evento/salas-de-ev
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
+    MatToolbarModule,
     
     // Import the module into the application, with configuration
     AuthModule.forRoot({
