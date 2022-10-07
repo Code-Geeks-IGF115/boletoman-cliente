@@ -1,26 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import {SocialAuthService,} from '@abacritt/angularx-social-login';
+import { SocialUser } from "angularx-social-login"
+import { SocialLoginModule } from '@abacritt/angularx-social-login';
 import { AuthService } from '@auth0/auth0-angular';
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  providers: [SocialLoginModule, AuthService]
 })
 export class LoginComponent implements OnInit {
+  user:any;
+  loggedIn:any;
+  //input password
+  hide = true;
+  constructor(private authService: SocialAuthService, private router: Router) { }
 
-  constructor(public auth: AuthService, private router: Router) { }
-
-  ngOnInit(): void {
-    //Redirige a la vista crearEvento en caso este logeado
-    this.auth.isAuthenticated$.subscribe(isAuthenticated =>{
-      if(isAuthenticated){
-        this.router.navigate(['/creaEvento'])
-      }
-    })
+  ngOnInit() {
+    this.authService.authState.subscribe((user) => {
+      this.user = user;
+      this.loggedIn = (user != null);
+      console.log(this.user.name);
+      this.router.navigate(['/creaEvento'])
+    }); 
   }
-  login(){
-    this.auth.loginWithRedirect()
-  }
-
 }
