@@ -16,15 +16,17 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { FormsModule } from '@angular/forms'; 
 // Import the module from the SDK
 import { AuthModule } from '@auth0/auth0-angular';
 import { CreaEventoComponent } from './components/crea-evento/crea-evento.component';
-
+import { SalasDeEventoComponent } from './components/salas-de-evento/salas-de-evento.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    CreaEventoComponent
+    CreaEventoComponent,
+    SalasDeEventoComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +43,7 @@ import { CreaEventoComponent } from './components/crea-evento/crea-evento.compon
     MatToolbarModule,
     MatMenuModule,
     MatIconModule,
-    
+    FormsModule,
     // Import the module into the application, with configuration
     AuthModule.forRoot({
       domain: 'boletoman.us.auth0.com',
