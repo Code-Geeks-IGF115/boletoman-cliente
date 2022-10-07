@@ -1,6 +1,5 @@
 
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -8,20 +7,25 @@ import {MatButtonModule} from '@angular/material/button';
 import { LoginComponent } from './components/login/login.component';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
-import {MatInputModule} from '@angular/material/input';
+
 /* Angular Material */
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatChipsModule} from '@angular/material/chips';
+import {MatCardModule} from '@angular/material/card';
+import {MatSelectModule} from '@angular/material/select';
+import {MatInputModule} from '@angular/material/input';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; 
 import { CreaEventoComponent } from './components/crea-evento/crea-evento.component';
 //Social media
 import { SocialLoginModule, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
 import {
   GoogleLoginProvider,
 } from '@abacritt/angularx-social-login';
-import {MatSelectModule} from '@angular/material/select';
 import { SalasDeEventoComponent } from './components/salas-de-evento/salas-de-evento.component';
-
 
 @NgModule({
   declarations: [
@@ -33,20 +37,21 @@ import { SalasDeEventoComponent } from './components/salas-de-evento/salas-de-ev
   imports: [
     BrowserModule,
     AppRoutingModule,
+    MatCardModule,
     BrowserAnimationsModule,
+    MatCheckboxModule,
     MatButtonModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatInputModule,
+    MatChipsModule,
+    MatDatepickerModule,
+    MatToolbarModule,
     MatMenuModule,
     MatIconModule,
     FormsModule, 
     ReactiveFormsModule,
-    MatCardModule,
-    MatFormFieldModule,
-    MatInputModule,
     SocialLoginModule, 
-    MatFormFieldModule,
-    MatInputModule,
-    MatSelectModule,
-  
   ],
   providers: [
     {
@@ -66,8 +71,6 @@ import { SalasDeEventoComponent } from './components/salas-de-evento/salas-de-ev
         }
       } as SocialAuthServiceConfig,
     }
-    
-    
   ],
   bootstrap: [AppComponent]
 })
