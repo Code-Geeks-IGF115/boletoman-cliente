@@ -1,6 +1,5 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 
+import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -8,12 +7,24 @@ import {MatButtonModule} from '@angular/material/button';
 import { LoginComponent } from './components/login/login.component';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
+
+/* Angular Material */
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatChipsModule} from '@angular/material/chips';
+import {MatCardModule} from '@angular/material/card';
 import {MatSelectModule} from '@angular/material/select';
-// Import the module from the SDK
-import { AuthModule } from '@auth0/auth0-angular';
+import {MatInputModule} from '@angular/material/input';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; 
 import { CreaEventoComponent } from './components/crea-evento/crea-evento.component';
+//Social media
+import { SocialLoginModule, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
+import {
+  GoogleLoginProvider,
+} from '@abacritt/angularx-social-login';
 import { SalasDeEventoComponent } from './components/salas-de-evento/salas-de-evento.component';
 
 @NgModule({
@@ -26,21 +37,41 @@ import { SalasDeEventoComponent } from './components/salas-de-evento/salas-de-ev
   imports: [
     BrowserModule,
     AppRoutingModule,
+    MatCardModule,
     BrowserAnimationsModule,
+    MatCheckboxModule,
     MatButtonModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatInputModule,
+    MatChipsModule,
+    MatDatepickerModule,
+    MatToolbarModule,
     MatMenuModule,
     MatIconModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatSelectModule,
-    
-    // Import the module into the application, with configuration
-    AuthModule.forRoot({
-      domain: 'boletoman.us.auth0.com',
-      clientId: 'IOyYxoB4HkW78TfqTn72FR8KhuF3RDRS'
-    }),
+    FormsModule, 
+    ReactiveFormsModule,
+    SocialLoginModule, 
   ],
-  providers: [],
+  providers: [
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              '573091350225-98cajt278f660kel7soed9b35p8ec548.apps.googleusercontent.com'
+            )
+          }
+        ],
+        onError: (err) => {
+          console.error(err);
+        }
+      } as SocialAuthServiceConfig,
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

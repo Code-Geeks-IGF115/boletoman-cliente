@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '@auth0/auth0-angular';
+
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,8 +9,8 @@ import { Router } from '@angular/router';
 })
 export class SalasDeEventoComponent implements OnInit {
 
-  sesionActiva = true;
-  constructor(public auth: AuthService, private router:Router) { }
+  
+  constructor( private router:Router) { }
   
   ngOnInit(): void {
   }

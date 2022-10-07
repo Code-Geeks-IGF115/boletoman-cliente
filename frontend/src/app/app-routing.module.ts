@@ -6,12 +6,12 @@ import { CreaEventoComponent } from './components/crea-evento/crea-evento.compon
 import { SalasDeEventoComponent } from './components/salas-de-evento/salas-de-evento.component';
 
 const routes: Routes = [
+  
   {path:' ', redirectTo:'creaEvento',pathMatch: 'full'},
-  {path:' ', redirectTo:'crearSala',pathMatch: 'full'},
   {path:'login', component: LoginComponent},
   {path:'creaEvento', component: CreaEventoComponent},
   {path:'crearSala', component: SalasDeEventoComponent},
-  {path:'**', redirectTo:'login',pathMatch: 'full'},
+  {path:'**', redirectTo:'creaEvento',pathMatch: 'full'},
 ];
 
 @NgModule({
