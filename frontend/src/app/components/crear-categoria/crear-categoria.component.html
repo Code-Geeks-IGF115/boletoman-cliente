@@ -26,15 +26,14 @@
       <br><br>
     <h1><b><font size="6px">Vista previa de sala de Evento</font></b></h1>
     <br><br>
-    <br><br>
+    
     <h1><b><font size="6px">Configuracion</font></b></h1>
     <br><br>
-    <br><br>
+    
     <mat-form-field class="largo" appearance="fill">
         <mat-label>Categoria</mat-label>
         <input matInput>
       </mat-form-field>
-      <br><br>
       <br><br>
       <div class="new-categoria">
     <mat-form-field class="largo" appearance="fill">
@@ -63,33 +62,47 @@
       <button mat-raised-button class="separacion" class="botonlargo" color="primary">Agregar</button>
       <div class="espacio"></div>
       <br><br>
-      <mat-form-field appearance="fill">
-        <mat-label>Forma de la Sala</mat-label>
-        <mat-select>
-          <mat-option value="one">Circular</mat-option>
-          <mat-option value="two">Ovalado</mat-option>
-          <mat-option value="two">Cuadrado</mat-option>
-          <mat-option value="two">Rectangulo</mat-option>
-        </mat-select>
-      </mat-form-field>
 
-      <div class="espacio"></div>
+      <table mat-table [dataSource]="myDataArray" class="categoria">
+      
+        <ng-container matColumnDef="categoria">
+          <th mat-header-cell *matHeaderCellDef> Categoria </th>
+          <td mat-cell *matCellDef="let element"> {{element.categoria}} </td>
+        </ng-container>
 
-      <mat-form-field appearance="fill">
-        <mat-label>Columnas</mat-label>
-        <input matInput type="number">
-      </mat-form-field>
+        <ng-container matColumnDef="codigo">
+          <th mat-header-cell *matHeaderCellDef> Codigo </th>
+          <td mat-cell *matCellDef="let element"> {{element.codigo}} </td>
+        </ng-container>
 
-      <div class="espacio"></div>
+        <ng-container matColumnDef="precio">
+          <th mat-header-cell *matHeaderCellDef> Precio </th>
+          <td mat-cell *matCellDef="let element"> {{element.precio}} </td>
+        </ng-container>
 
-      <mat-form-field appearance="fill">
-        <mat-label>Filas</mat-label>
-        <input matInput type="number">
-      </mat-form-field>
+        <ng-container matColumnDef="fila">
+          <th mat-header-cell *matHeaderCellDef> Fila </th>
+          <td mat-cell *matCellDef="let element"> {{element.fila}} </td>
+        </ng-container>
+        <ng-container matColumnDef="columna">
+          <th mat-header-cell *matHeaderCellDef> columna </th>
+          <td mat-cell *matCellDef="let element"> {{element.columna}} </td>
+        </ng-container>
+        <ng-container matColumnDef="meses">
+          <th mat-header-cell *matHeaderCellDef> Meses </th>
+          <td mat-cell *matCellDef="let element"> {{element.meses}} </td>
+        </ng-container>
 
-      <br><br>
-      <FONT SIZE=6>Vista previa</FONT>
+        <ng-container matColumnDef="boletoman">
+          <th mat-header-cell *matHeaderCellDef> Boletoman </th>
+          <td mat-cell *matCellDef="let element"> {{element.boletoman}} </td>
 
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      
+      
+      </table>
       <br><br>
   
       <button mat-raised-button class="separacion" class="botonlargo" color="primary">Guardar</button>
