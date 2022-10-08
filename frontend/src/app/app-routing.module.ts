@@ -14,7 +14,7 @@ const routes: Routes = [
   {path:'creaEvento', component: CreaEventoComponent},
   {path:'crearCategoria', component: CrearCategoriaComponent},
   {path:'crearSala', component: SalasDeEventoComponent},
-  {path:'**', redirectTo:'creaEvento',pathMatch: 'full'},
+  {path:'**', redirectTo:'login',pathMatch: 'full'},
 ];
 
 @NgModule({
