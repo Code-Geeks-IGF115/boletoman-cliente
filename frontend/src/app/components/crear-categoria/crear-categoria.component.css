@@ -1,14 +1,25 @@
-.largo{
-    width: 45%;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+.largo{
+    width: 30%;
+}
+
 body{
     text-align: center;
 }
+
 .botonlargo{
 
     width: 20%;
 }
-
+.new-categoria{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
 .espacio{
     width: 10px;
     height: auto;
