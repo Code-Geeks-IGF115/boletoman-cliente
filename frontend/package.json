@@ -10,6 +10,7 @@
   },
   "private": true,
   "dependencies": {
+    "@abacritt/angularx-social-login": "^1.2.5",
     "@angular/animations": "^14.2.0",
     "@angular/cdk": "^14.2.3",
     "@angular/common": "^14.2.0",
@@ -21,8 +22,10 @@
     "@angular/platform-browser-dynamic": "^14.2.0",
     "@angular/router": "^14.2.0",
     "@auth0/auth0-angular": "^1.11.0",
+    "angularx-social-login": "^4.1.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
+    "with": "^7.0.2",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
