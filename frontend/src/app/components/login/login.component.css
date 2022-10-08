@@ -1,27 +1,22 @@
 .mat-toolbar{
-    background: #81268b;
+    background: linear-gradient(to bottom, rgba(74, 37, 127, 1) 30%, rgba(131, 58, 169, 1)
+    100%);
     color: #fff;
     
 }
 .contenedor{
-    display: inline-flexbox;
+    display: flex;
+    padding: 0 16px;
     width: 100%;
-    height: 100%;
+    align-items: center;
+    justify-content: space-around;
 }
 
-.imagen{
-    text-align: left;
-    padding-right:50px ;
-    
+.ab{
+    background:#4A257F;
+    color: #fff;
 }
-
-.centro{
-    text-align: center;
-    padding-left: 200px;
-    padding-right:100px ;
-}
-
-.derecha{
-    text-align: right;
-    padding-left: 200px;
+.bc{
+    background:#833AA9;
+    color: #fff;
 }
