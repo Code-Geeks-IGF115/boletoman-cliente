@@ -31,7 +31,7 @@
     <br><br>
     
     <mat-form-field class="largo" appearance="fill">
-        <mat-label>Categoria</mat-label>
+        <mat-select>Categoria</mat-select>
         <input matInput>
       </mat-form-field>
       <br><br>
@@ -63,7 +63,7 @@
       <div class="espacio"></div>
       <br><br>
 
-      <table mat-table [dataSource]="myDataArray" class="categoria">
+      <!-- <table mat-table [dataSource]="myDataArray" class="categoria">
       
         <ng-container matColumnDef="categoria">
           <th mat-header-cell *matHeaderCellDef> Categoria </th>
@@ -102,7 +102,8 @@
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       
       
-      </table>
+      </table> 
+    -->
       <br><br>
   
       <button mat-raised-button class="separacion" class="botonlargo" color="primary">Guardar</button>

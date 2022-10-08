@@ -13,8 +13,8 @@ export class CrearCategoriaComponent implements OnInit {
   }
 
 }
+/*
 
-import {Component} from '@angular/core';
 
 export interface Categoria {
   categoria: string;
@@ -36,9 +36,9 @@ const ELEMENT_DATA: Categoria[] = [
   {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
 ];
 
-/**
- * @title Basic use of `<table mat-table>`
- */
+
+  @title Basic use of `<table mat-table>`
+ 
 @Component({
   selector: 'table-basic-example',
   styleUrls: ['table-basic-example.css'],
@@ -48,3 +48,4 @@ export class TableBasicExample {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = ELEMENT_DATA;
 }
+*/
