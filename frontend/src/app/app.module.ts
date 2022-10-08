@@ -22,9 +22,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreaEventoComponent } from './components/crea-evento/crea-evento.component';
 //Social media
 import { SocialLoginModule, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
-import {
-  GoogleLoginProvider,
-} from '@abacritt/angularx-social-login';
+import {  GoogleLoginProvider} from '@abacritt/angularx-social-login';
 import { SalasDeEventoComponent } from './components/salas-de-evento/salas-de-evento.component';
 
 @NgModule({
