@@ -1,0 +1,16 @@
+.largo{
+    width: 45%;
+}
+body{
+    text-align: center;
+}
+.botonlargo{
+
+    width: 20%;
+}
+
+.espacio{
+    width: 10px;
+    height: auto;
+    display: inline-block;
+  }
