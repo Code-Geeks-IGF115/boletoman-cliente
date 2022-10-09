@@ -14,7 +14,7 @@ export class CrearCategoriaComponent implements OnInit {
 
 }
 
-
+/** 
 
 export interface CategoriaT {
   categoria: string;
@@ -33,9 +33,9 @@ const ELEMENT_DATA: CategoriaT[] = [
   
 ];
 
-/*
- ** @title Basic use of `<table mat-table>`
- */
+
+ @title Basic use of `<table mat-table>`
+ 
 @Component({
   selector: 'crear-categoria.component',
   styleUrls: ['crear-categoria.component.html'],
@@ -46,5 +46,5 @@ export class TableCategoria {
   dataSource = ELEMENT_DATA;
 }
 
-
+*/
 
