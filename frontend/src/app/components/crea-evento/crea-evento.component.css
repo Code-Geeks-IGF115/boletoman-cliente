@@ -1,9 +1,7 @@
 .largo{
     width: 45%;
 }
-body{
-    text-align: center;
-}
+
 .botonlargo{
 
     width: 20%;
@@ -14,3 +12,15 @@ body{
     height: auto;
     display: inline-block;
   }
+  .contenedor{
+    width:960px;
+    margin:auto;
+    margin-left: 200px;
+}
+.example-section{
+    display: flex;
+    padding: 0 16px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+}

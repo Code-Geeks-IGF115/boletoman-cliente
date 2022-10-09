@@ -1,27 +1,26 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+
 .largo{
-    width: 30%;
+    width: 65%;
 }
-
-body{
-    text-align: center;
+table {
+    width: 100%;
 }
-
+.contenedor{
+    width:960px;
+    margin:auto;
+    margin-left: 400px;
+}
 .botonlargo{
 
     width: 20%;
-}
-.new-categoria{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
 }
 .espacio{
     width: 10px;
     height: auto;
     display: inline-block;
-  }
+}
+.new-categoria{
+    width: 10px;
+    height: auto;
+    display: inline;
+}
