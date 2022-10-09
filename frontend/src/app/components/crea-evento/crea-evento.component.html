@@ -1,0 +1,87 @@
+
+<div class="contenedor">
+<!--titulo de pagina-->
+<div style="margin-top: 20px;width: 100%;background-color: rgb(255, 255, 255);">
+  <h1><b><font size="8px">Crear tu Evento</font></b></h1>
+</div>
+<!--titulo y organizador del evento-->
+<div style="margin-top: 50px; text-align: center;" ><br>
+  <mat-form-field class="largo" style="width: 75%;margin-left: 50px;margin-bottom: 5px;" appearance="fill">    
+    <input  matInput placeholder="Titulo del evento">     
+  </mat-form-field>
+  <br>  
+  <mat-form-field class="largo" style="width: 75%;margin-left: 50px;margin-top: 5px;"appearance="fill">   
+    <input  matInput placeholder="Organizador">    
+  </mat-form-field>
+</div>
+<!--tipo , categorias y subcategorias del evento-->
+<div style="text-align: center;"><br>
+    <mat-form-field style="margin-left: 50px;margin-top: 5px;"appearance="fill">
+      <mat-label>Tipo del evento</mat-label>
+      <mat-select>
+        <mat-option value="one">First option</mat-option>
+        <mat-option value="two">Second option</mat-option>
+      </mat-select>
+    </mat-form-field>
+    
+    <mat-form-field style="margin-left: 50px;margin-top: 5px;"appearance="fill">
+      <mat-label>Categoria evento</mat-label>
+      <mat-select>
+        <mat-option value="one">First option</mat-option>
+        <mat-option value="two">Second option</mat-option>
+      </mat-select>
+    </mat-form-field> 
+      
+    <mat-form-field style="margin-left: 50px;margin-top: 5px;"appearance="fill">
+      <mat-label>SubCategorias evento</mat-label>
+      <mat-select>
+        <mat-option value="one">First option</mat-option>
+        <mat-option value="two">Second option</mat-option>
+      </mat-select>
+    </mat-form-field>
+</div>
+<!--fechas y horas del evento-->
+<div style="margin-left: 50px;"><br>
+  <span>Fecha Inicio</span><span style="margin-left: 160px;">Hora Inicio</span><span style="margin-left: 160px;">Fecha Fin</span><span style="margin-left: 170px;">Hora Fin</span><br><br>
+  <mat-form-field appearance="fill">    
+    <input type="date"  matInput placeholder="Fecha">     
+  </mat-form-field>
+  <mat-form-field style="margin-left: 30px;" appearance="fill">    
+    <input  type="time" matInput placeholder="Hora">     
+  </mat-form-field>  
+  <mat-form-field style="margin-left: 30px;" appearance="fill">    
+    <input type="date"  matInput placeholder="Fecha">     
+  </mat-form-field>  <mat-form-field style="margin-left: 30px;" appearance="fill">    
+    <input  type="time" matInput placeholder="Hora">    
+  </mat-form-field>  
+</div>
+<!--tipo y dias del evento-->
+<div class="example-section"><br>
+  <mat-form-field style="margin-left: 10px;margin-top: 5px;"appearance="fill">
+      <mat-label>tipo de evento</mat-label>
+      <mat-select>
+        <mat-option value="one">First option</mat-option>
+        <mat-option value="two">Second option</mat-option>
+      </mat-select>    
+  </mat-form-field>
+  <section  >
+    <mat-checkbox style="margin: 10px;">lunes</mat-checkbox>
+    <mat-checkbox style="margin: 10px;">martes</mat-checkbox>
+    <mat-checkbox style="margin: 10px;">miercoles</mat-checkbox>
+    <mat-checkbox style="margin: 10px;">jueves</mat-checkbox>
+    <mat-checkbox style="margin: 10px;">viernes</mat-checkbox>
+    <mat-checkbox style="margin: 10px;">sabado</mat-checkbox>
+    <mat-checkbox style="margin: 10px;">domingo</mat-checkbox>
+  </section>
+</div>
+<!--botones-->
+<div style="margin-top: 25px;margin-top:50px;"><br>
+  <section>
+    <div class="example-button-row">
+      <button style="left: 25%;width: 200px;background-color: rgb(55, 174, 26);color: white;" mat-raised-button color="primary">GUARDAR</button>
+      <button style="left: 30%;width: 200px;background-color: rgb(164, 160, 160);color: white;"  mat-raised-button>SIGUIENTE</button>    
+    </div>
+  </section>
+</div><br>
+</div>
+

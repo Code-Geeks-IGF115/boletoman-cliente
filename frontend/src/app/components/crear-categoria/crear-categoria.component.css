@@ -1,0 +1,26 @@
+
+.largo{
+    width: 65%;
+}
+table {
+    width: 100%;
+}
+.contenedor{
+    width:960px;
+    margin:auto;
+    margin-left: 400px;
+}
+.botonlargo{
+
+    width: 20%;
+}
+.espacio{
+    width: 10px;
+    height: auto;
+    display: inline-block;
+}
+.new-categoria{
+    width: 10px;
+    height: auto;
+    display: inline;
+}
