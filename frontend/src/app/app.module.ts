@@ -16,6 +16,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatTableModule} from '@angular/material/table';
 // Importando componentes
 import { AuthModule } from '@auth0/auth0-angular';
 import { CreaEventoComponent } from './components/crea-evento/crea-evento.component';
@@ -59,7 +60,8 @@ import {
     MatToolbarModule,
     FormsModule, 
     ReactiveFormsModule,
-    SocialLoginModule, 
+    SocialLoginModule,
+    MatTableModule 
   ],
   providers: [
     {
