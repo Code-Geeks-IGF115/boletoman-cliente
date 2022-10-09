@@ -31,7 +31,13 @@
     <br><br>
     
     <mat-form-field class="largo" appearance="fill">
-        <mat-select>Categoria</mat-select>
+        <mat-label>Categoria</mat-label>
+        <mat-select>
+          <option value="opcion1">Opcion 1</option>
+          <option value="opcion2">Opcion 2</option>
+          <option value="opcion3">Opcion 3</option>
+          <option value="audi">Audi</option>
+        </mat-select>
         <input matInput>
       </mat-form-field>
       <br><br>
@@ -63,7 +69,7 @@
       <div class="espacio"></div>
       <br><br>
 
-      <!-- <table mat-table [dataSource]="myDataArray" class="categoria">
+      <table mat-table [dataSource]="myDataArray" class="categoria">
       
         <ng-container matColumnDef="categoria">
           <th mat-header-cell *matHeaderCellDef> Categoria </th>
@@ -101,14 +107,12 @@
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       
-      
       </table> 
-    -->
       <br><br>
   
       <button mat-raised-button class="separacion" class="botonlargo" color="primary">Guardar</button>
       
       <div class="espacio"></div>
-      <button mat-raised-button class="botonlcd argo" color="primary">Siguiente</button>
+      <button mat-raised-buttson class="botonlcd argo" color="primary">Siguiente</button>
 </body>
 

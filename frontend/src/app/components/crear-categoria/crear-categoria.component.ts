@@ -13,39 +13,38 @@ export class CrearCategoriaComponent implements OnInit {
   }
 
 }
-/*
 
 
-export interface Categoria {
+
+export interface CategoriaT {
   categoria: string;
-  codigo: number;
+  codigo: string;
+  precio: string;
   fila: number;
-  columna: string;
+  columna: number;
+  meses: number;
+  boletoman: number;
+
 }
 
-const ELEMENT_DATA: Categoria[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
+const ELEMENT_DATA: CategoriaT[] = [
+  { categoria: 'Categoria 1', codigo: 'CAT1', precio: '$25.00',   fila: 1, columna: 1, meses: 4, boletoman: 12},
+  { categoria: 'Categoria 2', codigo: 'CAT2', precio: '$15.00', fila: 2, columna: 1, meses: 0, boletoman: 24}
+  
 ];
 
-
-  @title Basic use of `<table mat-table>`
- 
+/*
+ ** @title Basic use of `<table mat-table>`
+ */
 @Component({
-  selector: 'table-basic-example',
-  styleUrls: ['table-basic-example.css'],
-  templateUrl: 'table-basic-example.html',
+  selector: 'crear-categoria.component',
+  styleUrls: ['crear-categoria.component.html'],
+  templateUrl: 'crear-categoria.component.css',
 })
-export class TableBasicExample {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+export class TableCategoria {
+  displayedColumns: string[] = ['categoria', 'codigo', 'precio', 'fila', 'columna', 'meses', 'boletoman'];
   dataSource = ELEMENT_DATA;
 }
-*/
+
+
+

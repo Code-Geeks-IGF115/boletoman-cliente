@@ -21,3 +21,30 @@ describe('CrearCategoriaComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+import {MaterialCategoria} from '.angular';
+import {TableCategoria} from './crear-categoria.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatNativeDateModule} from '@angular/material/core';
+import {HttpClientModule} from '@angular/common/http';
+
+@NgModule({
+  declarations: [TableCategoria],
+  imports: [
+    BrowserAnimationsModule,
+    BrowserModule,
+    FormsModule,
+    HttpClientModule,
+    MatNativeDateModule,
+    MaterialCategoria,
+    ReactiveFormsModule,
+  ],
+  providers: [],
+  bootstrap: [TableCategoria],
+})
+export class AppModule {}
+
