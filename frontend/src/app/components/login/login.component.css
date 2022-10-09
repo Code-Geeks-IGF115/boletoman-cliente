@@ -1,9 +1,31 @@
 html,
 body{
-    background-repeat: no-repeat;
     background-size: cover;
 }
-body {
+.mat-toolbar{
+    background: linear-gradient(to bottom, rgba(74, 37, 127, 1) 30%, rgba(131, 58, 169, 1)
+    100%);
+    color: #fff;
+    
+}
+.contenedor{
+    display: flex;
+    padding: 0 16px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.ab{
+    background:#4A257F;
+    color: #fff;
+}
+.bc{
+    background:#833AA9;
+    color: #fff;
+}
+
+.body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
   background:linear-gradient(#4B2680, #843BAA);
@@ -102,4 +124,5 @@ body {
 }
 .login-wrapper .mat-form-field-appearance-legacy .mat-form-field-infix {
   padding: 0.8375em 0;
+
 }
