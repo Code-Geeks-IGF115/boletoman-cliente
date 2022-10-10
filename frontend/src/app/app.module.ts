@@ -13,14 +13,15 @@ import {MatTableModule} from '@angular/material/table';
 // Import the module from the SDK
 import { AuthModule } from '@auth0/auth0-angular';
 import { CreaEventoComponent } from './components/crea-evento/crea-evento.component';
-import { SalaDeEventoComponent } from './components/sala-de-evento/sala-de-evento.component';
+import { VerSalaDeEventoComponent } from './components/ver-sala-de-evento/ver-sala-de-evento.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     CreaEventoComponent,
-    SalaDeEventoComponent
+    VerSalaDeEventoComponent,
   ],
   imports: [
     BrowserModule,
