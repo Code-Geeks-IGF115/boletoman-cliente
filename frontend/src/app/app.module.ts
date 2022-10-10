@@ -29,6 +29,7 @@ import { SocialLoginModule, SocialAuthServiceConfig } from '@abacritt/angularx-s
 import {
   GoogleLoginProvider,
 } from '@abacritt/angularx-social-login';
+import { BaseComponent } from './components/base/base.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import {
     CreaEventoComponent,
     SalasDeEventoComponent,
     LoginComponent,
-    CrearCategoriaComponent
+    CrearCategoriaComponent,
+    BaseComponent
   ],
   imports: [
     BrowserModule,
