@@ -8,15 +8,19 @@ import {MatButtonModule} from '@angular/material/button';
 import { LoginComponent } from './components/login/login.component';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
+import {MatTableModule} from '@angular/material/table';
+
 // Import the module from the SDK
 import { AuthModule } from '@auth0/auth0-angular';
 import { CreaEventoComponent } from './components/crea-evento/crea-evento.component';
+import { SalaDeEventoComponent } from './components/sala-de-evento/sala-de-evento.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    CreaEventoComponent
+    CreaEventoComponent,
+    SalaDeEventoComponent
   ],
   imports: [
     BrowserModule,
@@ -25,6 +29,7 @@ import { CreaEventoComponent } from './components/crea-evento/crea-evento.compon
     MatButtonModule,
     MatMenuModule,
     MatIconModule,
+    MatTableModule,
     
     // Import the module into the application, with configuration
     AuthModule.forRoot({
