@@ -1,18 +1,18 @@
 
 <div class="contenedor">
     <br><br>
-    <h1><b><font size="8px">Crear Categoria de Evento</font></b></h1>
+    <h1><b><font size="8px">Crear Categoría de Evento</font></b></h1>
     <br><br>
-    <h1><b><font size="6px">Categoria</font></b></h1>
+    <h1><b><font size="6px">Categoría</font></b></h1>
     <br><br>
     <mat-form-field class="largo" appearance="fill">
-      <mat-label>Nueva Categoria</mat-label>
+      <mat-label>Nueva Categoría</mat-label>
       <input matInput>
     </mat-form-field>
     <br><br>
     
         <mat-form-field style="width:32% ; padding-right: 1%;" appearance="fill">
-            <mat-label>Codigo Categoria</mat-label>
+            <mat-label>Código Categoría</mat-label>
             <input matInput>
         </mat-form-field>
         <mat-form-field style="width:32%;"  appearance="fill" floatLabel="always">
@@ -23,20 +23,20 @@
         </mat-form-field>
       <br><br>
 
-      <button style="background-color: rgb(29, 88, 216);color: white;" mat-raised-button class="botonlargo" color="primary">Agregar</button>
+      <button style="background-color: #5470FF;color: white;" mat-raised-button class="botonlargo" color="primary">Agregar</button>
       <div class="espacio"></div>
       <br><br>
     <h1><b><font size="6px">Vista previa de sala de Evento</font></b></h1>
     <br><br>
     <div>
-      <h1><b><font size="6px">Configuracion</font></b></h1>
+      <h1><b><font size="6px">Configuración</font></b></h1>
       <br><br>
       <mat-form-field class="largo" appearance="fill">
-          <mat-label>Categoria</mat-label>
+          <mat-label>Categoría</mat-label>
           <mat-select>
-            <mat-option value="opcion1">Opcion 1</mat-option>
-            <mat-option value="opcion2">Opcion 2</mat-option>
-            <mat-option value="opcion3">Opcion 3</mat-option>
+            <mat-option value="opcion1">Opción 1</mat-option>
+            <mat-option value="opcion2">Opción 2</mat-option>
+            <mat-option value="opcion3">Opción 3</mat-option>
           </mat-select>
           <input matInput>
       </mat-form-field>
@@ -44,27 +44,27 @@
         <div class="new-categoria">
           <mat-form-field style="width:32% ; padding-right: 1%;" appearance="fill">
             <mat-label>Fila</mat-label>
-            <input matInput>
+            <input matInput type="number" >
           </mat-form-field>
        
           <mat-form-field style="width:32%"  appearance="fill">
             <mat-label>Columna</mat-label>
-            <input matInput>
+            <input matInput type="number" >
           </mat-form-field>
         </div><br>
         <div class="new-categoria">
           <mat-form-field style="width:32% ; padding-right: 1%;" appearance="fill">
-            <mat-label>Numero de mesas</mat-label>
-            <input matInput>
+            <mat-label>Número de Mesas</mat-label>
+            <input matInput type="number" >
           </mat-form-field>
         
           <mat-form-field style="width:32%" appearance="fill">
-            <mat-label>Numero de Butacas</mat-label>
-            <input matInput>
+            <mat-label>Número de Butacas</mat-label>
+            <input matInput type="number">
           </mat-form-field>
         </div><br>
   
-        <button style="background-color: rgb(29, 88, 216);color: white; margin-left:435px;" mat-raised-button class="botonlargo" color="primary">Agregar</button>
+        <button style="background-color: #5470FF;color: white; margin-left:435px;" mat-raised-button class="botonlargo" color="primary">Agregar</button>
         <div class="espacio"></div>
     </div><br>
     <div>
@@ -105,8 +105,8 @@
       <tr mat-row *matRowDef="let row; columns: columnas;"></tr>
       </table>
     </div><br>
-      <button style="background-color: rgb(29, 88, 216);color: white;" mat-raised-button class="botonlargo" color="primary">Guardar</button>
+      <button style="background-color: #159600;color: white;" mat-raised-button class="botonlargo" color="primary">Guardar</button>
       <div class="espacio"></div>
-      <button style="background-color: rgb(29, 88, 216);color: white;" mat-raised-button class="botonlargo" color="primary">Siguiente</button>
+      <button style="background-color: #929292;color: white;" mat-raised-button class="botonlargo" color="primary">Siguiente</button>
 </div>
 
