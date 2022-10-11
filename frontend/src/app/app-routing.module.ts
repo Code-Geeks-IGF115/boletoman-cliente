@@ -9,8 +9,7 @@ import { BaseComponent } from './base/base.component';
 
 
 const routes: Routes = [
-  
-  
+
   {path:'login', component: LoginComponent},
   {path: '',
     component: BaseComponent,

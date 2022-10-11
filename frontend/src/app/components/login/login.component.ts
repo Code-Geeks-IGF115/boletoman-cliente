@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
       this.user = user;
       this.loggedIn = (user != null);
       console.log(this.user.name);
-      //this.router.navigate(['/creaEvento'])
+      this.router.navigate(['/creaEvento'])
     }); 
   }
 }
