@@ -15,8 +15,8 @@ const routes: Routes = [
     component: BaseComponent,
     children: [
       {
-        path:' ', 
-        redirectTo:'/creaEvento',
+        path:'', 
+        redirectTo:'creaEvento',
         pathMatch: 'full'}, 
       {
         path:'creaEvento', 
