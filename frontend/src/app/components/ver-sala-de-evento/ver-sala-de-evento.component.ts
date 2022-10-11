@@ -6,7 +6,7 @@ export interface PeriodicElement {
   correo: string;
 }
 const listaUsuarios: PeriodicElement[] = [
-  {nombre: '', direccion: '', telefono: '', correo: ''},
+  {nombre: 'Clavo & Canela Olímpica', direccion: 'Avenida Olímpica y, 67 Avenida Sur, San Salvador', telefono: '2500 0520', correo: 'clavo&canela@gmail.com'},
 ]
 @Component({
   selector: 'app-ver-sala-de-evento',
