@@ -4,68 +4,69 @@
     <h1><b>Crear Categoría de Evento</b></h1>
     <h2><b>Categoría</b></h2>
     <br><br>
-    <mat-form-field class="largo" appearance="fill">
-      <mat-label>Nueva Categoría</mat-label>
-      <input matInput>
-    </mat-form-field>
-    <br><br>
-    
-        <mat-form-field style="width:32% ; padding-right: 1%;" appearance="fill">
-            <mat-label>Código Categoría</mat-label>
-            <input matInput>
-        </mat-form-field>
-        <mat-form-field style="width:32%;"  appearance="fill" floatLabel="always">
-          <mat-label>Precio</mat-label>
-          <input matInput type="number" class="example-right-align" placeholder="0">
-          <span matPrefix>$&nbsp;</span>
-          <span matSuffix>.00</span>
-        </mat-form-field>
+    <form [formGroup]="creaCategoriaForms" (ngSubmit)="agregarCategoria(creaCategoriaForms.value)">
+      <mat-form-field class="largo" appearance="fill">
+        <mat-label>Nueva Categoría</mat-label>
+        <input formControlName="nuevaCategoria" matInput>
+      </mat-form-field>
       <br><br>
-
-      <button style="background-color: #5470FF;color: white;margin-left:435px;" mat-raised-button class="botonlargo" color="primary">Agregar</button>
-      <div class="espacio"></div>
+          <mat-form-field style="width:32% ; padding-right: 1%;" appearance="fill">
+              <mat-label>Código Categoría</mat-label>
+              <input formControlName="codigoCategoria" matInput>
+          </mat-form-field>
+          <mat-form-field style="width:32%;"  appearance="fill" floatLabel="always">
+            <mat-label>Precio</mat-label>
+            <input formControlName="precioCategoria" matInput type="number" class="example-right-align" placeholder="0">
+            <span matPrefix>$&nbsp;</span>
+            <span matSuffix>.00</span>
+          </mat-form-field>
+        <br><br>
+        <button type="submit" style="background-color: #5470FF;color: white;margin-left:435px;" mat-raised-button class="botonlargo" color="primary">Agregar</button>
+    </form>
+    
+  <div class="espacio"></div>
       <br><br>
     <h2><b>Vista previa de sala de Evento</b></h2>
     <br><br>
-    <div>
-      <h2><b>Configuración</b></h2>
-      <br><br>
-      <mat-form-field class="largo" appearance="fill">
-          <mat-label>Categoría</mat-label>
-          <mat-select>
-            <mat-option value="opcion1">Opción 1</mat-option>
-            <mat-option value="opcion2">Opción 2</mat-option>
-            <mat-option value="opcion3">Opción 3</mat-option>
-          </mat-select>
-          <input matInput>
-      </mat-form-field>
+    <form [formGroup]="configuracionForms" (ngSubmit)="agregarConfiguracion(configuracionForms.value)">
+      <div>
+        <h2><b>Configuración</b></h2>
         <br><br>
-        <div class="new-categoria">
-          <mat-form-field style="width:32% ; padding-right: 1%;" appearance="fill">
-            <mat-label>Fila</mat-label>
-            <input matInput type="number" >
-          </mat-form-field>
-       
-          <mat-form-field style="width:32%"  appearance="fill">
-            <mat-label>Columna</mat-label>
-            <input matInput type="number" >
-          </mat-form-field>
-        </div><br>
-        <div class="new-categoria">
-          <mat-form-field style="width:32% ; padding-right: 1%;" appearance="fill">
-            <mat-label>Número de Mesas</mat-label>
-            <input matInput type="number" >
-          </mat-form-field>
-        
-          <mat-form-field style="width:32%" appearance="fill">
-            <mat-label>Número de Butacas</mat-label>
-            <input matInput type="number">
-          </mat-form-field>
-        </div><br>
-  
-        <button style="background-color: #5470FF;color: white; margin-left:435px;" mat-raised-button class="botonlargo" color="primary">Agregar</button>
-        <div class="espacio"></div>
-    </div><br>
+        <mat-form-field class="largo" appearance="fill">
+            <mat-label>Categoría</mat-label>
+            <mat-select formControlName="categoria">
+              <mat-option value="opcion1">Opción 1</mat-option>
+              <mat-option value="opcion2">Opción 2</mat-option>
+              <mat-option value="opcion3">Opción 3</mat-option>
+            </mat-select>
+            <input matInput>
+        </mat-form-field>
+          <br><br>
+          <div class="new-categoria">
+            <mat-form-field style="width:32% ; padding-right: 1%;" appearance="fill">
+              <mat-label>Fila</mat-label>
+              <input formControlName="fila" matInput type="number" >
+            </mat-form-field>
+            <mat-form-field style="width:32%"  appearance="fill">
+              <mat-label>Columna</mat-label>
+              <input formControlName="columna" matInput type="number" >
+            </mat-form-field>
+          </div><br>
+          <div class="new-categoria">
+            <mat-form-field style="width:32% ; padding-right: 1%;" appearance="fill">
+              <mat-label>Número de Mesas</mat-label>
+              <input  matInput type="number" >
+            </mat-form-field>
+            <mat-form-field style="width:32%" appearance="fill">
+              <mat-label>Número de Butacas</mat-label>
+              <input formControlName="numButacas" matInput type="number">
+            </mat-form-field>
+          </div><br>
+          <button type="submit" style="background-color: #5470FF;color: white; margin-left:435px;" mat-raised-button class="botonlargo" color="primary">Agregar</button>
+          <div class="espacio"></div>
+      </div><br>
+    </form>
+    
     <div>
       <table style="width:65%;" mat-table [dataSource]="dataSource" class="mat-elevation-z8">
         <!-- Position Column -->
