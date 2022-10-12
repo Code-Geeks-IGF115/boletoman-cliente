@@ -12,6 +12,8 @@ th
     margin-left: 200px;
 }
 .botonlargo{
-
+    background-color: rgb(55, 174, 26);
+    color: white;
     width: 20%;
+    margin-left: 760px;
 }
