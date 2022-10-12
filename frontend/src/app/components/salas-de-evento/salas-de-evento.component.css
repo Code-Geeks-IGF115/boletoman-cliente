@@ -1,9 +1,7 @@
 .largo{
-    width: 45%;
+    width: 65%;
 }
-body{
-    text-align: center;
-}
+
 .botonlargo{
 
     width: 20%;
@@ -13,6 +11,10 @@ body{
     width: 10px;
     height: auto;
     display: inline-block;
-  }
+}
 
-  
+.contenedor{
+    width:960px;
+    margin:auto;
+    margin-left: 400px;
+}
