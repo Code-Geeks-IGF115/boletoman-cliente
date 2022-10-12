@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {SocialAuthService,} from '@abacritt/angularx-social-login';
+import {FormGroup, FormControl, Validators} from '@angular/forms';
 //importando services
 import { EventoService } from 'src/app/services/evento-api.service';
 
@@ -12,6 +13,20 @@ import { EventoService } from 'src/app/services/evento-api.service';
 export class CreaEventoComponent implements OnInit {
   //definiendo variable
   eventosList:any[]=[];
+  creaEventoForms = new FormGroup({
+    tituloEvento: new FormControl('', Validators.required),
+    organizador: new FormControl('', Validators.required),
+    tipoEvento: new FormControl('', Validators.required),
+    catEvento: new FormControl('', Validators.required),
+    subCatEvento: new FormControl('', Validators.required),
+    fechaInicio: new FormControl('', Validators.required),
+    horaInicio: new FormControl('', Validators.required),
+    fechaFin: new FormControl('', Validators.required),
+    horaFin: new FormControl('', Validators.required),
+    concurencia: new FormControl('', Validators.required),
+    dias: new FormControl('', Validators.required)
+  });
+
   constructor(private authService: SocialAuthService, private router: Router, private eventosApiService:EventoService) { }
   
   ngOnInit(): void {
@@ -29,8 +44,12 @@ export class CreaEventoComponent implements OnInit {
         });
         console.log(this.eventosApiService)
       },
-      error: (error) => {},
+      error: (error) => {console.log("No papito no se pudo establecer la conexión")},
       complete: () => {},
     });
+  }
+  //Metodo para guardar el evento
+  guardarEvento(form: any){
+    console.log(form)
   }
 }
