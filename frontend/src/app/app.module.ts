@@ -28,6 +28,7 @@ import { SalasDeEventoComponent } from './components/salas-de-evento/salas-de-ev
 import { LoginComponent } from './components/login/login.component';
 import { CrearCategoriaComponent } from './components/crear-categoria/crear-categoria.component';
 import { VerSalaDeEventoComponent } from './components/ver-sala-de-evento/ver-sala-de-evento.component';
+import { SeleccionarButacaComponent } from './components/seleccionar-butaca/seleccionar-butaca.component';
 
 //Social media
 import { SocialLoginModule, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
@@ -35,6 +36,7 @@ import {
   GoogleLoginProvider,
 } from '@abacritt/angularx-social-login';
 import { BaseComponent } from './base/base.component';
+
 
 
 @NgModule({
@@ -45,7 +47,8 @@ import { BaseComponent } from './base/base.component';
     LoginComponent,
     VerSalaDeEventoComponent,
     CrearCategoriaComponent,
-    BaseComponent
+    BaseComponent,
+    SeleccionarButacaComponent
 
   ],
   imports: [
