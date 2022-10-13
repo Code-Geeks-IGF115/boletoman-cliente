@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
+// import { MatCarouselModule } from '@ngmodule/material-carousel';
 
 
 import { HttpClientModule } from '@angular/common/http';
@@ -35,6 +36,7 @@ import {
   GoogleLoginProvider,
 } from '@abacritt/angularx-social-login';
 import { BaseComponent } from './base/base.component';
+import { VerDetalleEventoComponent } from './components/ver-detalle-evento/ver-detalle-evento.component';
 
 
 @NgModule({
@@ -45,7 +47,8 @@ import { BaseComponent } from './base/base.component';
     LoginComponent,
     VerSalaDeEventoComponent,
     CrearCategoriaComponent,
-    BaseComponent
+    BaseComponent,
+    VerDetalleEventoComponent
 
   ],
   imports: [
@@ -71,7 +74,8 @@ import { BaseComponent } from './base/base.component';
     ReactiveFormsModule,
     SocialLoginModule,
     MatTableModule,
-    HttpClientModule 
+    HttpClientModule
+    // MatCarouselModule.forRoot()
   ],
   providers: [
     {
