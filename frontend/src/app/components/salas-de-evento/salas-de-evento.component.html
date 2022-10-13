@@ -48,8 +48,8 @@
 <div style="margin-top:20px;"><br>
   <section>
     <div class="example-button-row">
-      <button type="submit" style="left: 25%;width: 200px;background-color: rgb(55, 174, 26);color: white;margin-left: -140px;" mat-raised-button color="primary">GUARDAR</button>
-      <button style="left: 30%;width: 200px;background-color: rgb(164, 160, 160);color: white;" [routerLink]="['/crearCategoria']" mat-raised-button>SIGUIENTE</button>    
+      <button [disabled]="!creaSalaForms.valid" type="submit" style="left: 25%;width: 200px;background-color: rgb(55, 174, 26);color: white;margin-left: -140px;" mat-raised-button color="primary">GUARDAR</button>
+      <button [disabled]="!creaSalaForms.valid" style="left: 30%;width: 200px;background-color:#7250c0;color: white;" [routerLink]="['/crearCategoria']" mat-raised-button>SIGUIENTE</button>    
     </div>
   </section>
 </div><br>

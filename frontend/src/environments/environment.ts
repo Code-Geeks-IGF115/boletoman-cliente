@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  base_url:'http://localhost:8000/',
+  evento_url:'http://boletoman-eventos.herokuapp.com/',
   port_url:'http://127.0.0.1:8000/'
 };
 
