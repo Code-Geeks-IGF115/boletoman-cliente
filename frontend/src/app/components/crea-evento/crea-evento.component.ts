@@ -18,13 +18,13 @@ export class CreaEventoComponent implements OnInit {
     organizador: new FormControl('', Validators.required),
     tipoEvento: new FormControl('', Validators.required),
     catEvento: new FormControl('', Validators.required),
-    subCatEvento: new FormControl('', Validators.required),
+    telefono: new FormControl('', Validators.required),
     fechaInicio: new FormControl('', Validators.required),
     horaInicio: new FormControl('', Validators.required),
     fechaFin: new FormControl('', Validators.required),
     horaFin: new FormControl('', Validators.required),
     concurencia: new FormControl('', Validators.required),
-    dias: new FormControl('', Validators.required)
+    //dias: new FormControl('', Validators.required)
   });
 
   constructor(private authService: SocialAuthService, private router: Router, private eventosApiService:EventoService) { }
@@ -51,5 +51,10 @@ export class CreaEventoComponent implements OnInit {
   //Metodo para guardar el evento
   guardarEvento(form: any){
     console.log(form)
+  }
+
+  //metodo para habilitar el botón de siguiente
+  habilitarBoton(){
+
   }
 }
