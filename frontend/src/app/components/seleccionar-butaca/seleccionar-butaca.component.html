@@ -1,1 +1,46 @@
-<p>seleccionar-butaca works!</p>
+<div class="body">
+
+<h1 class="centrar">Seleccionar Butacas</h1>
+
+<br><br><br><br><br><br>
+<!--Boton "Agregar butacas" -->
+<button style="position: absolute; right: 500px;" mat-raised-button color="primary">Agregar Butacas</button>
+<br><br><br><br><br><br>
+<h1 class="centrar">Carrito de Compras</h1>
+
+<br><br><br><br><br><br>
+
+<!-- Tabla -->
+
+<table style="margin:0 auto" mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  
+   
+    <ng-container matColumnDef="categoria">
+      <th mat-header-cell *matHeaderCellDef>Categoria </th>
+      <td mat-cell *matCellDef="let element"> {{element.categoria}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="precio">
+      <th  mat-header-cell *matHeaderCellDef> Precio </th>
+      <td  mat-cell *matCellDef="let element"> {{element.precio}} </td>
+    </ng-container>
+  
+
+    <ng-container matColumnDef="cantidad">
+      <th mat-header-cell *matHeaderCellDef> Cantidad </th>
+      <td mat-cell *matCellDef="let element"> {{element.cantidad}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="borrar">
+      <th mat-header-cell *matHeaderCellDef> Borrar </th>
+      <td mat-cell *matCellDef="let element"> <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="delete"></mat-icon> </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <br><br><br><br><br><br>
+  <button style="position: absolute; right: 500px;" mat-raised-button color="primary">Comprar</button>
+
+</div>

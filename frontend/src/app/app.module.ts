@@ -8,6 +8,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
 
 
+
 import { HttpClientModule } from '@angular/common/http';
 /* Angular Material */
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
@@ -48,7 +49,7 @@ import { BaseComponent } from './base/base.component';
     VerSalaDeEventoComponent,
     CrearCategoriaComponent,
     BaseComponent,
-    SeleccionarButacaComponent
+    SeleccionarButacaComponent,
 
   ],
   imports: [
@@ -74,7 +75,8 @@ import { BaseComponent } from './base/base.component';
     ReactiveFormsModule,
     SocialLoginModule,
     MatTableModule,
-    HttpClientModule 
+    HttpClientModule
+     
   ],
   providers: [
     {

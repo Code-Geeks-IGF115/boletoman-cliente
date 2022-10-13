@@ -7,6 +7,7 @@ import { VerSalaDeEventoComponent } from './components/ver-sala-de-evento/ver-sa
 import { CrearCategoriaComponent } from './components/crear-categoria/crear-categoria.component';
 import { SalasDeEventoComponent } from './components/salas-de-evento/salas-de-evento.component';
 import { BaseComponent } from './base/base.component';
+import { SeleccionarButacaComponent } from './components/seleccionar-butaca/seleccionar-butaca.component';
 
 
 const routes: Routes = [
@@ -34,6 +35,10 @@ const routes: Routes = [
       {
         path:'verSalaEvento', 
         component: VerSalaDeEventoComponent
+      },
+      {
+        path:'seleccionarButaca', 
+        component: SeleccionarButacaComponent
       },
       {
         path:'', 
