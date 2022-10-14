@@ -17,7 +17,7 @@
       <br><br>
       <mat-form-field appearance="fill">
         <mat-label>Forma de la Sala</mat-label>
-        <mat-select formControlName="formaSala">
+        <mat-select formControlName="formaSala" >
           <mat-option value="Circular">Circular</mat-option>
           <mat-option value="Ovalado">Ovalado</mat-option>
           <mat-option value="Cuadrado">Cuadrado</mat-option>
@@ -36,12 +36,22 @@
 
       <mat-form-field appearance="fill">
         <mat-label>Filas</mat-label>
-        <input formControlName="filas" matInput type="number">
+        <input formControlName="filas"  matInput type="number">
       </mat-form-field>
 
       <br><br>
       <h2>Vista previa</h2>
+      <div *ngIf=creaSalaForms.value.formaSala == 'rectangular'>
+        <div>
+            <table >
+              <tr >
+                <td>
 
+                </td>
+              </tr>
+            </table>
+        </div>
+      </div> 
       <br><br>
   
       <!--botones-->
