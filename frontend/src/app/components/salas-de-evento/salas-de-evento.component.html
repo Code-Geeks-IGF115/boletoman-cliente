@@ -41,19 +41,8 @@
 
       <br><br>
       <h2>Vista previa</h2>
-      <div *ngIf=creaSalaForms.value.formaSala == 'rectangular'>
-        <div>
-            <table >
-              <tr >
-                <td>
-
-                </td>
-              </tr>
-            </table>
-        </div>
-      </div> 
-      <br><br>
-  
+      <!--renderizando componente de vista previa-->
+      <app-vista-previa [columnas]="creaSalaForms.value.columnas" [fila]="creaSalaForms.value.filas"></app-vista-previa>
       <!--botones-->
 <div style="margin-top:20px;"><br>
   <section>

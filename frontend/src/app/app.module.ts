@@ -35,6 +35,7 @@ import {
   GoogleLoginProvider,
 } from '@abacritt/angularx-social-login';
 import { BaseComponent } from './base/base.component';
+import { VistaPreviaComponent } from './components/vista-previa/vista-previa.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { BaseComponent } from './base/base.component';
     LoginComponent,
     VerSalaDeEventoComponent,
     CrearCategoriaComponent,
-    BaseComponent
+    BaseComponent,
+    VistaPreviaComponent
 
   ],
   imports: [
