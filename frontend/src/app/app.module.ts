@@ -37,6 +37,7 @@ import {
   GoogleLoginProvider,
 } from '@abacritt/angularx-social-login';
 import { BaseComponent } from './base/base.component';
+import { VistaPreviaComponent } from './components/vista-previa/vista-previa.component';
 
 
 
@@ -50,7 +51,7 @@ import { BaseComponent } from './base/base.component';
     CrearCategoriaComponent,
     BaseComponent,
     SeleccionarButacaComponent,
-
+    VistaPreviaComponent
   ],
   imports: [
     BrowserModule,

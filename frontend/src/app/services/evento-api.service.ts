@@ -11,7 +11,7 @@ export class EventoService {
   constructor(private httpClient: HttpClient) { }
 
   obtenerEventos(){
-    return this.httpClient.get(environment.port_url+'evento/')
+    return this.httpClient.get(environment.evento_url+'evento/')
     .pipe(
       map((resultados:any)=>{
         return resultados;

@@ -21,7 +21,7 @@
             <span matSuffix>.00</span>
           </mat-form-field>
         <br><br>
-        <button type="submit" style="background-color: #5470FF;color: white;margin-left:435px;" mat-raised-button class="botonlargo" color="primary">Agregar</button>
+        <button [disabled]="!creaCategoriaForms.valid" type="submit" style="background-color: #5470FF;color: white;margin-left:435px;" mat-raised-button class="botonlargo" color="primary">Agregar</button>
     </form>
     
   <div class="espacio"></div>
@@ -62,7 +62,7 @@
               <input formControlName="numButacas" matInput type="number">
             </mat-form-field>
           </div><br>
-          <button type="submit" style="background-color: #5470FF;color: white; margin-left:435px;" mat-raised-button class="botonlargo" color="primary">Agregar</button>
+          <button [disabled]="!configuracionForms.valid" type="submit" style="background-color: #5470FF;color: white; margin-left:435px;" mat-raised-button class="botonlargo" color="primary">Agregar</button>
           <div class="espacio"></div>
       </div><br>
     </form>
@@ -110,7 +110,7 @@
   <section>
     <div class="example-button-row">
       <button style="left: 25%;width: 200px;background-color: rgb(55, 174, 26);color: white;margin-left: -140px;" mat-raised-button color="primary">GUARDAR</button>
-      <button style="left: 30%;width: 200px;background-color: rgb(164, 160, 160);color: white;"  mat-raised-button>SIGUIENTE</button>    
+      <button style="left: 30%;width: 200px;background-color:#7250c0;color: white;"  mat-raised-button>SIGUIENTE</button>    
     </div>
   </section>
 </div><br>
