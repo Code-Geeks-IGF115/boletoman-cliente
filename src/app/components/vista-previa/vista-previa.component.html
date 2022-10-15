@@ -1,0 +1,22 @@
+<!-- Generando sala cuadrada -->
+<div style="margin-left: 220px;" *ngIf="formaSala =='1'">
+    <table class="cuadrado">
+        <tbody>
+            <tr  *ngFor="let fila of filas">
+                <td  *ngFor="let columna of cols">
+                </td>
+            </tr>
+        </tbody>
+    </table> 
+</div>
+<!-- Generando sala rectangular -->
+<div style="margin-left: 110px;" *ngIf="formaSala =='2'">
+    <table class="rectangulo">
+        <tbody>
+            <tr *ngFor="let fila of filas">
+                <td *ngFor="let columna of cols">
+                </td>
+            </tr>
+        </tbody>
+    </table> 
+</div>   

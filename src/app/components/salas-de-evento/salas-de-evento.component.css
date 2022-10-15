@@ -1,0 +1,21 @@
+
+.largo{
+    width: 65%;
+}
+
+.botonlargo{
+
+    width: 20%;
+}
+
+.espacio{
+    width: 10px;
+    height: auto;
+    display: inline-block;
+}
+
+.contenedor{
+    width:960px;
+    margin:auto;
+    margin-left: 400px;
+}

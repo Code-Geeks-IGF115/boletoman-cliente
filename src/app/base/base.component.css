@@ -1,0 +1,21 @@
+.mat-toolbar{
+    background: linear-gradient(to bottom, rgba(74, 37, 127, 1) 30%, rgba(131, 58, 169, 1)
+    100%);
+    color: #fff;
+    
+}
+.contenedor{
+    display: flex;
+    padding: 0 16px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+}
+.imgRedonda {
+    width:30px;
+    height:30px;
+    border-radius:150px;
+}
+.color-text{
+    color:rgb(49, 49, 49);
+}
