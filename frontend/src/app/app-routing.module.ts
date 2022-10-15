@@ -8,6 +8,8 @@ import { CrearCategoriaComponent } from './components/crear-categoria/crear-cate
 import { SalasDeEventoComponent } from './components/salas-de-evento/salas-de-evento.component';
 import { BaseComponent } from './base/base.component';
 import { VerEventosComponent } from './components/ver-eventos/ver-eventos.component';
+import { SeleccionarButacaComponent } from './components/seleccionar-butaca/seleccionar-butaca.component';
+
 
 
 const routes: Routes = [
@@ -39,6 +41,10 @@ const routes: Routes = [
       {
         path:'verSalaEvento', 
         component: VerSalaDeEventoComponent
+      },
+      {
+        path:'seleccionarButaca', 
+        component: SeleccionarButacaComponent
       },
       {
         path:'', 

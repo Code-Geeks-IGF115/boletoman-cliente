@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class SalasDeEventoComponent implements OnInit {
   //Definiendo variables
+  
   creaSalaForms = new FormGroup({
     nombreSala: new FormControl('', Validators.required),
     direccion: new FormControl('', Validators.required),
@@ -16,7 +17,9 @@ export class SalasDeEventoComponent implements OnInit {
     columnas: new FormControl('', Validators.required),
     filas: new FormControl('', Validators.required),
   });
- 
+  columnas:any;
+  filas:any;
+  resultado:any;
   constructor( private router:Router) { }
   
   ngOnInit(): void {
@@ -26,4 +29,11 @@ export class SalasDeEventoComponent implements OnInit {
   guardarSala(form:any){
     console.log(form)
   }
+
+   vistaPreviaSala(){
+    let i, j;
+    this.columnas=this.creaSalaForms.controls['columnas']
+    this.filas=this.creaSalaForms.controls['filas']
+    this.resultado= this.filas*this.columnas
+  } 
 }
