@@ -35,7 +35,7 @@ const routes: Routes = [
         component: SalasDeEventoComponent
       },
       {
-        path:'verEvento', 
+        path:'verEventos', 
         component: VerEventosComponent
       },
       {
