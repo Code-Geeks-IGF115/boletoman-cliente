@@ -17,16 +17,14 @@
       <br><br>
       <mat-form-field appearance="fill">
         <mat-label>Forma de la Sala</mat-label>
-        <mat-select formControlName="formaSala">
+        <mat-select formControlName="formaSala" >
           <mat-option value="Circular">Circular</mat-option>
           <mat-option value="Ovalado">Ovalado</mat-option>
           <mat-option value="Cuadrado">Cuadrado</mat-option>
           <mat-option value="Rectangulo">Rectangulo</mat-option>
         </mat-select>
       </mat-form-field>
-
       <div class="espacio"></div>
-
       <mat-form-field appearance="fill">
         <mat-label>Columnas</mat-label>
         <input formControlName="columnas" matInput type="number">
@@ -36,14 +34,18 @@
 
       <mat-form-field appearance="fill">
         <mat-label>Filas</mat-label>
-        <input formControlName="filas" matInput type="number">
+        <input formControlName="filas"  matInput type="number">
       </mat-form-field>
 
       <br><br>
       <h2>Vista previa</h2>
 
+
       <br><br>
-  
+
+      <!--renderizando componente de vista previa-->
+      <app-vista-previa [columnas]="creaSalaForms.value.columnas" [fila]="creaSalaForms.value.filas"></app-vista-previa>
+
       <!--botones-->
 <div style="margin-top:20px;"><br>
   <section>
@@ -55,4 +57,5 @@
 </div><br>
   </form>
 </div>
+
 

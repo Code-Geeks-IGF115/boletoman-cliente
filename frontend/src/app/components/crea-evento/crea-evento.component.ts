@@ -24,7 +24,13 @@ export class CreaEventoComponent implements OnInit {
     fechaFin: new FormControl('', Validators.required),
     horaFin: new FormControl('', Validators.required),
     concurencia: new FormControl('', Validators.required),
-    //dias: new FormControl('', Validators.required)
+    lunes: new FormControl(''),
+    martes: new FormControl(''),
+    miercoles: new FormControl(''),
+    jueves: new FormControl(''),
+    viernes: new FormControl(''),
+    sabado: new FormControl(''),
+    domingo: new FormControl(''),
   });
 
   constructor(private authService: SocialAuthService, private router: Router, private eventosApiService:EventoService) { }
