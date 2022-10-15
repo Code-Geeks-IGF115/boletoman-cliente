@@ -1,4 +1,3 @@
-
 <div class="contenedor">
   <br><br>
 <!--titulo de pagina-->
@@ -21,25 +20,22 @@
     <mat-form-field style="margin-left: 50px;margin-top: 5px;"appearance="fill">
       <mat-label>Tipo del evento</mat-label>
       <mat-select formControlName="tipoEvento">
-        <mat-option >First option</mat-option>
-        <mat-option >Second option</mat-option>
+        <mat-option value="First option" >First option</mat-option>
+        <mat-option value="Second option" >Second option</mat-option>
       </mat-select>
     </mat-form-field>
     
     <mat-form-field style="margin-left: 50px;margin-top: 5px;"appearance="fill">
       <mat-label>Categoria evento</mat-label>
       <mat-select formControlName="catEvento">
-        <mat-option >First option</mat-option>
-        <mat-option >Second option</mat-option>
+        <mat-option value="First option" >First option</mat-option>
+        <mat-option value="Second option">Second option</mat-option>
       </mat-select>
     </mat-form-field> 
       
     <mat-form-field style="margin-left: 50px;margin-top: 5px;"appearance="fill">
-      <mat-label>SubCategorias evento</mat-label>
-      <mat-select formControlName="subCatEvento">
-        <mat-option >First option</mat-option>
-        <mat-option >Second option</mat-option>
-      </mat-select>
+      <input formControlName="telefono" autocomplete="enabled" matInput type="text" 
+      placeholder="Teléfono del organizador">
     </mat-form-field>
 </div>
 <!--fechas y horas del evento-->
@@ -62,12 +58,12 @@
   <mat-form-field style="margin-left: 10px;margin-top: 5px;"appearance="fill">
       <mat-label>tipo de evento</mat-label>
       <mat-select formControlName="concurencia">
-        <mat-option >First option</mat-option>
-        <mat-option >Second option</mat-option>
+        <mat-option value="First option">First option</mat-option>
+        <mat-option value="Second option">Second option</mat-option>
       </mat-select>    
   </mat-form-field>
   <section  >
-    <mat-checkbox formControlName="dias"style="margin: 10px;">lunes</mat-checkbox>
+    <mat-checkbox formControlName="lunes" style="margin: 10px;">lunes</mat-checkbox>
     <mat-checkbox style="margin: 10px;">martes</mat-checkbox>
     <mat-checkbox style="margin: 10px;">miercoles</mat-checkbox>
     <mat-checkbox style="margin: 10px;">jueves</mat-checkbox>
@@ -80,11 +76,12 @@
   <div style="margin-top: 25px;margin-top:50px;"><br>
     <section>
       <div class="example-button-row">
-        <button type="submit" style="left: 25%;width: 200px;background-color: rgb(55, 174, 26);color: white;" mat-raised-button color="primary">GUARDAR</button>
-        <button style="left: 30%;width: 200px;background-color: rgb(164, 160, 160);color: white;" [routerLink]="['/verSalaEvento']"  mat-raised-button>SIGUIENTE</button>    
+        <button [disabled]="!creaEventoForms.valid" type="submit" style="left: 25%;width: 200px;background-color: rgb(55, 174, 26);color: white;" mat-raised-button color="primary">GUARDAR</button>
+        <button [disabled]="!creaEventoForms.valid" style="left: 30%;width: 200px;background-color:#7250c0;color: white;" [routerLink]="['/verSalaEvento']"  mat-raised-button>SIGUIENTE</button>    
       </div>
     </section>
   </div><br>
 </form>
 </div>
+
 
