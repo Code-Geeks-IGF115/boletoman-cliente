@@ -1,0 +1,26 @@
+.largo{
+    width: 45%;
+}
+
+.botonlargo{
+
+    width: 20%;
+}
+
+.espacio{
+    width: 10px;
+    height: auto;
+    display: inline-block;
+  }
+  .contenedor{
+    width:960px;
+    margin:auto;
+    margin-left: 200px;
+}
+.example-section{
+    display: flex;
+    padding: 0 16px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+}
