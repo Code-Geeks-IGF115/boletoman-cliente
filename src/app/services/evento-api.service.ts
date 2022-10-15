@@ -1,4 +1,3 @@
-
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs';
@@ -15,9 +14,10 @@ export class EventoService {
     return this.httpClient.get(environment.evento_url+'sala/de/eventos/')
     .pipe(
       map((resultados:any)=>{
+        console.log(resultados)
         return resultados;
       })
     );
+
   }
 }
-

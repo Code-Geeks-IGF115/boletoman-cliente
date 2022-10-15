@@ -17,10 +17,8 @@
       <mat-form-field appearance="fill">
         <mat-label>Forma de la Sala</mat-label>
         <mat-select formControlName="formaSala" >
-          <mat-option value="Circular">Circular</mat-option>
-          <mat-option value="Ovalado">Ovalado</mat-option>
-          <mat-option value="Cuadrado">Cuadrado</mat-option>
-          <mat-option value="Rectangulo">Rectangulo</mat-option>
+          <mat-option value="1">Cuadrado</mat-option>
+          <mat-option value="2">Rectangulo</mat-option>
         </mat-select>
       </mat-form-field>
       <div class="espacio"></div>
@@ -38,12 +36,8 @@
 
       <br><br>
       <h2>Vista previa</h2>
-
-
-      <br><br>
-
       <!--renderizando componente de vista previa-->
-      <app-vista-previa [columnas]="creaSalaForms.value.columnas" [fila]="creaSalaForms.value.filas"></app-vista-previa>
+      <app-vista-previa style="margin-left: 150px;" [columnas]="creaSalaForms.value.columnas" [fila]="creaSalaForms.value.filas" [formaSala]="creaSalaForms.value.formaSala"></app-vista-previa>
 
       <!--botones-->
 <div style="margin-top:20px;"><br>

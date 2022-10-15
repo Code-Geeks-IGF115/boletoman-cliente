@@ -1,0 +1,18 @@
+table tbody tr:nth-child(odd) {
+	background: #B0A2D2;
+}
+table tbody tr:nth-child(even) {
+	background: #665297;
+}
+table tbody td:nth-child(even) {
+	border-color: black;
+}
+
+.rectangulo{
+    width: 50%;
+	height: 100px;
+}
+.cuadrado{
+	width: 190px;
+	height: 160px;
+}

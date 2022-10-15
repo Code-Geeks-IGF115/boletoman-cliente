@@ -12,7 +12,7 @@ import { EventoService } from 'src/app/services/evento-api.service';
 })
 export class CreaEventoComponent implements OnInit {
   //definiendo variable
-  eventosList:any[]=[];
+  eventosList:any;
   creaEventoForms = new FormGroup({
     tituloEvento: new FormControl('', Validators.required),
     organizador: new FormControl('', Validators.required),
@@ -38,30 +38,28 @@ export class CreaEventoComponent implements OnInit {
   ngOnInit(): void {
     this.getListEventos();
   }
-
+//Metodo para consultar las salas de eventos
   getListEventos() {
-    this.eventosApiService.obtenerEventos().subscribe({
-      next: (resultado: any) => {
-        this.eventosList = resultado.map((evento: any) => {
-          return {
-            nombreEvento:evento.nombre,
-            descripcionEvento:evento.descripcion
-          };
-        });
-        console.log(this.eventosApiService)
-      },
-      error: (error) => {console.log("No papito no se pudo establecer la conexión")},
-      complete: () => {},
-    });
+    this.eventosApiService.obtenerEventos()
+    .subscribe({
+      next:(resultado:any)=>{
+        this.eventosList=resultado.salas.map((sala:any)=>{
+          return{
+            nombre:sala.nombre,
+            direccion:sala.direccion,
+            telefono:sala.telefono,
+            correo:sala.email
+          }
+        })
+        console.log(this.eventosList)
+      }
+    })
   }
   //Metodo para guardar el evento
   guardarEvento(form: any){
     console.log(form)
   }
 
-  //metodo para habilitar el botón de siguiente
-  habilitarBoton(){
 
-  }
 }
 
