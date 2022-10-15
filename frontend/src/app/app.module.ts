@@ -6,7 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
-//import { MatCarouselModule } from '@ngmodule/material-carousel';
+import {GalleriaModule} from 'primeng/galleria';
 
 
 import { HttpClientModule } from '@angular/common/http';
@@ -74,8 +74,8 @@ import { VerDetalleEventoComponent } from './components/ver-detalle-evento/ver-d
     ReactiveFormsModule,
     SocialLoginModule,
     MatTableModule,
-    HttpClientModule
-    //MatCarouselModule.forRoot()
+    HttpClientModule,
+    GalleriaModule
   ],
   providers: [
     {
