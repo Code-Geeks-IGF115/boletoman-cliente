@@ -7,7 +7,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
 import {GalleriaModule} from 'primeng/galleria';
-
+import {ImageModule} from 'primeng/image';
 
 import { HttpClientModule } from '@angular/common/http';
 /* Angular Material */
@@ -75,7 +75,8 @@ import { VerDetalleEventoComponent } from './components/ver-detalle-evento/ver-d
     SocialLoginModule,
     MatTableModule,
     HttpClientModule,
-    GalleriaModule
+    GalleriaModule,
+    ImageModule,
   ],
   providers: [
     {
