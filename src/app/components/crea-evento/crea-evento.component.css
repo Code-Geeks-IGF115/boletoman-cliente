@@ -24,3 +24,6 @@
     align-items: center;
     justify-content: space-around;
 }
+.blue-snackbar {
+    background: #2196F3;
+}

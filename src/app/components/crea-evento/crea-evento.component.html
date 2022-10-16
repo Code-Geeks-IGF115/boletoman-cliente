@@ -4,6 +4,7 @@
 <div style="margin-top: 20px;width: 100%;background-color: rgb(255, 255, 255);">
   <h1><b>Crear tu Evento</b></h1>
 </div>
+
 <form [formGroup]="creaEventoForms" (ngSubmit)="guardarEvento(creaEventoForms.value)">
   <!--titulo y organizador del evento-->
 <div style="margin-top: 50px; text-align: center;" ><br>
@@ -18,18 +19,14 @@
 <!--tipo , categorias y subcategorias del evento-->
 <div style="text-align: center;"><br>
     <mat-form-field style="margin-left: 50px;margin-top: 5px;"appearance="fill">
-      <mat-label>Tipo del evento</mat-label>
-      <mat-select formControlName="tipoEvento">
-        <mat-option value="First option" >First option</mat-option>
-        <mat-option value="Second option" >Second option</mat-option>
-      </mat-select>
+        <input formControlName="tipoEvento" matInput placeholder="Tipo del Evento">
     </mat-form-field>
     
     <mat-form-field style="margin-left: 50px;margin-top: 5px;"appearance="fill">
       <mat-label>Categoria evento</mat-label>
       <mat-select formControlName="catEvento">
-        <mat-option value="First option" >First option</mat-option>
-        <mat-option value="Second option">Second option</mat-option>
+        <mat-option value="1" >First option</mat-option>
+        <mat-option value="2">Second option</mat-option>
       </mat-select>
     </mat-form-field> 
       

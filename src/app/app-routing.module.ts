@@ -31,7 +31,7 @@ const routes: Routes = [
         component: CrearCategoriaComponent
       },
       {
-        path:'crearSala', 
+        path:'crearSala/:id_evento', 
         component: SalasDeEventoComponent
       },
       {
@@ -39,7 +39,7 @@ const routes: Routes = [
         component: VerEventosComponent
       },
       {
-        path:'verSalaEvento', 
+        path:'verSalaEvento/:id_evento', 
         component: VerSalaDeEventoComponent
       },
       {

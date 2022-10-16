@@ -6,6 +6,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
+
 /* Angular Material */
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -20,6 +21,8 @@ import {MatTableModule} from '@angular/material/table';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'; 
 import {GalleriaModule} from 'primeng/galleria';
 import {ImageModule} from 'primeng/image';
+import {MessagesModule} from 'primeng/messages';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 // Importando componentes
 import { AuthModule } from '@auth0/auth0-angular';
 import { CreaEventoComponent } from './components/crea-evento/crea-evento.component';
@@ -78,7 +81,8 @@ import {
     HttpClientModule,
     GalleriaModule,
     ImageModule,
-     
+    MessagesModule,
+    MatSnackBarModule
   ],
   providers: [
     {
