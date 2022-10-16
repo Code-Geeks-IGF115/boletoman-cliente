@@ -1,4 +1,3 @@
-<<<<<<< HEAD:src/app/app.module.ts
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -29,16 +28,16 @@ import { LoginComponent } from './components/login/login.component';
 import { CrearCategoriaComponent } from './components/crear-categoria/crear-categoria.component';
 import { VerSalaDeEventoComponent } from './components/ver-sala-de-evento/ver-sala-de-evento.component';
 import { SeleccionarButacaComponent } from './components/seleccionar-butaca/seleccionar-butaca.component';
-
+import { BaseComponent } from './base/base.component';
+import { VerEventosComponent } from './components/ver-eventos/ver-eventos.component';
+import { VistaPreviaComponent } from './components/vista-previa/vista-previa.component';
+import { VerDetalleEventoComponent } from './components/ver-detalle-evento/ver-detalle-evento.component';
 //Social media
 import { SocialLoginModule, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
 import {
   GoogleLoginProvider,
 } from '@abacritt/angularx-social-login';
-import { BaseComponent } from './base/base.component';
-import { VerEventosComponent } from './components/ver-eventos/ver-eventos.component';
-import { VistaPreviaComponent } from './components/vista-previa/vista-previa.component';
-import { VerDetalleEventoComponent } from './components/ver-detalle-evento/ver-detalle-evento.component';
+
 @NgModule({
   declarations: [
     AppComponent,
