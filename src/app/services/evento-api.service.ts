@@ -11,8 +11,8 @@ export class EventoService {
 
   constructor(private httpClient: HttpClient) { }
   //servicio para consultar las salas de eventos
-  obtenerEventos(){
-    return this.httpClient.get(environment.evento_url+'sala/de/eventos/')
+  obtenerSalas(){
+    return this.httpClient.get(environment.salas_url+'sala/de/eventos/')
     .pipe(
       map((resultados:any)=>{
         console.log(resultados)

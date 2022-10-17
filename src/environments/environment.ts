@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   evento_url:'https://boletoman-eventos.herokuapp.com/',
+  salas_url:'http://boletoman-reservaciones.herokuapp.com/'
 };
 
 /*
