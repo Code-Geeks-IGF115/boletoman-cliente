@@ -1,4 +1,3 @@
-
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 //importando componentes
@@ -10,7 +9,7 @@ import { SalasDeEventoComponent } from './components/salas-de-evento/salas-de-ev
 import { BaseComponent } from './base/base.component';
 import { VerEventosComponent } from './components/ver-eventos/ver-eventos.component';
 import { SeleccionarButacaComponent } from './components/seleccionar-butaca/seleccionar-butaca.component';
-
+import { VerDetalleEventoComponent } from './components/ver-detalle-evento/ver-detalle-evento.component';
 
 
 const routes: Routes = [
@@ -48,6 +47,10 @@ const routes: Routes = [
         component: SeleccionarButacaComponent
       },
       {
+        path:'verDetalleEvento', 
+        component: VerDetalleEventoComponent
+      },
+      {
         path:'', 
         component: BaseComponent
       }
@@ -63,3 +66,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
