@@ -34,6 +34,7 @@ div#bottom-arragement{
   }
 
 .boton1{
+    background-color: #D1410C;
     color: white;
     width: 20%;
     margin-top: 20px;
@@ -41,6 +42,7 @@ div#bottom-arragement{
 }
 
 .boton2{
+    background-color: #0D6EFD;
     color: white;
     width: 40%;
     margin-top: 20px;
