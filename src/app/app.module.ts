@@ -1,4 +1,3 @@
-
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -6,10 +5,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
-
-
-
 import { HttpClientModule } from '@angular/common/http';
+
 /* Angular Material */
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -22,6 +19,10 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatTableModule} from '@angular/material/table';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'; 
+import {GalleriaModule} from 'primeng/galleria';
+import {ImageModule} from 'primeng/image';
+import {MessagesModule} from 'primeng/messages';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 // Importando componentes
 import { AuthModule } from '@auth0/auth0-angular';
 import { CreaEventoComponent } from './components/crea-evento/crea-evento.component';
@@ -30,18 +31,15 @@ import { LoginComponent } from './components/login/login.component';
 import { CrearCategoriaComponent } from './components/crear-categoria/crear-categoria.component';
 import { VerSalaDeEventoComponent } from './components/ver-sala-de-evento/ver-sala-de-evento.component';
 import { SeleccionarButacaComponent } from './components/seleccionar-butaca/seleccionar-butaca.component';
-
+import { BaseComponent } from './base/base.component';
+import { VerEventosComponent } from './components/ver-eventos/ver-eventos.component';
+import { VistaPreviaComponent } from './components/vista-previa/vista-previa.component';
+import { VerDetalleEventoComponent } from './components/ver-detalle-evento/ver-detalle-evento.component';
 //Social media
 import { SocialLoginModule, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
 import {
   GoogleLoginProvider,
 } from '@abacritt/angularx-social-login';
-import { BaseComponent } from './base/base.component';
-import { VerEventosComponent } from './components/ver-eventos/ver-eventos.component';
-import { VistaPreviaComponent } from './components/vista-previa/vista-previa.component';
-
-
-
 
 @NgModule({
   declarations: [
@@ -54,7 +52,8 @@ import { VistaPreviaComponent } from './components/vista-previa/vista-previa.com
     BaseComponent,
     VerEventosComponent,
     SeleccionarButacaComponent,
-    VistaPreviaComponent
+    VistaPreviaComponent,
+    VerDetalleEventoComponent
   ],
   imports: [
     BrowserModule,
@@ -79,8 +78,11 @@ import { VistaPreviaComponent } from './components/vista-previa/vista-previa.com
     ReactiveFormsModule,
     SocialLoginModule,
     MatTableModule,
-    HttpClientModule
-     
+    HttpClientModule,
+    GalleriaModule,
+    ImageModule,
+    MessagesModule,
+    MatSnackBarModule
   ],
   providers: [
     {

@@ -1,11 +1,11 @@
-
 <div class="contenedor">
   <br><br>
 <!--titulo de pagina-->
 <div style="margin-top: 20px;width: 100%;background-color: rgb(255, 255, 255);">
   <h1><b>Crear tu Evento</b></h1>
 </div>
-<form [formGroup]="creaEventoForms" (ngSubmit)="guardarEvento(creaEventoForms.value)">
+
+<form [formGroup]="creaEventoForms" (ngSubmit)="guardarEvento(creaEventoForms.value, concurenciaForms.value)">
   <!--titulo y organizador del evento-->
 <div style="margin-top: 50px; text-align: center;" ><br>
   <mat-form-field class="largo" style="width: 75%;margin-left: 50px;margin-bottom: 5px;" appearance="fill">    
@@ -19,24 +19,22 @@
 <!--tipo , categorias y subcategorias del evento-->
 <div style="text-align: center;"><br>
     <mat-form-field style="margin-left: 50px;margin-top: 5px;"appearance="fill">
-      <mat-label>Tipo del evento</mat-label>
-      <mat-select formControlName="tipoEvento">
-        <mat-option value="First option" >First option</mat-option>
-        <mat-option value="Second option" >Second option</mat-option>
-      </mat-select>
+        <input formControlName="tipoEvento" matInput placeholder="Tipo del Evento">
     </mat-form-field>
     
     <mat-form-field style="margin-left: 50px;margin-top: 5px;"appearance="fill">
       <mat-label>Categoria evento</mat-label>
-      <mat-select formControlName="catEvento">
-        <mat-option value="First option" >First option</mat-option>
-        <mat-option value="Second option">Second option</mat-option>
+      <mat-select formControlName="id_categoria">
+        <mat-option value="1" >Tecnología</mat-option>
+        <mat-option value="2">Cocina</mat-option>
+        <mat-option value="3">Carpinteria</mat-option>
+        <mat-option value="4">Restaurante</mat-option>
+        <mat-option value="5">Aire Libre</mat-option>
       </mat-select>
     </mat-form-field> 
       
     <mat-form-field style="margin-left: 50px;margin-top: 5px;"appearance="fill">
-      <input formControlName="telefono" autocomplete="enabled" matInput type="text" 
-      placeholder="Teléfono del organizador">
+      <input formControlName="telefono" autocomplete="enabled" matInput type="tel" placeholder="Teléfono del organizador">
     </mat-form-field>
 </div>
 <!--fechas y horas del evento-->
@@ -54,34 +52,38 @@
     <input formControlName="horaFin" type="time" matInput placeholder="Hora">    
   </mat-form-field>  
 </div>
+
 <!--tipo y dias del evento-->
 <div class="example-section"><br>
-  <mat-form-field style="margin-left: 10px;margin-top: 5px;"appearance="fill">
-      <mat-label>tipo de evento</mat-label>
-      <mat-select formControlName="concurencia">
-        <mat-option value="First option">First option</mat-option>
-        <mat-option value="Second option">Second option</mat-option>
-      </mat-select>    
-  </mat-form-field>
-  <section  >
-    <mat-checkbox formControlName="lunes" style="margin: 10px;">lunes</mat-checkbox>
-    <mat-checkbox style="margin: 10px;">martes</mat-checkbox>
-    <mat-checkbox style="margin: 10px;">miercoles</mat-checkbox>
-    <mat-checkbox style="margin: 10px;">jueves</mat-checkbox>
-    <mat-checkbox style="margin: 10px;">viernes</mat-checkbox>
-    <mat-checkbox style="margin: 10px;">sabado</mat-checkbox>
-    <mat-checkbox style="margin: 10px;">domingo</mat-checkbox>
-  </section>
+  <form [formGroup]="concurenciaForms">
+    <section  >
+      <mat-form-field style="margin-left: 10px;margin-top: 5px;"appearance="fill">
+        <mat-label>tipo de evento</mat-label>
+        <mat-select formControlName="concurrencia">
+          <mat-option value="1">Recurrente</mat-option>
+          <mat-option value="2">No recurrente</mat-option>
+        </mat-select>    
+    </mat-form-field>
+      <mat-checkbox [disabled]="concurenciaForms.value.concurrencia=='2'" formControlName="lunes"  style="margin: 10px;">lunes</mat-checkbox>
+      <mat-checkbox [disabled]="concurenciaForms.value.concurrencia=='2'" formControlName="martes"  style="margin: 10px;">martes</mat-checkbox>
+      <mat-checkbox [disabled]="concurenciaForms.value.concurrencia=='2'" formControlName="miercoles"  style="margin: 10px;">miercoles</mat-checkbox>
+      <mat-checkbox [disabled]="concurenciaForms.value.concurrencia=='2'" formControlName="jueves"  style="margin: 10px;">jueves</mat-checkbox>
+      <mat-checkbox [disabled]="concurenciaForms.value.concurrencia=='2'" formControlName="viernes"  style="margin: 10px;">viernes</mat-checkbox>
+      <mat-checkbox [disabled]="concurenciaForms.value.concurrencia=='2'" formControlName="sabado"  style="margin: 10px;">sabado</mat-checkbox>
+      <mat-checkbox [disabled]="concurenciaForms.value.concurrencia=='2'" formControlName="domingo"  style="margin: 10px;">domingo</mat-checkbox>
+    </section>
+  </form>
 </div>
   <!--botones-->
   <div style="margin-top: 25px;margin-top:50px;"><br>
     <section>
       <div class="example-button-row">
-        <button [disabled]="!creaEventoForms.valid" type="submit" style="left: 25%;width: 200px;background-color: rgb(55, 174, 26);color: white;" mat-raised-button color="primary">GUARDAR</button>
-        <button [disabled]="!creaEventoForms.valid" style="left: 30%;width: 200px;background-color:#7250c0;color: white;" [routerLink]="['/verSalaEvento']"  mat-raised-button>SIGUIENTE</button>    
+        <button [disabled]="!creaEventoForms.valid && !concurenciaForms.valid" type="submit" style="left: 25%;width: 200px;background-color: rgb(55, 174, 26);color: white;" mat-raised-button color="primary">GUARDAR</button>
+        <button [disabled]="!creaEventoForms.valid && !concurenciaForms.valid" style="left: 30%;width: 200px;background-color:#7250c0;color: white;" [routerLink]="['/verSalaEvento']"  mat-raised-button>SIGUIENTE</button>    
       </div>
     </section>
   </div><br>
 </form>
 </div>
+
 

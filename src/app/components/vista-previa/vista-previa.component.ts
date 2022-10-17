@@ -8,6 +8,7 @@ import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/cor
 export class VistaPreviaComponent implements OnInit, OnChanges {
   @Input() columnas:any;
   @Input() fila:any;
+  @Input() formaSala:any;
   cols:number[]=[];
   filas:number[]=[];
   constructor() { }
