@@ -2,7 +2,14 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup, FormControl, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
-
+import {
+  MatSnackBar,
+  MatSnackBarHorizontalPosition,
+  MatSnackBarVerticalPosition,
+} from '@angular/material/snack-bar';
+//importando services
+import { EventoService } from 'src/app/services/evento-api.service';
+import { SalasI } from 'src/app/models/salas.interface';
 @Component({
   selector: 'app-salas-de-evento',
   templateUrl: './salas-de-evento.component.html',
@@ -21,14 +28,23 @@ export class SalasDeEventoComponent implements OnInit {
   columnas:any;
   filas:any;
   resultado:any;
-  constructor( private router:Router) { }
+  horizontalPosition: MatSnackBarHorizontalPosition = 'right';
+  verticalPosition: MatSnackBarVerticalPosition = 'top';
+  constructor( private router:Router,private eventosApiService:EventoService,private _snackBar: MatSnackBar) { }
   
   ngOnInit(): void {
   }
 
-  //Metodo para recuperar datos de la sala
-  guardarSala(form:any){
-    console.log(form)
+  //Método para guardar el evento
+  guardarSala(creaSalaForms: any){
+    this.eventosApiService.postEvento(creaSalaForms).subscribe(data =>{
+      console.log(data)
+      this._snackBar.open(data.message, 'Cerrar', {
+        horizontalPosition: this.horizontalPosition,
+        verticalPosition: this.verticalPosition,
+      });
+    })
+    console.log(creaSalaForms)
   }
 
    vistaPreviaSala(){

@@ -33,11 +33,9 @@ th
   }
   
   .mat-row:hover .mat-cell {
-    background-color: #b0a2d2 ;
+    background-color: #d1d1d1 ;
   }
   
-  .demo-row-is-clicked {
-    font-weight: bold;
-  }
+
  
 

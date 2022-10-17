@@ -23,7 +23,7 @@ export class VerSalaDeEventoComponent implements OnInit {
   // tableData !: MatTableDataSource<any>;
   tableData:any
   // salaList:SalasI[];
-  displayedColumns: string[] = ['seleccion','nombre', 'direccion', 'telefono', 'correo'];
+  displayedColumns: string[] = ['nombre', 'direccion', 'telefono', 'correo','action'];
   // dataSource = this.tableData;
   clickedRows = new Set<SalasI>();
   constructor(private eventosApiService:EventoService,private _snackBar: MatSnackBar,
@@ -39,6 +39,7 @@ export class VerSalaDeEventoComponent implements OnInit {
       next:(resultado:any)=>{
         this.tableData =resultado.salas.map((sala:any) =>{
           return{
+            id_sala:sala.id,
             nombre:sala.nombre,
             direccion:sala.direccion,
             telefono: sala.telefono,
