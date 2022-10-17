@@ -3,18 +3,23 @@
 <a><mat-form-field appearance="outline">
       <mat-label>Categoria Evento</mat-label>
       <mat-select >
-        <mat-option value="option1">Option 1</mat-option>
-        <mat-option value="option2">Option 2</mat-option>
-        <mat-option value="option3">Option 3</mat-option>
+        <mat-option value="1" >Tecnología</mat-option>
+        <mat-option value="2">Cocina</mat-option>
+        <mat-option value="3">Carpinteria</mat-option>
+        <mat-option value="4">Restaurante</mat-option>
+        <mat-option value="5">Aire Libre</mat-option>
       </mat-select>
     </mat-form-field></a>
 </div>
-<mat-card class="tarjeta" >
+<div class="container">
+  <mat-card class="tarjeta" >
     <img mat-card-image src="https://www.otaquest.com/wp-content/uploads/2021/01/why-kaworu-and-shinjis-relationship-matters-to-the-story-of-evangelion-600x450.jpg" alt="Photo of a Shiba Inu">
     <mat-card-content>
+      <span style="font-size: 30px;font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Evangelion</span>
+      <br><br>
       <mat-chip-list>
-      <mat-chip color="primary" selected> Evangelion </mat-chip>
-    </mat-chip-list>
+      <mat-chip style="background-color: #5E5BFF;width: 200px;"  selected>anime</mat-chip>
+      </mat-chip-list>
       <p>
         Se necesitó un ángel para mostrar algo de humanidad.
         <br>-De verdad nací para conocerte.
@@ -22,6 +27,7 @@
       </p>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-raised-button style="background-color: green; color: white; "  >Ver Mas</button>
+      <button mat-raised-button style="width: 100%;background-color:#159600;" color="primary">Ver Mas</button>
     </mat-card-actions>
   </mat-card>
+</div>

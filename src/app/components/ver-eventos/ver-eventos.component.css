@@ -1,13 +1,26 @@
-.tarjeta{
-    max-width: 200px;
-    border-style: groove;
+.mat-card{
+  width: 200px;
+  height: 400px;
+  display: inline-block;
+  margin-top: 10px;
+  margin-left:20px;
+  background-color: rgb(235, 235, 235);
+  border-radius: 0.375rem;
+  box-shadow: 0px 10px 10px -6px black;
   }
   mat-chip {
     max-width: 200px;
+    text-align: center;
   }
   .contenedor{
     display: flex;
-    padding: 0 16px;
+    padding: 20px 16px;
     align-items: center;
     justify-content: space-between;
+}
+.container{
+  width:960px;
+  margin:auto;
+  margin-left: 100px;
+  margin-right: 100px;
 }

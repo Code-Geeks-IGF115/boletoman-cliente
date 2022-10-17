@@ -1,3 +1,5 @@
+
+
 table {
     width: 100%;
 }
@@ -16,4 +18,24 @@ th
     color: white;
     width: 20%;
     margin-left: 760px;
+
 }
+
+
+.demo-table {
+    width: 100%;
+  }
+  
+  .mat-row .mat-cell {
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    cursor: pointer;
+  }
+  
+  .mat-row:hover .mat-cell {
+    background-color: #d1d1d1 ;
+  }
+  
+
+ 
+

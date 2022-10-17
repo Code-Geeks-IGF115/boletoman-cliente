@@ -1,0 +1,51 @@
+*{
+    margin: 0px;
+    padding: 0%;
+}
+
+div#main-arragement{
+    margin:auto;
+    margin-top: 40px;
+    width: 960px;
+    height: 500px;
+}
+
+div#right-arragement{
+    float: right;
+    width: 450px;
+    height: 500px;
+}
+
+div#left-arragement{
+    float: left;
+    width: 450px;
+    height: 500px;
+}
+
+div#bottom-arragement{
+    margin: auto;
+    margin-top: 40px;
+    width: 700px;
+    height: 500px;
+}
+
+.text-justify {
+    text-align: justify;
+  }
+
+.boton1{
+    background-color: #D1410C;
+    color: white;
+    width: 40%;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.boton2{
+    background-color: #0D6EFD;
+    color: white;
+    width: 40%;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
