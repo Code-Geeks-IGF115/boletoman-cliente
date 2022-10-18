@@ -20,18 +20,15 @@ export class CreaEventoComponent implements OnInit {
   //definiendo variable
   eventosList:any;
   creaEventoForms = new FormGroup({
-    evento_id: new FormControl(''),
-    tituloEvento: new FormControl('', Validators.required),
-    organizador: new FormControl('', Validators.required),
-    tipoEvento: new FormControl('', Validators.required),
-    id_categoria: new FormControl('', Validators.required),
-    telefono: new FormControl('', Validators.required),
+    // evento_id: new FormControl(''),
+    nombre: new FormControl('', Validators.required),
+    descripcion: new FormControl('', Validators.required),
+    tipoDeEvento: new FormControl('', Validators.required),
+    categoria:new FormControl('', Validators.required) ,
     fechaInicio: new FormControl('', Validators.required),
     horaInicio: new FormControl('', Validators.required),
     fechaFin: new FormControl('', Validators.required),
     horaFin: new FormControl('', Validators.required),
-  });
-  concurenciaForms= new FormGroup({
     concurrencia: new FormControl('', Validators.required),
     lunes: new FormControl(''),
     martes: new FormControl(''),
@@ -50,7 +47,9 @@ export class CreaEventoComponent implements OnInit {
   }
 
   //Método para guardar el evento
-  guardarEvento(eventoform: any,concurenciaform: any){
+  guardarEvento(eventoform: any){
+    eventoform.concurrencia=Number(eventoform.concurrencia);
+    eventoform.categoria=Number(eventoform.categoria);
     this.eventosApiService.postEvento(eventoform).subscribe(data =>{
       console.log(data)
       this._snackBar.open(data.message, 'Cerrar', {
@@ -59,7 +58,6 @@ export class CreaEventoComponent implements OnInit {
       });
     })
     console.log(eventoform)
-    console.log(concurenciaform)
   }
 
 

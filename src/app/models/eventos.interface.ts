@@ -1,11 +1,11 @@
 export interface EventosI{
-    id:"",
-    categoria_id:"",
+    // id:"",
     nombre:"",
     descripcion:"",
-    tipo_de_evento:"",
-    fecha_inicio:"",
-    fecha_fin:"",
+    tipoDeEvento:"",
+    fechaInicio:"",
+    horaInicio:"",
+    fechaFin:"",
     horaFin:"",
-    sala_de_eventos_id:"",
+    categoria:"",
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ActivatedRoute } from '@angular/router';
+import { EventoService } from 'src/app/services/evento-api.service';
 
 @Component({
   selector: 'app-ver-detalle-evento',
@@ -9,25 +10,38 @@ import { Component, OnInit } from '@angular/core';
 
 
 export class VerDetalleEventoComponent implements OnInit {
-  images: any[]=[];
-  responsiveOptions:any[] = [
-    {
-        breakpoint: '1024px',
-        numVisible: 5
-    },
-    {
-        breakpoint: '768px',
-        numVisible: 3
-    },
-    {
-        breakpoint: '560px',
-        numVisible: 1
-    }
-]
-  constructor() { }
+//definiendo variables
+id_evento:any;
+detallesEvento:any;
+  constructor(private route: ActivatedRoute,private eventosApiService:EventoService) { }
 
   ngOnInit(): void {
-    
+    this.id_evento =this.route.snapshot.paramMap.get('idEvento');
+    this.getDetalleEvento(this.id_evento);
+  }
+
+  getDetalleEvento(id_evento:any){
+    this.eventosApiService.obtenerDetalleEvento(id_evento)
+    .subscribe({
+      next:(resultado:any) => {
+        this.detallesEvento=resultado.map((evento:any)=>{
+          return{
+            id_evento:evento.id,
+            nombre:evento.nombre,
+            descripcion:evento.descripcion,
+            tipoDeEvento: evento.tipoDeEvento,
+            fechaInicio:evento.fechaInicio,
+            horaInicio:evento.horaInicio,
+            fechaFin:evento.fechaFin,
+            horaFin:evento.horaFin,
+            id_categoria:evento.categoria.id,
+            categoria:evento.categoria.nombre
+          }
+        });
+      }
+    })
+    console.log(this.detallesEvento)
+
   }
 
 }

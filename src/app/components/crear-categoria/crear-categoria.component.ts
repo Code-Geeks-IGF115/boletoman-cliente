@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup, FormControl, Validators} from '@angular/forms';
+import { EventoService } from '../../services/evento-api.service';
+import { ActivatedRoute, Router } from '@angular/router';
 export interface Configuracion {
-  categoria: string;
-  codigo: string;
-  precio: number;
-  fila: number;
-  columna:number;
-  mesas:number;
-  butacas: number;
+  categoria?: string;
+  codigo?: string;
+  precio?: number;
+  fila?: number;
+  columna?:number;
+  mesas?:number;
+  butacas?: number;
 }
 
-const ELEMENT_DATA: Configuracion[] = [
-  {categoria:'Categoria 1', codigo: 'CAT1', precio: 12, fila: 1,columna: 1,mesas: 3,butacas: 1},
-];
+const ELEMENT_DATA: Configuracion[] = [];
 @Component({
   selector: 'app-crear-categoria',
   templateUrl: './crear-categoria.component.html',
@@ -32,20 +32,41 @@ export class CrearCategoriaComponent implements OnInit {
     columna: new FormControl('', Validators.required),
     numButacas: new FormControl('', Validators.required),
   });
-  columnas: string[] = ['categoria', 'codigo', 'precio','fila','columna','mesas','butacas'];
+  columnas: string[] = ['categoria', 'codigo', 'precio','fila','columna','butacas'];
   dataSource = ELEMENT_DATA;
-  constructor() { }
+  idSala: any;
+
+  categorias: {[key:string]:any} = {};
+  configuraciones: any[] = [];
+
+  constructor(private eventoApi: EventoService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.idSala = this.activatedRoute.snapshot.paramMap.get('idSala');
   }
   //metodo para agregar una categoria
   agregarCategoria(form:any){
-    console.log(form)
+    this.categorias[form.codigoCategoria] = { nombre:form.nuevaCategoria, precio: form.precioCategoria};
   }
   //metodo para agregar la configuración
   agregarConfiguracion(form:any)
   {
-    console.log(form)
+    this.dataSource.push({
+      categoria: this.categorias[form.categoria].nombre,
+      fila: form.fila,
+      columna: form.columna,
+      butacas: form.numButacas,
+      codigo: form.categoria,
+      precio: this.categorias[form.categoria].precio,
+    });
+    this.dataSource = [...this.dataSource];
   }
+
+  guardarConfiguracion(){
+    this.eventoApi.guardarConfiguracion(this.dataSource, this.idSala).subscribe((res:any)=>{
+      console.log(res);
+    });
+  }
+
 }
 

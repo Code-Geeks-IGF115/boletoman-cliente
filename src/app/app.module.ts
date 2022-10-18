@@ -35,11 +35,13 @@ import { BaseComponent } from './base/base.component';
 import { VerEventosComponent } from './components/ver-eventos/ver-eventos.component';
 import { VistaPreviaComponent } from './components/vista-previa/vista-previa.component';
 import { VerDetalleEventoComponent } from './components/ver-detalle-evento/ver-detalle-evento.component';
+import { EditarSalaComponent } from './components/editar-sala/editar-sala.component';
 //Social media
 import { SocialLoginModule, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
 import {
   GoogleLoginProvider,
 } from '@abacritt/angularx-social-login';
+
 
 @NgModule({
   declarations: [
@@ -53,7 +55,8 @@ import {
     VerEventosComponent,
     SeleccionarButacaComponent,
     VistaPreviaComponent,
-    VerDetalleEventoComponent
+    VerDetalleEventoComponent,
+    EditarSalaComponent
   ],
   imports: [
     BrowserModule,

@@ -10,7 +10,7 @@ import { BaseComponent } from './base/base.component';
 import { VerEventosComponent } from './components/ver-eventos/ver-eventos.component';
 import { SeleccionarButacaComponent } from './components/seleccionar-butaca/seleccionar-butaca.component';
 import { VerDetalleEventoComponent } from './components/ver-detalle-evento/ver-detalle-evento.component';
-
+import { EditarSalaComponent } from './components/editar-sala/editar-sala.component';
 
 const routes: Routes = [
 
@@ -20,26 +20,38 @@ const routes: Routes = [
     children: [
       {
         path:'', 
-        redirectTo:'creaEvento',
+        redirectTo:'/login',
         pathMatch: 'full'}, 
       {
         path:'creaEvento', 
         component: CreaEventoComponent
       },
       {
-        path:'crearCategoria', 
+        path:'crearCategoria/:idSala', 
         component: CrearCategoriaComponent
       },
       {
-        path:'crearSala', 
+        path:'verSalaEvento/:crud', 
         component: SalasDeEventoComponent
       },
+      {
+        path:'verSalaEvento/:crud/:idSala', 
+        component: SalasDeEventoComponent
+      },
+      // {
+      //   path:'verSalaEvento/crearSala', 
+      //   component: SalasDeEventoComponent
+      // },
+      // {
+      //   path:'verSalaEvento/editarSala', 
+      //   component: EditarSalaComponent 
+      // },
       {
         path:'verEventos', 
         component: VerEventosComponent
       },
       {
-        path:'verSalaEvento', 
+        path:'verSalas', 
         component: VerSalaDeEventoComponent
       },
       {
@@ -47,7 +59,7 @@ const routes: Routes = [
         component: SeleccionarButacaComponent
       },
       {
-        path:'verDetalleEvento', 
+        path:'verDetalleEvento/:idEvento', 
         component: VerDetalleEventoComponent
       },
       {

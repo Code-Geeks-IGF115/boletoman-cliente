@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  evento_url:'https://boletoman-eventos.herokuapp.com/evento/',
-  salas_url:'http://boletoman-reservaciones.herokuapp.com/sala/de/eventos'
+  evento_url:'https://boletoman-eventos.herokuapp.com/evento',
+  salas_url:'https://boletoman-re-carguetami-opkvrh.herokuapp.com/sala/de/eventos'
 };
 
 /*
@@ -16,3 +16,6 @@ export const environment = {
  * on performance if an error is thrown.
  */
 // import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
+// https://boletoman-ev-andrea-k4jg2l0qwl.herokuapp.com/evento
+// https://boletoman-re-carguetami-opkvrh.herokuapp.com/
+//http://boletoman-reservaciones.herokuapp.com/
