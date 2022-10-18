@@ -28,7 +28,8 @@ export class VerEventosComponent implements OnInit {
             horaInicio:evento.horaInicio,
             fechaFin:evento.fechaFin,
             horaFin:evento.horaFin,
-            id_categoria:evento.categoria.id
+            id_categoria:evento.categoria.id,
+            categoria:evento.categoria.nombre
           }
         }) 
         console.log(this.eventosList)

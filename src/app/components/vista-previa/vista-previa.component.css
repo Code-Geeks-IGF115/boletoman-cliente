@@ -16,3 +16,13 @@ table tbody td:nth-child(even) {
 	width: 190px;
 	height: 160px;
 }
+
+.categoria{
+	display: flex !important;
+	flex-flow: row wrap !important;
+	/* justify-content: space-between; */
+}
+
+.butaca {
+	color: rgb(63, 158, 95) !important;
+}

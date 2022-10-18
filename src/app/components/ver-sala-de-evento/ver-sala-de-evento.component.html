@@ -1,7 +1,7 @@
 <div class="contenedor">
 <br><br>
 <h1><b>Salas de Eventos</b></h1>
-<p>&nbsp;&nbsp;<button class="botonlargo" [routerLink]="['/crearSala']" mat-raised-button color="primary">Crear Sala</button></p>
+<p>&nbsp;&nbsp;<button class="botonlargo" [routerLink]="['/verSalaEvento/crear']" mat-raised-button color="primary">Crear Sala</button></p>
 <br> <br> 
 
 <table mat-table [dataSource]="tableData" class="mat-elevation-z8 demo-table">
@@ -33,7 +33,7 @@
   <ng-container  matColumnDef="action">
     <th style="width:15%; " mat-header-cell *matHeaderCellDef>Seleccionar Sala</th>
     <td style="text-align: center;" mat-cell *matCellDef="let element">
-      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+      <button mat-icon-button  [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
         <mat-icon>more_vert</mat-icon>
       </button>
       <mat-menu #menu="matMenu">
@@ -41,11 +41,11 @@
           <mat-icon>save_alt</mat-icon>
           <span>Guardar sala</span>
         </button>
-        <button mat-menu-item >
-          <mat-icon>create</mat-icon>
+        <button [routerLink]="['/verSalaEvento/editar/',element.id_sala]" mat-menu-item >
+          <mat-icon >create</mat-icon>
           <span>Editar sala</span>
         </button>
-        <button mat-menu-item>
+        <button (click)="eliminarSala(element.id_sala)" mat-menu-item>
           <mat-icon>delete_outline</mat-icon>
           <span>Eliminar sala</span>
         </button>
@@ -56,28 +56,10 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr
       mat-row
-      (click)="clickedRows.add(row)"
       [class.demo-row-is-clicked]="clickedRows.has(row)"
       *matRowDef="let row; columns: displayedColumns;"
   ></tr>
 </table>
 
-<div>
-  <h3>
-    Click Log
-  </h3>
-</div>
-
-<div *ngIf="!clickedRows.size">
-  Clicked rows will be logged here
-</div>
-
-<ul>
-  <li *ngFor="let clickedRow of clickedRows">
-    Clicked on {{clickedRow.nombre}}
-  </li>
-</ul>
-
-</div>
 
 

@@ -20,14 +20,13 @@ import { SalasI } from 'src/app/models/salas.interface';
   styleUrls: ['./ver-sala-de-evento.component.css']
 })
 export class VerSalaDeEventoComponent implements OnInit {
-  // tableData !: MatTableDataSource<any>;
   tableData:any
-  // salaList:SalasI[];
   displayedColumns: string[] = ['nombre', 'direccion', 'telefono', 'correo','action'];
-  // dataSource = this.tableData;
   clickedRows = new Set<SalasI>();
+  horizontalPosition: MatSnackBarHorizontalPosition = 'right';
+  verticalPosition: MatSnackBarVerticalPosition = 'top';
   constructor(private eventosApiService:EventoService,private _snackBar: MatSnackBar,
-              private reouter:Router) { }
+              private router:Router) { }
 
   ngOnInit(): void {
     this.getListSala();
@@ -50,5 +49,30 @@ export class VerSalaDeEventoComponent implements OnInit {
       }
     })
   }
+  //Metodo para guardar la sala seleccionada
+  guardarSala(creaSalaForms: any){
+    creaSalaForms.forma=Number(creaSalaForms.forma);
+    this.eventosApiService.postSala(creaSalaForms).subscribe(data =>{
+      console.log(data)
+      this._snackBar.open(data.message, 'Cerrar', {
+        horizontalPosition: this.horizontalPosition,
+        verticalPosition: this.verticalPosition,
+      });
+    })
+    console.log(creaSalaForms)
+  }
+
+  //Método para eliminar una sala
+  eliminarSala(id:any){
+    this.eventosApiService.eliminarSala(id).subscribe(data =>{
+      this._snackBar.open(data.message, 'Cerrar', {
+        horizontalPosition: this.horizontalPosition,
+        verticalPosition: this.verticalPosition,
+      });
+    })
+    this.getListSala(); 
+  }
+
+
 }
 

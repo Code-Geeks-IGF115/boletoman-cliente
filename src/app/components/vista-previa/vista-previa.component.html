@@ -2,8 +2,15 @@
 <div style="margin-left: 220px;" *ngIf="formaSala =='1'">
     <table class="cuadrado">
         <tbody>
-            <tr  *ngFor="let fila of filas">
-                <td  *ngFor="let columna of cols">
+            <tr *ngFor="let fila of cols">
+                <td id="{{fila}}:{{columna}}" *ngFor="let columna of cols">
+                    <div class="categoria">
+                        <ng-container *ngIf="fila === filaCategoria && columna === columnaCategoria">
+                            <div class="butaca" *ngFor="let butaca of butacaArray">
+                            {{butaca}}
+                            </div>
+                        </ng-container>
+                    </div>
                 </td>
             </tr>
         </tbody>
@@ -14,7 +21,12 @@
     <table class="rectangulo">
         <tbody>
             <tr *ngFor="let fila of filas">
-                <td *ngFor="let columna of cols">
+                <td id="{{fila}}:{{columna}}" *ngFor="let columna of cols">
+                    <div class="categoria" *ngIf="fila === filaCategoria && columna === columnaCategoria">
+                        <div class="butaca" *ngFor="let butaca of butacaArray">
+                            <mat-icon>chair</mat-icon>
+                        </div>
+                    </div>
                 </td>
             </tr>
         </tbody>
