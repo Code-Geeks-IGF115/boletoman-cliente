@@ -8,11 +8,9 @@ import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/cor
 export class VistaPreviaComponent implements OnInit, OnChanges {
   @Input() columnas:any;
   @Input() fila:any;
-
   @Input() columnaCategoria:any;
   @Input() filaCategoria:any;
   @Input() butacas:any;
-
   @Input() formaSala:any;
 
   cols:number[]=[];
@@ -22,9 +20,9 @@ export class VistaPreviaComponent implements OnInit, OnChanges {
   constructor() { }
 
   ngOnInit(): void {
-    // this.formaSala='2';
-    // this.cols=[1,2,3,4];
-    // this.filas=[1,2,3];
+    /* this.formaSala='2';
+    this.cols=[1,2,3,4];
+    this.filas=[1,2,3]; */
   }
 
   ngOnChanges(): void {

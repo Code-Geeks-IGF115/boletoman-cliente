@@ -18,11 +18,11 @@
 </div>
 <!--tipo , categorias y subcategorias del evento-->
 <div style="text-align: center;"><br>
-    <mat-form-field style="margin-left: 50px;margin-top: 5px;"appearance="fill">
+    <mat-form-field style="margin-left: 40px;margin-top: 5px;width: 36%;"appearance="fill">
         <input formControlName="tipoDeEvento" matInput placeholder="Tipo del Evento">
     </mat-form-field>
     
-    <mat-form-field style="margin-left: 50px;margin-top: 5px;"appearance="fill">
+    <mat-form-field style="margin-left: 25px;margin-top: 5px;width: 36%"appearance="fill">
       <mat-label>Categoria evento</mat-label>
       <mat-select formControlName="categoria">
         <mat-option value=1 >Tecnología</mat-option>
@@ -73,7 +73,7 @@
     <section>
       <div class="example-button-row">
         <button [disabled]="!creaEventoForms.valid " type="submit" style="left: 25%;width: 200px;background-color: rgb(55, 174, 26);color: white;" mat-raised-button color="primary">GUARDAR</button>
-        <button [disabled]="!creaEventoForms.valid " style="left: 30%;width: 200px;background-color:#7250c0;color: white;" [routerLink]="['/verSalas']"  mat-raised-button>SIGUIENTE</button>    
+        <button [disabled]="!creaEventoForms.valid " style="left: 30%;width: 200px;background-color:#7250c0;color: white;" [routerLink]="['/verSalas',idEvento]"  mat-raised-button>SIGUIENTE</button>    
       </div>
     </section>
   </div><br>

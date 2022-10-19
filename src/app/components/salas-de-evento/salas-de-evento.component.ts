@@ -52,9 +52,12 @@ export class SalasDeEventoComponent implements OnInit {
   //Método para guardar la sala
   guardarSala(creaSalaForms: any){
     creaSalaForms.forma=Number(creaSalaForms.forma);
+    if(creaSalaForms.forma==1){
+      creaSalaForms.filas=creaSalaForms.columnas
+    }
     if(this.accionCrud === 'crear'){
       this.eventosApiService.postSala(creaSalaForms).subscribe(data =>{
-        console.log(data)
+        this.idSala=data.id;
         this._snackBar.open(data.message, 'Cerrar', {
           horizontalPosition: this.horizontalPosition,
           verticalPosition: this.verticalPosition,
