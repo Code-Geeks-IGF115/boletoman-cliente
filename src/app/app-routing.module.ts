@@ -51,7 +51,7 @@ const routes: Routes = [
         component: VerEventosComponent
       },
       {
-        path:'verSalas', 
+        path:'verSalas/:idEvento', 
         component: VerSalaDeEventoComponent
       },
       {
