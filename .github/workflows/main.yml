@@ -3,7 +3,7 @@ name: CI
 on:
   push:
     branches:
-    - produccion
+    - main
 
 jobs:
   firebase-deploy:
@@ -14,9 +14,9 @@ jobs:
     - uses: actions/checkout@master
     - uses: actions/setup-node@master
       with:
-        node-version: '12.x'
-    - run: npm install
-    - run: npm run build:prod
+        node-version: '16.x'
+    - run: npm install with --force
+    - run: npm run build
     - uses: w9jds/firebase-action@master
       with:
         args: deploy --only hosting
