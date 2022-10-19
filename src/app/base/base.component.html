@@ -14,9 +14,9 @@
                     <mat-icon>expand_more</mat-icon>
                   </button>
                   <mat-menu #menu="matMenu">
-                    <button mat-menu-item>
-                      <mat-icon>settings</mat-icon>
-                      <span>Ajuste</span>
+                    <button [routerLink]="['/verEventos']" mat-menu-item>
+                      <mat-icon>dashboard</mat-icon>
+                      <span>Ver Eventos</span>
                     </button>
 
                     <button mat-menu-item>

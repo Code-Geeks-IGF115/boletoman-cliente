@@ -7,7 +7,7 @@
                     <div class="categoria">
                         <ng-container *ngIf="fila === filaCategoria && columna === columnaCategoria">
                             <div class="butaca" *ngFor="let butaca of butacaArray">
-                            {{butaca}}
+                                <mat-icon>event_seat</mat-icon>
                             </div>
                         </ng-container>
                     </div>
@@ -24,7 +24,7 @@
                 <td id="{{fila}}:{{columna}}" *ngFor="let columna of cols">
                     <div class="categoria" *ngIf="fila === filaCategoria && columna === columnaCategoria">
                         <div class="butaca" *ngFor="let butaca of butacaArray">
-                            <mat-icon>chair</mat-icon>
+                            <mat-icon>event_seat</mat-icon>
                         </div>
                     </div>
                 </td>

@@ -19,6 +19,7 @@ import { EventosI } from 'src/app/models/eventos.interface';
 export class CreaEventoComponent implements OnInit {
   //definiendo variable
   eventosList:any;
+  idEvento:any;
   creaEventoForms = new FormGroup({
     // evento_id: new FormControl(''),
     nombre: new FormControl('', Validators.required),
@@ -51,15 +52,15 @@ export class CreaEventoComponent implements OnInit {
     eventoform.concurrencia=Number(eventoform.concurrencia);
     eventoform.categoria=Number(eventoform.categoria);
     this.eventosApiService.postEvento(eventoform).subscribe(data =>{
-      console.log(data)
+      this.idEvento=data.id;
+      console.log(data);
       this._snackBar.open(data.message, 'Cerrar', {
         horizontalPosition: this.horizontalPosition,
         verticalPosition: this.verticalPosition,
       });
     })
-    console.log(eventoform)
   }
 
-
+  
 }
 

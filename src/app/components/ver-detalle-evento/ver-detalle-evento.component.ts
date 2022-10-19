@@ -22,28 +22,38 @@ detallesEvento:any;
 
   getDetalleEvento(id_evento:any){
     this.eventosApiService.obtenerDetalleEvento(id_evento)
-    .subscribe({
-      next:(resultado:any) => {
-        this.detallesEvento=resultado.map((evento:any)=>{
-          return{
-            id_evento:evento.id,
-            nombre:evento.nombre,
-            descripcion:evento.descripcion,
-            tipoDeEvento: evento.tipoDeEvento,
-            fechaInicio:evento.fechaInicio,
-            horaInicio:evento.horaInicio,
-            fechaFin:evento.fechaFin,
-            horaFin:evento.horaFin,
-            id_categoria:evento.categoria.id,
-            categoria:evento.categoria.nombre
-          }
-        });
-      }
-    })
-    console.log(this.detallesEvento)
-
+    .subscribe((resultado:any) => {
+        console.log(resultado);
+        this.detallesEvento = {
+            id_evento:resultado.evento.id,
+            nombre:resultado.evento.nombre,
+            descripcion:resultado.evento.descripcion,
+            tipoDeEvento: resultado.evento.tipoDeEvento,
+            fechaInicio:resultado.evento.fechaInicio,
+            horaInicio:resultado.evento.horaInicio,
+            fechaFin:resultado.evento.fechaFin,
+            horaFin:resultado.evento.horaFin,
+            id_categoria:resultado.evento.categoria.id,
+            categoria:resultado.evento.categoria.nombre
+        }
+        
+        // Object.entries(resultado.evento).map((res:any)=>{
+        //   return{
+        //     id_evento:res.id,
+        //     nombre:res.nombre,
+        //     descripcion:res.descripcion,
+        //     tipoDeEvento: res.tipoDeEvento,
+        //     fechaInicio:res.fechaInicio,
+        //     horaInicio:res.horaInicio,
+        //     fechaFin:res.fechaFin,
+        //     horaFin:res.horaFin,
+        //     id_categoria:res.categoria.id,
+        //     categoria:res.categoria.nombre
+        //   }
+        // });
+        console.log(this.detallesEvento)
+      })
   }
-
 }
 
 
