@@ -1,0 +1,67 @@
+<body>
+    <div style="margin-left: 313px;margin-top:84px;margin-bottom: 14%;">
+        <!--titulo de la pagina-->
+        <mat-label style="font-size: 35px;font-style: normal;font-family: Inter;line-height: 36px;">Informacion de
+            Tarjeta</mat-label><br>
+        <!--intputs-->
+        <div style="margin-top: 50px;">
+            <!--NOMBRE-->
+            <span style="font-size:24px;">Nombre</span>
+            <p>
+                <mat-form-field appearance="outline" style="width: 530px;">
+                    <input matInput placeholder="Nombre">
+                </mat-form-field>
+            </p>
+            <!--NUMERO DE TARJETA-->
+            <span style="font-size:24px;">N° de tarjeta de credito</span>
+            <p>
+                <mat-form-field appearance="outline" style="width: 530px;"><input matInput></mat-form-field>
+            </p>
+            <!--FECHA DE EXPIRACION Y CODIGO-->
+            <span style="font-size:24px;">Fecha de Expiración</span><span
+                style="font-size:24px;margin-left: 75px;">Codigo de Seguridad</span> <br>
+            <p>
+                <mat-form-field style="width: 240;" appearance="outline"><input type="date" matInput></mat-form-field>
+                <mat-form-field style="margin-left: 50px;width: 240;" appearance="outline"><input matInput>
+                </mat-form-field>
+            </p>
+        </div>
+        <!--tabla de carrito de compras-->
+        <div>
+            <span style="font-size: 35px;font-style: normal;font-family: Inter;line-height: 36px;">
+                <mat-icon>shopping_cart</mat-icon>CARRITO DE COMPRAS
+            </span>
+            <!--tabla-->
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z3" style="margin-top: 50px;">
+                <!--columnas con valores cambiantes-->
+                <ng-container *ngFor="let columna of columnas" matColumnDef="{{columna.name}}">
+                    <th mat-header-cell *matHeaderCellDef> {{columna.titulo}} </th>
+                    <td mat-cell *matCellDef="let element"> {{element[columna.name]}} </td>
+                </ng-container>
+                <!--columna con el icono delete permanente en todas las filas-->
+                <ng-container matColumnDef="acciones">
+                    <th mat-header-cell *matHeaderCellDef> </th>
+                    <td mat-cell *matCellDef="let element" style="text-align: center;">
+                        <a>
+                            <mat-icon class="pointer">delete</mat-icon>
+                        </a>
+                    </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </div>
+        <!--botones de cancelar y comprar-->
+        <div><br>
+            <section>
+                <div class="example-button-row" style="margin-left: 600px;">
+                    <button style="background-color: #52525C;" mat-raised-button color="primary">Cancelar</button>
+                    <button style="background-color: #D1410C;margin-left: 17px;" mat-raised-button color="primary">
+                        <mat-icon>shopping_cart</mat-icon>Comprar
+                    </button>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>

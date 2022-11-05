@@ -11,7 +11,7 @@ import { VerEventosComponent } from './components/ver-eventos/ver-eventos.compon
 import { SeleccionarButacaComponent } from './components/seleccionar-butaca/seleccionar-butaca.component';
 import { VerDetalleEventoComponent } from './components/ver-detalle-evento/ver-detalle-evento.component';
 import { EditarSalaComponent } from './components/editar-sala/editar-sala.component';
-
+import { RealizarPagoComponent } from './components/realizar-pago/realizar-pago.component';
 const routes: Routes = [
 
   {path:'login', component: LoginComponent},
@@ -61,6 +61,10 @@ const routes: Routes = [
       {
         path:'verDetalleEvento/:idEvento', 
         component: VerDetalleEventoComponent
+      },
+      {
+        path:'realizarPago', 
+        component: RealizarPagoComponent
       },
       {
         path:'', 

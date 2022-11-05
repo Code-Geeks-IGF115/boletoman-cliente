@@ -7,6 +7,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
 
+import { CommonModule } from '@angular/common';
 /* Angular Material */
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -23,6 +24,7 @@ import {GalleriaModule} from 'primeng/galleria';
 import {ImageModule} from 'primeng/image';
 import {MessagesModule} from 'primeng/messages';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 // Importando componentes
 import { AuthModule } from '@auth0/auth0-angular';
 import { CreaEventoComponent } from './components/crea-evento/crea-evento.component';
@@ -36,11 +38,11 @@ import { VerEventosComponent } from './components/ver-eventos/ver-eventos.compon
 import { VistaPreviaComponent } from './components/vista-previa/vista-previa.component';
 import { VerDetalleEventoComponent } from './components/ver-detalle-evento/ver-detalle-evento.component';
 import { EditarSalaComponent } from './components/editar-sala/editar-sala.component';
+import { RealizarPagoComponent } from './components/realizar-pago/realizar-pago.component';
 //Social media
 import { SocialLoginModule, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
-import {
-  GoogleLoginProvider,
-} from '@abacritt/angularx-social-login';
+import { GoogleLoginProvider, } from '@abacritt/angularx-social-login';
+
 
 
 @NgModule({
@@ -56,7 +58,8 @@ import {
     SeleccionarButacaComponent,
     VistaPreviaComponent,
     VerDetalleEventoComponent,
-    EditarSalaComponent
+    EditarSalaComponent,
+    RealizarPagoComponent
   ],
   imports: [
     BrowserModule,
@@ -68,6 +71,7 @@ import {
     MatFormFieldModule,
     MatSelectModule,
     MatInputModule,
+    CommonModule,
     MatChipsModule,
     MatDatepickerModule,
     MatToolbarModule,
@@ -79,7 +83,7 @@ import {
     MatToolbarModule,
     FormsModule, 
     ReactiveFormsModule,
-    SocialLoginModule,
+    SocialLoginModule,    
     MatTableModule,
     HttpClientModule,
     GalleriaModule,
