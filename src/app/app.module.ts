@@ -41,6 +41,7 @@ import { SocialLoginModule, SocialAuthServiceConfig } from '@abacritt/angularx-s
 import {
   GoogleLoginProvider,
 } from '@abacritt/angularx-social-login';
+import { DetalleCompraComponent } from './components/detalle-compra/detalle-compra.component';
 
 
 @NgModule({
@@ -56,7 +57,8 @@ import {
     SeleccionarButacaComponent,
     VistaPreviaComponent,
     VerDetalleEventoComponent,
-    EditarSalaComponent
+    EditarSalaComponent,
+    DetalleCompraComponent
   ],
   imports: [
     BrowserModule,
