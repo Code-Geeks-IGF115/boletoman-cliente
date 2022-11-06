@@ -11,7 +11,7 @@ import { VerEventosComponent } from './components/ver-eventos/ver-eventos.compon
 import { SeleccionarButacaComponent } from './components/seleccionar-butaca/seleccionar-butaca.component';
 import { VerDetalleEventoComponent } from './components/ver-detalle-evento/ver-detalle-evento.component';
 import { EditarSalaComponent } from './components/editar-sala/editar-sala.component';
-//import { detalleCompra } from './components/detalle-compra/detalle-compra.component';
+import { DetalleCompraComponent } from './components/detalle-compra/detalle-compra.component';
 
 
 const routes: Routes = [
@@ -64,14 +64,11 @@ const routes: Routes = [
         path:'verDetalleEvento/:idEvento', 
         component: VerDetalleEventoComponent
       },
-      {
-        path:'', 
-        component: BaseComponent
-      },
-    /* {
-        path:'detalleCompra/:idEvento', 
-        component: detalleCompraComponent
-      }*/
+     
+     {
+        path:'detalleCompra', 
+        component: DetalleCompraComponent
+      }
     ]
   },
   {
