@@ -11,6 +11,7 @@ import { VerEventosComponent } from './components/ver-eventos/ver-eventos.compon
 import { SeleccionarButacaComponent } from './components/seleccionar-butaca/seleccionar-butaca.component';
 import { VerDetalleEventoComponent } from './components/ver-detalle-evento/ver-detalle-evento.component';
 import { EditarSalaComponent } from './components/editar-sala/editar-sala.component';
+import { InformacionEventoComponent } from './components/informacion-evento/informacion-evento.component';
 
 const routes: Routes = [
 
@@ -19,51 +20,52 @@ const routes: Routes = [
     component: BaseComponent,
     children: [
       {
-        path:'', 
+        path:'',
         redirectTo:'/login',
-        pathMatch: 'full'}, 
+        pathMatch: 'full'},
       {
-        path:'creaEvento', 
+        path:'creaEvento',
         component: CreaEventoComponent
       },
       {
-        path:'crearCategoria/:idSala', 
+        path:'crearCategoria/:idSala',
         component: CrearCategoriaComponent
       },
       {
-        path:'verSalaEvento/:crud', 
+        path:'verSalaEvento/:crud',
         component: SalasDeEventoComponent
       },
       {
-        path:'verSalaEvento/:crud/:idSala', 
+        path:'verSalaEvento/:crud/:idSala',
         component: SalasDeEventoComponent
       },
       // {
-      //   path:'verSalaEvento/crearSala', 
+      //   path:'verSalaEvento/crearSala',
       //   component: SalasDeEventoComponent
       // },
       // {
-      //   path:'verSalaEvento/editarSala', 
-      //   component: EditarSalaComponent 
+      //   path:'verSalaEvento/editarSala',
+      //   component: EditarSalaComponent
       // },
       {
-        path:'verEventos', 
+        path:'verEventos',
         component: VerEventosComponent
       },
       {
-        path:'verSalas/:idEvento', 
+        path:'verSalas/:idEvento',
         component: VerSalaDeEventoComponent
       },
       {
-        path:'seleccionarButaca', 
+        path:'seleccionarButaca',
         component: SeleccionarButacaComponent
       },
       {
-        path:'verDetalleEvento/:idEvento', 
-        component: VerDetalleEventoComponent
+        path:'informacionEvento',
+        component: InformacionEventoComponent
       },
+
       {
-        path:'', 
+        path:'',
         component: BaseComponent
       }
     ]
