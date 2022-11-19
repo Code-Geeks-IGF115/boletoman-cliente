@@ -11,6 +11,7 @@ import { VerEventosComponent } from './components/ver-eventos/ver-eventos.compon
 import { SeleccionarButacaComponent } from './components/seleccionar-butaca/seleccionar-butaca.component';
 import { VerDetalleEventoComponent } from './components/ver-detalle-evento/ver-detalle-evento.component';
 import { EditarSalaComponent } from './components/editar-sala/editar-sala.component';
+import { MisBoletosComponent } from './components/mis-boletos/mis-boletos.component';
 
 const routes: Routes = [
 
@@ -65,6 +66,10 @@ const routes: Routes = [
       {
         path:'', 
         component: BaseComponent
+      },
+      {
+        path:'misBoletos', 
+        component: MisBoletosComponent
       }
     ]
   },

@@ -1,0 +1,17 @@
+table {
+    width: 100%;
+  }
+
+  div#container{
+    margin:auto;
+    margin-top: 100px;
+    width: 960px;
+    height: 400;
+}
+
+div#center{
+    margin-top: 40px;
+    width: 960;
+    height: 120;
+    margin-bottom: 40px;
+}
