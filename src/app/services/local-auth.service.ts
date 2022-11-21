@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable} from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
+import { CookieService } from 'ngx-cookie-service';
 @Injectable({
   providedIn: 'root'
 })
@@ -9,7 +10,9 @@ export class LocalAuthService {
 
   token:any;
   email:any;
-  constructor(private httpClient: HttpClient) { }
+  logeado:boolean=false;
+  constructor(private httpClient: HttpClient, 
+    private cookieService: CookieService) { }
 
   //iniciar sesión
   checkSession(form:any):Observable<any>{
@@ -18,6 +21,13 @@ export class LocalAuthService {
   setCredentials(token:any, email:any){
     this.token=token;
     this.email=email;
-    console.log(`credentials ${token}, ${email}`);
+    this.logeado=true;
+    this.cookieService.set('token', token);
+  
+    // console.log(`credentials ${token}, ${email}`);
+  }
+
+  estaLogeado(){
+    return this.token!=null;
   }
 }
