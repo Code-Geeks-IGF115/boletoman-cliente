@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {SocialAuthService,} from '@abacritt/angularx-social-login';
-import { SocialUser } from "angularx-social-login"
-import { SocialLoginModule } from '@abacritt/angularx-social-login';
 
 @Component({
   selector: 'app-login',
