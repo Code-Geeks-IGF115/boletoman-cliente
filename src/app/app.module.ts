@@ -47,6 +47,7 @@ import { MisEventosComponent } from './components/mis-eventos/mis-eventos.compon
 import { DetalleCompraComponent } from './components/detalle-compra/detalle-compra.component';
 
 import { CookieService } from 'ngx-cookie-service';
+import { RegistroComponent } from './components/registro/registro.component';
 
 
 @NgModule({
@@ -66,7 +67,8 @@ import { CookieService } from 'ngx-cookie-service';
     InformacionEventoComponent,
     MisBoletosComponent,
     MisEventosComponent,
-    DetalleCompraComponent
+    DetalleCompraComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,

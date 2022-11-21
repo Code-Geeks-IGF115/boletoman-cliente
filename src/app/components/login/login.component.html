@@ -46,12 +46,16 @@
               <!--botones-->
             <div style="margin-top: 25px;margin-top:50px;"><br>
               <section>
-                <div class="example-button-row">
-                  <button type="submit" style="left: 25%;width: 200px;background-color: rgb(55, 174, 26);color: white;" mat-raised-button color="primary">Iniciar Sesión</button>
+                <div class="example-button-row" style="text-align: center;">
+                  <button type="submit" style="background-color: rgb(55, 174, 26);color: white;" mat-raised-button color="primary">Iniciar Sesión</button>
+                
+                  <button [routerLink]="['/registro']" type="button" mat-raised-button color="secondary">
+                    <!-- <mat-icon>login</mat-icon> -->
+                    <span>Registrarme</span>
+                  </button>
                 </div>
               </section>
             </div>
-
               <!-- <asl-google-signin-button  type='standard' size='large' theme='filled_black'></asl-google-signin-button> -->
           </form>
         </mat-card>
