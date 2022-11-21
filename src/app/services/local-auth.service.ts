@@ -18,6 +18,9 @@ export class LocalAuthService {
   checkSession(form:any):Observable<any>{
     return this.httpClient.post<any>(environment.usuarios_host+ '/api/login_check', form);
   }
+  registrarse(form:any):Observable<any>{
+    return this.httpClient.post<any>(environment.usuarios_host+ '/api/registro', form);
+  }
   setCredentials(token:any, email:any){
     this.token=token;
     this.email=email;
