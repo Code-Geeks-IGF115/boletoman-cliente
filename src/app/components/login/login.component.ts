@@ -16,12 +16,12 @@ export class LoginComponent implements OnInit {
   constructor(private authService: SocialAuthService, private router: Router) { }
 
   ngOnInit() {
-    this.authService.authState.subscribe((user) => {
-      this.user = user;
-      localStorage.setItem('idToken',user.idToken);
-      this.loggedIn = (user != null);
-      console.log(this.user);
-      this.router.navigate(['/creaEvento'])
-    }); 
+    // this.authService.authState.subscribe((user) => {
+    //   this.user = user;
+    //   localStorage.setItem('idToken',user.idToken);
+    //   this.loggedIn = (user != null);
+    //   console.log(this.user);
+    //   this.router.navigate(['/creaEvento'])
+    // }); 
   }
 }
