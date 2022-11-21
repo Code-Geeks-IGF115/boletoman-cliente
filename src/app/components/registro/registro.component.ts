@@ -30,7 +30,7 @@ registrarse(loginForm: any){
   loginForm.email=loginForm.email;
   loginForm.password=loginForm.password;
   if(loginForm.password==loginForm.password2){
-    this.auth.checkSession(loginForm).subscribe(data =>{
+    this.auth.registrarse(loginForm).subscribe(data =>{
         if(data){
           this.auth.setCredentials(data.token,loginForm.email);
           this.router.navigate(['/verEventos']);
