@@ -21,12 +21,13 @@ import { DetalleCompraComponent } from './components/detalle-compra/detalle-comp
 const routes: Routes = [
 
   {path:'login', component: LoginComponent},
+  // {path:'registro', component: RegistroComponent},
   {path: '',
     component: BaseComponent,
     children: [
       {
         path:'',
-        redirectTo:'/login',
+        redirectTo:'/verEventos',
         pathMatch: 'full'},
       {
         path:'creaEvento',
@@ -69,10 +70,10 @@ const routes: Routes = [
         component: InformacionEventoComponent
       },
 
-      {
-        path:'',
-        component: BaseComponent
-      },
+      // {
+      //   path:'',
+      //   component: BaseComponent
+      // },
       {
         path:'misBoletos', 
         component: MisBoletosComponent

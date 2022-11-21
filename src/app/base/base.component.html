@@ -10,28 +10,48 @@
             </a>
             <a class="derecha">
                 <img src='assets\images\ico.png' class='imgRedonda' />
-                <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-                    <mat-icon>expand_more</mat-icon>
-                  </button>
-                  <mat-menu #menu="matMenu">
-                    <button [routerLink]="['/verEventos']" mat-menu-item>
-                      <mat-icon>dashboard</mat-icon>
-                      <span>Ver Eventos</span>
+                <div *ngIf="logeado==true; then thenBlock else elseBlock"></div>
+                <ng-template #thenBlock>
+                  <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                      <mat-icon>expand_more</mat-icon>
                     </button>
-
-                    <button mat-menu-item>
-                      <mat-icon>theaters</mat-icon>
-                      <span>Mis Eventos</span>
-                    </button>
-                    <button mat-menu-item>
-                      <mat-icon>perm_identity</mat-icon>
+                    <mat-menu #menu="matMenu" >
+                      <button [routerLink]="['/verEventos']" mat-menu-item>
+                        <mat-icon>dashboard</mat-icon>
+                        <span>Ver Eventos</span>
+                      </button>
+                      
+                      <button mat-menu-item>
+                        <mat-icon>theaters</mat-icon>
+                        <span>Mis Eventos</span>
+                      </button>
+                      <!-- <button mat-menu-item>
+                        <mat-icon>perm_identity</mat-icon>
                       <span>Mi Perfil</span>
-                    </button>
+                     </button> -->
                     <button mat-menu-item>
                       <mat-icon>exit_to_app</mat-icon>
                       <span>Salir</span>
                     </button>
                   </mat-menu>
+                </ng-template>
+                <ng-template #elseBlock>
+                  <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                      <mat-icon>expand_more</mat-icon>
+                    </button>
+                  <mat-menu #menu="matMenu">
+                    <!-- <button [routerLink]="['/registro']" mat-menu-item>
+                      <mat-icon>dashboard</mat-icon>
+                      <span>Registrarse</span>
+                    </button> -->
+                    <button mat-menu-item [routerLink]="['/login']">
+                      <mat-icon>login</mat-icon>
+                      <span>Iniciar Sesión</span>
+                    </button>
+                  </mat-menu>
+                </ng-template>
+                  
+                  
             </a>
     </div>
 </mat-toolbar>
