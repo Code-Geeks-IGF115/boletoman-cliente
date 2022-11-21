@@ -36,21 +36,6 @@ detallesEvento:any;
             id_categoria:resultado.evento.categoria.id,
             categoria:resultado.evento.categoria.nombre
         }
-        
-        // Object.entries(resultado.evento).map((res:any)=>{
-        //   return{
-        //     id_evento:res.id,
-        //     nombre:res.nombre,
-        //     descripcion:res.descripcion,
-        //     tipoDeEvento: res.tipoDeEvento,
-        //     fechaInicio:res.fechaInicio,
-        //     horaInicio:res.horaInicio,
-        //     fechaFin:res.fechaFin,
-        //     horaFin:res.horaFin,
-        //     id_categoria:res.categoria.id,
-        //     categoria:res.categoria.nombre
-        //   }
-        // });
         console.log(this.detallesEvento)
       })
   }

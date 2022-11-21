@@ -17,6 +17,7 @@ import { MisEventosComponent } from './components/mis-eventos/mis-eventos.compon
 import { DetalleCompraComponent } from './components/detalle-compra/detalle-compra.component';
 
 
+
 const routes: Routes = [
 
   {path:'login', component: LoginComponent},
@@ -64,7 +65,7 @@ const routes: Routes = [
         component: SeleccionarButacaComponent
       },
       {
-        path:'informacionEvento',
+        path:'evento/:idEvento/informacionEvento',
         component: InformacionEventoComponent
       },
 
@@ -85,6 +86,10 @@ const routes: Routes = [
         path:'detalleCompra', 
         component: DetalleCompraComponent
 
+      },
+      {
+        path:'verDetalleEvento/:idEvento',
+        component: VerDetalleEventoComponent
       }
     ]
   },
