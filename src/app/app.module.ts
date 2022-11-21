@@ -42,6 +42,8 @@ import {
   GoogleLoginProvider,
 } from '@abacritt/angularx-social-login';
 import { MisEventosComponent } from './components/mis-eventos/mis-eventos.component';
+import { DetalleCompraComponent } from './components/detalle-compra/detalle-compra.component';
+
 
 
 @NgModule({
@@ -58,7 +60,8 @@ import { MisEventosComponent } from './components/mis-eventos/mis-eventos.compon
     VistaPreviaComponent,
     VerDetalleEventoComponent,
     EditarSalaComponent,
-    MisEventosComponent
+    MisEventosComponent,
+    DetalleCompraComponent
   ],
   imports: [
     BrowserModule,
