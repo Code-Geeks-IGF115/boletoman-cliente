@@ -13,17 +13,18 @@ export class VerDetalleEventoComponent implements OnInit {
 //definiendo variables
 id_evento:any;
 detallesEvento:any;
-  constructor(private route: ActivatedRoute,private eventosApiService:EventoService) { }
+salaDeEventos:any;
+constructor(private route: ActivatedRoute,private eventosApiService:EventoService) { }
 
-  ngOnInit(): void {
-    this.id_evento =this.route.snapshot.paramMap.get('idEvento');
-    this.getDetalleEvento(this.id_evento);
-  }
+ngOnInit(): void {
+  this.id_evento =this.route.snapshot.paramMap.get('idEvento');
+  this.getDetalleEvento(this.id_evento);
+}
 
   getDetalleEvento(id_evento:any){
     this.eventosApiService.obtenerDetalleEvento(id_evento)
     .subscribe((resultado:any) => {
-        console.log(resultado);
+        // console.log(resultado);
         this.detallesEvento = {
             id_evento:resultado.evento.id,
             nombre:resultado.evento.nombre,
@@ -36,6 +37,18 @@ detallesEvento:any;
             id_categoria:resultado.evento.categoria.id,
             categoria:resultado.evento.categoria.nombre
         }
+        if(resultado.evento.sala_de_eventos_id){
+          this.getSalaDeEventos(resultado.evento.sala_de_eventos_id);
+        }
+        // console.log(this.detallesEvento)
+      })
+  }
+
+  getSalaDeEventos(idSalaDeEventos:any){
+    this.eventosApiService.getSala(idSalaDeEventos)
+    .subscribe((resultado:any) => {
+        console.log(resultado.salaDeEvento.nombre);
+        this.salaDeEventos = resultado.salaDeEvento;
         console.log(this.detallesEvento)
       })
   }

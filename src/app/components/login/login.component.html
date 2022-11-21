@@ -5,7 +5,7 @@
                 <img src="assets\images\default.png"  width="150" height="50">
             </a>
             <a class="centro">
-                <button mat-raised-button>Explorar</button>
+                <button mat-raised-button [routerLink]="['/verEventos']">Explorar</button>
                 <button mat-raised-button>Mis Boletos</button>
                 <button mat-raised-button>Mis Favoritos</button>
             </a>
@@ -16,7 +16,9 @@
     </div>
 </mat-toolbar>
 <body>
-    <div  class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+    <div   fxLayout="row" fxLayoutAlign="center">
+      <div class="login-wrapper">
+        
         <mat-card class="box">
           <mat-card-header>
             <mat-card-title>
@@ -44,6 +46,7 @@
               <asl-google-signin-button  type='standard' size='large' theme='filled_black'></asl-google-signin-button>
           </form>
         </mat-card>
+      </div>
     </div>
 </body>
 

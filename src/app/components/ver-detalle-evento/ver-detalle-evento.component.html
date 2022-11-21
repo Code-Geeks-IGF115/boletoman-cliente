@@ -34,16 +34,17 @@
 
 <div id="bottom-arragement">
 
-    <div>
+    
+    <div *ngIf="salaDeEventos!=null">
         <h1> <b>&nbsp;Sala del Evento</b></h1>
         <br><br>
-        <b>&nbsp;Nombre: {{detallesEvento.nombre}}</b>
+        <b>&nbsp;Nombre: {{salaDeEventos.nombre}}</b>
         <br><br>
-        <b>&nbsp;Dirección:</b>
+        <b>&nbsp;Dirección: {{salaDeEventos.direccion}}</b>
         <br><br>
-        <b>&nbsp;Teléfono: </b>
+        <b>&nbsp;Teléfono: {{salaDeEventos.telefono}}</b>
         <br><br>
-        <b>&nbsp;Email: </b>
+        <b>&nbsp;Email: {{salaDeEventos.email}}</b>
         <br><br>
     </div>
         

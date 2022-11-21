@@ -14,13 +14,12 @@
   }
 .contenedor{
     display: flex;
-    padding: 20px 16px 20px;
+    padding: 20px;
     align-items: center;
     justify-content: space-between;
 }
 .container{
-  width:1200px;
+  width:80%;
   margin:auto;
-  margin-left: 150px;
-  margin-right: 150px;
+  text-align: center;
 }
