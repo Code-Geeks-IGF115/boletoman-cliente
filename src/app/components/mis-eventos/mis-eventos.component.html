@@ -1,0 +1,44 @@
+<html>
+<body>
+
+
+<br><br><br>
+
+
+<h1> <mat-icon class="icon-display">event_note</mat-icon> &nbsp;  Mis Eventos</h1>
+
+
+
+<br><br>
+
+<!-- Tabla -->
+
+<table  style="margin:0 auto" mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  
+   
+    <ng-container matColumnDef="nombreDeEvento">
+      <th  mat-header-cell *matHeaderCellDef>Nombre del evento</th>
+      <td  mat-cell *matCellDef="let element"> {{element.nombreDeEvento}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="fecha">
+      <th  mat-header-cell *matHeaderCellDef> Fecha </th>
+      <td  mat-cell *matCellDef="let element"> {{element.fecha}} </td>
+    </ng-container>
+  
+
+    <ng-container matColumnDef="hora">
+      <th mat-header-cell *matHeaderCellDef> Hora </th>
+      <td mat-cell *matCellDef="let element"> {{element.hora}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="listaDeAsistentes">
+      <th mat-header-cell *matHeaderCellDef> Lista de Asistentes </th>
+      <td mat-cell *matCellDef="let element"> <mat-icon class="descarga">download</mat-icon> </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</body>
+  </html>

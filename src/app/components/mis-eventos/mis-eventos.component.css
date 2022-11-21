@@ -1,0 +1,42 @@
+table{
+    
+        border: none;
+        width: 80%;
+        right: 80%;
+        border-collapse: collapse;
+       
+    
+}
+
+td { 
+   
+    text-align-last:center;
+    -ms-text-size-adjust: auto;
+    
+    
+}
+
+th { 
+    
+    text-align-last: center;
+    
+    background-color: rgba(248, 244, 244, 0.842);
+    color: black;
+    font-size: 14px;
+}
+
+.icon-display { 
+    transform: scale(2.5); 
+    
+   
+}
+
+h1{
+    text-align: left;
+    padding-left: 150px;
+    
+}
+
+.descarga{
+    transform: scale(1.5);
+}

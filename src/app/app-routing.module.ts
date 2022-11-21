@@ -12,6 +12,9 @@ import { SeleccionarButacaComponent } from './components/seleccionar-butaca/sele
 import { VerDetalleEventoComponent } from './components/ver-detalle-evento/ver-detalle-evento.component';
 import { EditarSalaComponent } from './components/editar-sala/editar-sala.component';
 import { MisBoletosComponent } from './components/mis-boletos/mis-boletos.component';
+import { MisEventosComponent } from './components/mis-eventos/mis-eventos.component';
+import { DetalleCompraComponent } from './components/detalle-compra/detalle-compra.component';
+
 
 const routes: Routes = [
 
@@ -70,6 +73,16 @@ const routes: Routes = [
       {
         path:'misBoletos', 
         component: MisBoletosComponent
+      },
+      {
+        path:'misEventos', 
+        component: MisEventosComponent
+      },
+     
+     {
+        path:'detalleCompra', 
+        component: DetalleCompraComponent
+
       }
     ]
   },
