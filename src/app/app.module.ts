@@ -46,6 +46,7 @@ import { MisBoletosComponent } from './components/mis-boletos/mis-boletos.compon
 import { MisEventosComponent } from './components/mis-eventos/mis-eventos.component';
 import { DetalleCompraComponent } from './components/detalle-compra/detalle-compra.component';
 
+import { CookieService } from 'ngx-cookie-service';
 
 
 @NgModule({
@@ -113,7 +114,8 @@ import { DetalleCompraComponent } from './components/detalle-compra/detalle-comp
           console.error(err);
         }
       } as SocialAuthServiceConfig,
-    }
+    },
+    CookieService
   ],
   bootstrap: [AppComponent]
 })

@@ -5,8 +5,8 @@
             </a>
             <a class="centro">
                 <button mat-raised-button [routerLink]="['/verEventos']">Explorar</button>
-                <button mat-raised-button>Mis Boletos</button>
-                <button mat-raised-button>Mis Favoritos</button>
+                <button mat-raised-button [routerLink]="['/misEventos']">Mis Eventos</button>
+                <button mat-raised-button [routerLink]="['/misBoletos']">Mis Boletos</button>
             </a>
             <a class="derecha">
                 <img src='assets\images\ico.png' class='imgRedonda' />
@@ -16,20 +16,24 @@
                       <mat-icon>expand_more</mat-icon>
                     </button>
                     <mat-menu #menu="matMenu" >
-                      <button [routerLink]="['/verEventos']" mat-menu-item>
+                      <button [routerLink]="['/misBoletos']" mat-menu-item>
                         <mat-icon>dashboard</mat-icon>
-                        <span>Ver Eventos</span>
+                        <span>Mis Boletos</span>
                       </button>
                       
                       <button mat-menu-item>
                         <mat-icon>theaters</mat-icon>
-                        <span>Mis Eventos</span>
+                        <span [routerLink]="['/misEventos']">Mis Eventos</span>
+                      </button>
+                      <button mat-menu-item>
+                        <mat-icon>theaters</mat-icon>
+                        <span [routerLink]="['/creaEvento']">Crear Evento</span>
                       </button>
                       <!-- <button mat-menu-item>
                         <mat-icon>perm_identity</mat-icon>
                       <span>Mi Perfil</span>
                      </button> -->
-                    <button mat-menu-item>
+                    <button mat-menu-item (click)="cerrarSesion()">
                       <mat-icon>exit_to_app</mat-icon>
                       <span>Salir</span>
                     </button>

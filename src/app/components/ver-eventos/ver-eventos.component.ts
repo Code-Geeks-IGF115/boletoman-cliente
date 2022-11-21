@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EventoService } from 'src/app/services/evento-api.service';
+import { LocalAuthService } from 'src/app/services/local-auth.service';
 @Component({
   selector: 'app-ver-eventos',
   templateUrl: './ver-eventos.component.html',
@@ -8,10 +9,12 @@ import { EventoService } from 'src/app/services/evento-api.service';
 export class VerEventosComponent implements OnInit {
   //definiendo variables
   eventosList:any;
-  constructor(private eventosApiService:EventoService) { }
+  constructor(private eventosApiService:EventoService,
+    private authService:LocalAuthService) { }
 
   ngOnInit(): void {
     this.getListEventos()
+    // console.log(`Esta logeado: ${this.authService.estaLogeado()}`);
   }
   //Metodo para consultar los eventos
   getListEventos() {
