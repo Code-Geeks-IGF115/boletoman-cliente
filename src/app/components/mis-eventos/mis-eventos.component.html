@@ -1,5 +1,11 @@
-<h1> <mat-icon class="icon-display">event_note</mat-icon> &nbsp;  Mis Eventos</h1>
-<br><br>
+<h1 class="container"> <mat-icon class="icon-display">event_note</mat-icon> &nbsp;  Mis Eventos</h1>
+<div class="nav-custom-buttons container">
+  <button type="button" style="background-color: rgb(55, 174, 26);color: white;" mat-raised-button color="primary">
+    <mat-icon>theaters</mat-icon>
+    <span [routerLink]="['/creaEvento']">Crear Evento</span>
+  </button>
+</div>
+
 <table  style="margin:0 auto" mat-table [dataSource]="dataSource" class="mat-elevation-z8">
     <ng-container matColumnDef="nombreDeEvento">
       <th  mat-header-cell *matHeaderCellDef>Nombre del evento</th>
