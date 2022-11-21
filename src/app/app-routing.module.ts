@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 //importando componentes
 import { LoginComponent } from './components/login/login.component';
+import { RegistroComponent } from './components/registro/registro.component';
 import { CreaEventoComponent } from './components/crea-evento/crea-evento.component';
 import { VerSalaDeEventoComponent } from './components/ver-sala-de-evento/ver-sala-de-evento.component';
 import { CrearCategoriaComponent } from './components/crear-categoria/crear-categoria.component';
@@ -21,6 +22,7 @@ import { DetalleCompraComponent } from './components/detalle-compra/detalle-comp
 const routes: Routes = [
 
   {path:'login', component: LoginComponent},
+  {path:'registro', component: RegistroComponent},
   // {path:'registro', component: RegistroComponent},
   {path: '',
     component: BaseComponent,
