@@ -4,10 +4,10 @@
 
 export const environment = {
   production: false,
-  usuarios_host:'https://boletoman-security.herokuapp.com/',
-  compras_host:'https://compras.herokuapp.com/',
-  eventos_host:'https://eventos.herokuapp.com/',
-  reservaciones_host:'https://reservaciones.herokuapp.com/',
+  usuarios_host:'https://boletoman-security.herokuapp.com',
+  compras_host:'https://compras.herokuapp.com',
+  eventos_host:'https://eventos.herokuapp.com',
+  reservaciones_host:'https://reservaciones.herokuapp.com',
   evento_url:'https://boletoman-eventos.herokuapp.com/evento',
   salas_url:'https://boletoman-reservaciones.herokuapp.com/sala/de/eventos',
   categoria_url:'https://boletoman-re-andrea-v3-seyh3on.herokuapp.com/categoria/butaca',

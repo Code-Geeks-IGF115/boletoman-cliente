@@ -82,7 +82,7 @@ export class EventoService {
   
   //iniciar sesión
   iniciarSesion(form:any):Observable<ResponseI>{
-    return this.httpClient.post<ResponseI>(environment.usuarios_host+ 'login', form)
+    return this.httpClient.post<ResponseI>(environment.usuarios_host+ '/api/login_check', form)
   }
 
 }
