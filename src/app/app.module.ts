@@ -18,7 +18,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatTableModule} from '@angular/material/table';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'; 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {GalleriaModule} from 'primeng/galleria';
 import {ImageModule} from 'primeng/image';
 import {MessagesModule} from 'primeng/messages';
@@ -36,11 +36,16 @@ import { VerEventosComponent } from './components/ver-eventos/ver-eventos.compon
 import { VistaPreviaComponent } from './components/vista-previa/vista-previa.component';
 import { VerDetalleEventoComponent } from './components/ver-detalle-evento/ver-detalle-evento.component';
 import { EditarSalaComponent } from './components/editar-sala/editar-sala.component';
+import { InformacionEventoComponent } from './components/informacion-evento/informacion-evento.component';
 //Social media
 import { SocialLoginModule, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
 import {
   GoogleLoginProvider,
 } from '@abacritt/angularx-social-login';
+import { MisBoletosComponent } from './components/mis-boletos/mis-boletos.component';
+import { MisEventosComponent } from './components/mis-eventos/mis-eventos.component';
+import { DetalleCompraComponent } from './components/detalle-compra/detalle-compra.component';
+
 
 
 @NgModule({
@@ -56,7 +61,11 @@ import {
     SeleccionarButacaComponent,
     VistaPreviaComponent,
     VerDetalleEventoComponent,
-    EditarSalaComponent
+    EditarSalaComponent,
+    InformacionEventoComponent,
+    MisBoletosComponent,
+    MisEventosComponent,
+    DetalleCompraComponent
   ],
   imports: [
     BrowserModule,
@@ -77,7 +86,7 @@ import {
     MatInputModule,
     MatSelectModule,
     MatToolbarModule,
-    FormsModule, 
+    FormsModule,
     ReactiveFormsModule,
     SocialLoginModule,
     MatTableModule,

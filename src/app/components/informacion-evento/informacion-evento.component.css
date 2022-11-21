@@ -1,0 +1,13 @@
+table {
+  width: 50%;
+}
+
+tr.mat-mdc-footer-row td {
+  font-weight: bold;
+}
+
+.contenedor{
+  width:960px;
+  margin:auto;
+  margin-left: 400px;
+}
