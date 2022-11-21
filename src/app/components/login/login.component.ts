@@ -3,6 +3,9 @@ import { Router } from '@angular/router';
 import {SocialAuthService,} from '@abacritt/angularx-social-login';
 import { EventoService } from 'src/app/services/evento-api.service';
 import {FormGroup, FormControl, Validators} from '@angular/forms';
+import { LocalAuthService } from 'src/app/services/local-auth.service';
+import { HttpErrorResponse } from '@angular/common/http';
+import { catchError, throwError } from 'rxjs';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -18,7 +21,12 @@ export class LoginComponent implements OnInit {
     email: new FormControl('', Validators.required),
     password: new FormControl('', Validators.required),
   });
-  constructor(private authService: SocialAuthService, private eventosApiService:EventoService, private router: Router) { }
+  constructor(
+    private authService: SocialAuthService, 
+    private eventosApiService:EventoService, 
+    private router: Router,
+    private auth:LocalAuthService
+    ) { }
 
   ngOnInit() {
     // this.authService.authState.subscribe((user) => {
@@ -30,11 +38,13 @@ export class LoginComponent implements OnInit {
     // }); 
   }
   //Método para guardar el evento
-  iniciarSesion(eventoform: any){
-    eventoform.email=Number(eventoform.email);
-    eventoform.password=Number(eventoform.password);
-    this.eventosApiService.iniciarSesion(eventoform).subscribe(data =>{
-      console.log(data);
-    })
+  iniciarSesion(loginForm: any){
+    loginForm.email=loginForm.email;
+    loginForm.password=loginForm.password;
+    this.auth.checkSession(loginForm).subscribe(data =>{
+        if(data){
+          this.auth.setCredentials(data.token,loginForm.email);
+        }
+    });
   }
 }
