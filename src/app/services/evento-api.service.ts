@@ -78,5 +78,11 @@ export class EventoService {
   postCelda(form:any, id:any):Observable<ResponseI>{
     return this.httpClient.post<ResponseI>(environment.celda_url+ '/'+id+'/new', form)
   }
+  
+  
+  //iniciar sesión
+  iniciarSesion(form:any):Observable<ResponseI>{
+    return this.httpClient.post<ResponseI>(environment.usuarios_host+ 'login', form)
+  }
 
 }

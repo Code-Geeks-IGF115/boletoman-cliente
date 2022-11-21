@@ -1,17 +1,17 @@
 
 <mat-toolbar id="toolBar" > 
     <div class="contenedor">
-            <a class="imagen" >
+            <a class="imagen nav-element" >
                 <img src="assets\images\default.png"  width="150" height="50">
             </a>
-            <a class="centro">
+            <a class="nav-element">
                 <button mat-raised-button [routerLink]="['/verEventos']">Explorar</button>
-                <button mat-raised-button>Mis Boletos</button>
-                <button mat-raised-button>Mis Favoritos</button>
+                <!-- <button mat-raised-button>Mis Boletos</button>
+                <button mat-raised-button>Mis Favoritos</button> -->
             </a>
-            <a class="derecha">
-                <button class="ab" mat-raised-button  color="accent">Registrarme</button>
-                <button class="bc" mat-raised-button color="primary">Iniciar Session</button>
+            <a class="nav-element">
+                <!-- <button class="ab" mat-raised-button  color="accent">Registrarme</button>
+                <button class="bc" mat-raised-button color="primary">Iniciar Session</button> -->
             </a>
     </div>
 </mat-toolbar>
@@ -30,20 +30,29 @@
                 </tr>
             </mat-card-title>
           </mat-card-header>
-          <form class="example-form">
+          <form class="example-form" [formGroup]="iniciarSesionForm" (ngSubmit)="iniciarSesion(iniciarSesionForm.value)">
             <mat-card-content>
               <mat-form-field class="example-full-width">
-                <input matInput placeholder="Usuario">
+                <input formControlName="email" matInput placeholder="Email" type="email">
               </mat-form-field>
               <mat-form-field class="example-full-width" >
                 <mat-label>Contraseña</mat-label>
-                <input matInput [type]="hide ? 'password' : 'text'">
+                <input formControlName="password" matInput [type]="hide ? 'password' : 'text'">
                 <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                   <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                 </button>
               </mat-form-field>
             </mat-card-content>
-              <asl-google-signin-button  type='standard' size='large' theme='filled_black'></asl-google-signin-button>
+              <!--botones-->
+            <div style="margin-top: 25px;margin-top:50px;"><br>
+              <section>
+                <div class="example-button-row">
+                  <button type="submit" style="left: 25%;width: 200px;background-color: rgb(55, 174, 26);color: white;" mat-raised-button color="primary">Iniciar Sesión</button>
+                </div>
+              </section>
+            </div>
+
+              <!-- <asl-google-signin-button  type='standard' size='large' theme='filled_black'></asl-google-signin-button> -->
           </form>
         </mat-card>
       </div>

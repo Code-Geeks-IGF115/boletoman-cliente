@@ -127,3 +127,7 @@ body{
   padding: 0.8375em 0;
 
 }
+.nav-element{
+  width: 33%;
+  text-align: center;
+}
