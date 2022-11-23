@@ -58,6 +58,10 @@ export class EventoService {
   postEvento(form:any):Observable<ResponseI> {
     return this.httpClient.post<ResponseI>(environment.evento_url+'/new', form)
   }
+  //servicio para editar la sala de eventos
+  editarEvento(form:any, id:any):Observable<ResponseI>{
+    return this.httpClient.post<ResponseI>(environment.evento_url+ '/'+id+'/edit', form)
+  }
   //servicio para guardar sala
   postSala(form:SalasI):Observable<ResponseI> {
     return this.httpClient.post<ResponseI>(environment.salas_url+'/new', form)
@@ -79,6 +83,20 @@ export class EventoService {
     return this.httpClient.post<ResponseI>(environment.celda_url+ '/'+id+'/new', form)
   }
   
+  getMisEventos(id:any){
+    return Promise.resolve(25)
+    .then(
+      (val) => {
+        return ++val;
+      }
+    )
+    .then(
+      (val:any) => {
+        // return ++val;
+        throw new Error("fail")
+      }
+    );
+  }
 
 
 }

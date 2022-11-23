@@ -48,8 +48,10 @@ import { DetalleCompraComponent } from './components/detalle-compra/detalle-comp
 
 import { CookieService } from 'ngx-cookie-service';
 import { RegistroComponent } from './components/registro/registro.component';
-
-
+import { registerLocaleData,formatDate  } from '@angular/common';
+import localeES from '@angular/common/locales/es';
+registerLocaleData(localeES);
+import {  LOCALE_ID} from '@angular/core';
 @NgModule({
   declarations: [
     AppComponent,
@@ -100,6 +102,7 @@ import { RegistroComponent } from './components/registro/registro.component';
     MatSnackBarModule
   ],
   providers: [
+    { provide: LOCALE_ID, useValue: 'es' },
     {
       provide: 'SocialAuthServiceConfig',
       useValue: {

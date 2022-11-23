@@ -73,7 +73,9 @@
     <section>
       <div class="example-button-row">
         <button [disabled]="!creaEventoForms.valid " type="submit" style="left: 25%;width: 200px;background-color: rgb(55, 174, 26);color: white;" mat-raised-button color="primary">GUARDAR</button>
-        <button [disabled]="!creaEventoForms.valid " style="left: 30%;width: 200px;background-color:#7250c0;color: white;" [routerLink]="['/verSalas',idEvento]"  mat-raised-button>SIGUIENTE</button>    
+
+          <button *ngIf="idEvento" style="left: 30%;width: 200px;background-color:#7250c0;color: white;" [routerLink]="['/verSalas',idEvento]"  mat-raised-button>SIGUIENTE</button>    
+
       </div>
     </section>
   </div><br>

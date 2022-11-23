@@ -36,6 +36,10 @@ const routes: Routes = [
         component: CreaEventoComponent
       },
       {
+        path:'evento/:idEvento',
+        component: CreaEventoComponent
+      },
+      {
         path:'crearCategoria/:idSala',
         component: CrearCategoriaComponent
       },
