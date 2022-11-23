@@ -9,12 +9,12 @@
 <table  style="margin:0 auto" mat-table [dataSource]="dataSource" class="mat-elevation-z8">
     <ng-container matColumnDef="nombreDeEvento">
       <th  mat-header-cell *matHeaderCellDef>Nombre del evento</th>
-      <td  mat-cell *matCellDef="let element"> {{element.nombreDeEvento}} </td>
+      <td  mat-cell *matCellDef="let element"> {{element.nombre}} </td>
     </ng-container>
   
     <ng-container matColumnDef="fecha">
       <th  mat-header-cell *matHeaderCellDef> Fecha </th>
-      <td  mat-cell *matCellDef="let element"> {{element.fecha}} </td>
+      <td  mat-cell *matCellDef="let element"> {{element.fecha }} </td>
     </ng-container>
   
 
