@@ -85,8 +85,8 @@ export class EventoService {
     return this.httpClient.post<ResponseI>(environment.celda_url+ '/'+id+'/new', form)
   }
   
-  getMisEventos():any{  
-      this.authService.checkSesion();
+  async getMisEventos():Promise<any>{  
+      await this.authService.checkSesion();
       let id=this.authService.getUsuarioId();
       return this.httpClient.get<ResponseI>(environment.eventos_host+'/evento/eventosdeusuarios/'+id);
   }

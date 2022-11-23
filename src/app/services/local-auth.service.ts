@@ -52,6 +52,7 @@ export class LocalAuthService {
   }
   cerrarSesion(){
     this.cookieService.delete('token');
+    this.cookieService.deleteAll();
   }
   getUsuarioId(){
     return this.cookieService.get('idUsuario');
