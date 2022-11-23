@@ -5,12 +5,14 @@ import { environment } from 'src/environments/environment';
 import { EventosI } from '../models/eventos.interface';
 import { ResponseI } from '../models/response.interface';
 import { SalasI } from '../models/salas.interface';
+import { LocalAuthService } from 'src/app/services/local-auth.service';
+import { CookieService } from 'ngx-cookie-service';
 @Injectable({
   providedIn: 'root'
 })
 export class EventoService {
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient, private authService:LocalAuthService) { }
   //servicio para consultar las salas de eventos
   obtenerSalas(){
     return this.httpClient.get(environment.salas_url+ '/')
@@ -83,19 +85,10 @@ export class EventoService {
     return this.httpClient.post<ResponseI>(environment.celda_url+ '/'+id+'/new', form)
   }
   
-  getMisEventos(id:any){
-    return Promise.resolve(25)
-    .then(
-      (val) => {
-        return ++val;
-      }
-    )
-    .then(
-      (val:any) => {
-        // return ++val;
-        throw new Error("fail")
-      }
-    );
+  getMisEventos():any{  
+      this.authService.checkSesion();
+      let id=this.authService.getUsuarioId();
+      return this.httpClient.get<ResponseI>(environment.eventos_host+'/evento/eventosdeusuarios/'+id);
   }
 
 

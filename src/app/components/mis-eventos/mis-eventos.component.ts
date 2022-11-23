@@ -34,12 +34,11 @@ export class MisEventosComponent implements OnInit {
 
   ngOnInit(): void {
     this.idEvento = this.activatedRoute.snapshot.paramMap.get('idEvento');
-    this.eventosApiService.getMisEventos(this.idEvento).then(
-      (val)=>{
-        console.log(val);
-      },
-      (err) => console.log(err.message)
-    );
+    this.eventosApiService.getMisEventos().subscribe((resultado:any)=>{
+      resultado.forEach(evento => {
+        
+      });;
+    });
   }
 
 }

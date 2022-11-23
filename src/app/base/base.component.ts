@@ -25,11 +25,7 @@ export class BaseComponent implements OnInit, OnChanges {
   }
   
   cerrarSesion(){
-    this.cookieService.delete('token');
-    this.estaLogeado=false;
+    this.authService.cerrarSesion();
     const url=(this.router.url=='/verEventos') ?  window.location.reload() :this.router.navigate(['/verEventos']);
-    
-    
-    console.log(this.cookieService.check('token'));
   }
 }
