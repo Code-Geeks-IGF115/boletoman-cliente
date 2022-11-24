@@ -32,6 +32,7 @@ export class LoginComponent implements OnInit {
     loginForm.password=loginForm.password;
     this.auth.checkSession(loginForm).subscribe(data =>{
         if(data){
+          // console.log(data);
           this.auth.setCredentials(data.token,loginForm.email);
           this.router.navigate(['/verEventos']);
         }

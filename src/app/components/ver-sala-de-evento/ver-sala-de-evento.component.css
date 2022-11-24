@@ -9,18 +9,19 @@ th
     width: 25%;    
 }
 .contenedor{
-    width:960px;
+    width:75%;
     margin:auto;
-    margin-left: 200px;
+    /* margin-left: 200px; */
 }
 .botonlargo{
     background-color: rgb(55, 174, 26);
     color: white;
     width: 20%;
-    margin-left: 760px;
-
+    text-align: center;
 }
-
+.boton-container{
+  text-align: end;
+}
 
 .demo-table {
     width: 100%;
@@ -35,7 +36,6 @@ th
   .mat-row:hover .mat-cell {
     background-color: #d1d1d1 ;
   }
-  
 
  
 

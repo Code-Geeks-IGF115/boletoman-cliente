@@ -1,14 +1,23 @@
 <div class="body">
 
 <h1 class="centrar">Seleccionar Butacas</h1>
+<mat-grid-list cols="2" rowHeight="2:1">
+  <mat-grid-tile>
+    <app-vista-previa  [columnas]="this.columnaSala" [fila]="this.filaSala" [formaSala]="this.formaSala"></app-vista-previa>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <button style="position: absolute;top:250px; right: 340px;background-color: #159600;" mat-raised-button color="primary"><mat-icon style="margin-right: 5px;">add</mat-icon>Agregar Butacas</button>
+  </mat-grid-tile>
+</mat-grid-list>
 
-<br><br><br><br><br><br>
+
+
 <!--Boton "Agregar butacas" -->
-<button style="position: absolute; right: 500px;background-color: #159600;" mat-raised-button color="primary"><mat-icon style="margin-right: 5px;">add</mat-icon>Agregar Butacas</button>
-<br><br><br><br><br><br>
+
+
 <h1 class="centrar"><mat-icon style="margin-right: 5px;">shopping_cart</mat-icon>Carrito de Compras</h1>
 
-<br><br><br><br><br><br>
+
 
 <!-- Tabla -->
 
@@ -38,8 +47,6 @@
   
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
-
-  <br><br><br><br><br><br>
-  <button style="position: absolute; right: 500px;background-color: #D1410C;" mat-raised-button color="primary"><mat-icon style="margin-right: 5px;">shopping_cart</mat-icon>Comprar</button>
+  </table><br>
+  <button style="position: absolute; right: 340px;background-color: #D1410C;" mat-raised-button color="primary"><mat-icon style="margin-right: 5px;">shopping_cart</mat-icon>Comprar</button>
 </div>

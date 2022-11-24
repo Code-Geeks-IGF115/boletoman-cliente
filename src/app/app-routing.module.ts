@@ -36,6 +36,10 @@ const routes: Routes = [
         component: CreaEventoComponent
       },
       {
+        path:'evento/:idEvento',
+        component: CreaEventoComponent
+      },
+      {
         path:'crearCategoria/:idSala',
         component: CrearCategoriaComponent
       },
@@ -64,7 +68,7 @@ const routes: Routes = [
         component: VerSalaDeEventoComponent
       },
       {
-        path:'seleccionarButaca',
+        path:'seleccionarButaca/:idEvento',
         component: SeleccionarButacaComponent
       },
       {

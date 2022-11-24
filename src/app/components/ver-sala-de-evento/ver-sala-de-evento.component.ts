@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {FormGroup, FormControl, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
-import { MatTableDataSource, MatTableModule } from '@angular/material/table';
+import { ActivatedRoute } from '@angular/router';
 import {
   MatSnackBar,
   MatSnackBarHorizontalPosition,
@@ -25,11 +24,17 @@ export class VerSalaDeEventoComponent implements OnInit {
   clickedRows = new Set<SalasI>();
   horizontalPosition: MatSnackBarHorizontalPosition = 'right';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
-  constructor(private eventosApiService:EventoService,private _snackBar: MatSnackBar,
-              private router:Router) { }
+  idEvento:any;
+  constructor(
+    private eventosApiService:EventoService,
+    private _snackBar: MatSnackBar,
+    private router:Router,
+    private route: ActivatedRoute
+    ) { }
 
   ngOnInit(): void {
     this.getListSala();
+    this.idEvento =this.route.snapshot.paramMap.get('idEvento');
   }
   //Metodo para consultar las salas de eventos
   getListSala() {
@@ -45,7 +50,7 @@ export class VerSalaDeEventoComponent implements OnInit {
             correo:sala.email
           }
         }) 
-        console.log(this.tableData)
+        // console.log(this.tableData)
       }
     })
   }
@@ -53,13 +58,13 @@ export class VerSalaDeEventoComponent implements OnInit {
   guardarSala(creaSalaForms: any){
     creaSalaForms.forma=Number(creaSalaForms.forma);
     this.eventosApiService.postSala(creaSalaForms).subscribe(data =>{
-      console.log(data)
+      // console.log(data)
       this._snackBar.open(data.message, 'Cerrar', {
         horizontalPosition: this.horizontalPosition,
         verticalPosition: this.verticalPosition,
       });
     })
-    console.log(creaSalaForms)
+    // console.log(creaSalaForms)
   }
 
   //Método para eliminar una sala
@@ -71,6 +76,21 @@ export class VerSalaDeEventoComponent implements OnInit {
       });
     })
     this.getListSala(); 
+  }
+  seleccionarSala(idSalaDeEventos:any){
+    this.eventosApiService.seleccionarSala(this.idEvento,idSalaDeEventos).subscribe(data =>{
+      this._snackBar.open(data.message, 'Cerrar', {
+        horizontalPosition: this.horizontalPosition,
+        verticalPosition: this.verticalPosition,
+      });
+    })
+    this.eventosApiService.postSalaEvento(this.idEvento, idSalaDeEventos).subscribe(data =>{
+      this._snackBar.open(data.message, 'Cerrar', {
+        horizontalPosition: this.horizontalPosition,
+        verticalPosition: this.verticalPosition,
+      });
+    });
+    // this.getListSala(); 
   }
 
 

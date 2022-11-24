@@ -30,11 +30,13 @@ export class SeleccionarButacaComponent implements OnInit {
 
   displayedColumns: string[] = ['categoria', 'precio', 'cantidad', 'borrar'];
   dataSource = ELEMENT_DATA;
+  columnaSala=4;
+  filaSala=4;
+  formaSala='1';
   constructor( private router:Router) { }
   
   ngOnInit(): void {
   }
 
- 
 
 }

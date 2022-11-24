@@ -13,9 +13,9 @@
     display: inline-block;
   }
   .contenedor{
-    width:960px;
+    width:80%;
     margin:auto;
-    margin-left: 200px;
+    /* margin-left: 200px; */
 }
 .example-section{
     display: flex;

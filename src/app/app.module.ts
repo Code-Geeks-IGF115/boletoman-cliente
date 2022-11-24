@@ -23,6 +23,7 @@ import {GalleriaModule} from 'primeng/galleria';
 import {ImageModule} from 'primeng/image';
 import {MessagesModule} from 'primeng/messages';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatGridListModule} from '@angular/material/grid-list';
 // Importando componentes
 import { AuthModule } from '@auth0/auth0-angular';
 import { CreaEventoComponent } from './components/crea-evento/crea-evento.component';
@@ -48,8 +49,10 @@ import { DetalleCompraComponent } from './components/detalle-compra/detalle-comp
 
 import { CookieService } from 'ngx-cookie-service';
 import { RegistroComponent } from './components/registro/registro.component';
-
-
+import { registerLocaleData,formatDate  } from '@angular/common';
+import localeES from '@angular/common/locales/es';
+registerLocaleData(localeES);
+import {  LOCALE_ID} from '@angular/core';
 @NgModule({
   declarations: [
     AppComponent,
@@ -97,9 +100,11 @@ import { RegistroComponent } from './components/registro/registro.component';
     GalleriaModule,
     ImageModule,
     MessagesModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatGridListModule
   ],
   providers: [
+    { provide: LOCALE_ID, useValue: 'es' },
     {
       provide: 'SocialAuthServiceConfig',
       useValue: {
