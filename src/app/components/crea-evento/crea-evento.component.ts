@@ -108,7 +108,6 @@ export class CreaEventoComponent implements OnInit {
     } else {
       eventoform.concurrencia = Number(eventoform.concurrencia);
       eventoform.categoria = Number(eventoform.categoria);
-      console.log(eventoform);
       this.eventosApiService.postEvento(eventoform).subscribe(data => {
         this.idEvento = data.id;
         sessionStorage.setItem('message', data.message);

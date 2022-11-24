@@ -12,7 +12,11 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class EventoService {
 
-  constructor(private httpClient: HttpClient, private authService:LocalAuthService) { }
+  constructor(
+    private httpClient: HttpClient, 
+    private authService:LocalAuthService,
+    private cookieServico:CookieService
+    ) { }
   //servicio para consultar las salas de eventos
   obtenerSalas(){
     return this.httpClient.get(environment.salas_url+ '/')
@@ -58,8 +62,9 @@ export class EventoService {
   }
   //servicio para guardar evento
   postEvento(form:any):Observable<ResponseI> {
-    this.authService.checkSesion();
-    form.idUsuario=sessionStorage.getItem('idUsuario');
+    // this.authService.checkSesion();
+    form.idUsuario=this.cookieServico.get('idUsuario');
+    console.log(form);
     return this.httpClient.post<ResponseI>(environment.evento_url+'/new', form)
   }
   //servicio para editar la sala de eventos

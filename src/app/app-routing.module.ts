@@ -68,7 +68,7 @@ const routes: Routes = [
         component: VerSalaDeEventoComponent
       },
       {
-        path:'seleccionarButaca',
+        path:'seleccionarButaca/:idEvento',
         component: SeleccionarButacaComponent
       },
       {
