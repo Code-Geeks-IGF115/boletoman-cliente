@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { EventoService } from 'src/app/services/evento-api.service';
 import {FormGroup, FormControl, Validators} from '@angular/forms';
 import { IconOptions } from '@angular/material/icon';
 
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 export interface PeriodicElement {
   categoria: string;
@@ -30,9 +31,18 @@ export class SeleccionarButacaComponent implements OnInit {
 
   displayedColumns: string[] = ['categoria', 'precio', 'cantidad', 'borrar'];
   dataSource = ELEMENT_DATA;
-  constructor( private router:Router) { }
+  idEvento:any;
+  constructor( 
+    private router:Router,
+    private activatedRoute:ActivatedRoute,
+    private eventoService:EventoService
+    ) { }
   
   ngOnInit(): void {
+    this.idEvento = this.activatedRoute.snapshot.paramMap.get('idEvento');
+    this.eventoService.obtenerDetalleEvento(this.idEvento).subscribe((resultado:any)=>{
+      console.log(resultado);
+    });
   }
 
  

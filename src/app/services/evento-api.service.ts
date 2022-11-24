@@ -55,7 +55,7 @@ export class EventoService {
     return this.httpClient.get(environment.evento_url+'/'+id_evento)
     .pipe(
       map((resultados:any)=>{
-        console.log(resultados)
+        // console.log(resultados)
         return resultados;
       })
     );

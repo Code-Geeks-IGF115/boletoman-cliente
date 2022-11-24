@@ -21,8 +21,8 @@
             <span matSuffix>.00</span>
           </mat-form-field>
         <br><br>
-        <button [disabled]="!creaCategoriaForms.valid" type="submit" style="background-color: #5470FF;color: white;margin-left:435px;" mat-raised-button class="botonlargo" color="primary">Agregar</button>
-        <button [disabled]="!creaCategoriaForms.valid" (click)="guardarCategoria(creaCategoriaForms.value)" style="background-color: rgb(55, 174, 26);color: white;margin-left:435px;" mat-raised-button class="botonlargo" color="primary">
+        <!-- <button [disabled]="!creaCategoriaForms.valid"  style="background-color: #5470FF;color: white;margin-left:435px;" mat-raised-button class="botonlargo" color="primary">Agregar</button> -->
+        <button [disabled]="!creaCategoriaForms.valid" type="submit" (click)="guardarCategoria(creaCategoriaForms.value)" style="background-color: rgb(55, 174, 26);color: white;margin-left:435px;" mat-raised-button class="botonlargo" color="primary">
           <mat-icon>add_circle_outline</mat-icon>
           <span>Guardar</span></button>
     </form>
@@ -64,8 +64,8 @@
               <input formControlName="numButacas" matInput type="number">
             </mat-form-field>
           </div><br>
-          <button [disabled]="!configuracionForms.valid" type="submit" style="background-color: #5470FF;color: white; margin-left:435px;" mat-raised-button class="botonlargo" color="primary">Agregar</button>
-          <button [disabled]="!creaCategoriaForms.valid" (click)="guardarCelda()" style="background-color: rgb(55, 174, 26);color: white;margin-left:435px;" mat-raised-button class="botonlargo" color="primary">
+          <!-- <button [disabled]="!configuracionForms.valid"  style="background-color: #5470FF;color: white; margin-left:435px;" mat-raised-button class="botonlargo" color="primary">Agregar</button> -->
+          <button [disabled]="!creaCategoriaForms.valid" type="submit" (click)="guardarCelda()" style="background-color: rgb(55, 174, 26);color: white;margin-left:435px;" mat-raised-button class="botonlargo" color="primary">
             <mat-icon>add_circle_outline</mat-icon>
             <span>Guardar</span></button>
           <div class="espacio"></div>
@@ -114,7 +114,7 @@
 <div style="margin-top: 25px;margin-top:50px;"><br>
   <section>
     <div class="example-button-row">
-       <button  [disabled]="!creaCategoriaForms.valid && !configuracionForms.valid" style="left: 25%;width: 200px;background-color: rgb(55, 174, 26);color: white;margin-left: -140px;" mat-raised-button color="primary">GUARDAR</button>
+       <button [routerLink]="['/misEventos/']"  type="button" style="left: 25%;width: 200px;background-color: rgb(26, 142, 174);color: white;margin-left: -140px;" mat-raised-button color="primary">FINALIZAR</button>
       <!-- <button style="left: 30%;width: 200px;background-color:#7250c0;color: white;"  mat-raised-button>SIGUIENTE</button>     -->
     </div>
   </section>
