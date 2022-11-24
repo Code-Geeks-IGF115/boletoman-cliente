@@ -71,13 +71,15 @@ export class CreaEventoComponent implements OnInit {
         this.eventosApiService.obtenerDetalleEvento(this.idEvento).subscribe((resultado: any) => {
           let evento=resultado.evento;
           this.selectedCategoria =`${evento.categoria.id}`;
-          this.selectedTipoEvento=`${(evento.concurrencia)?'1':'2'}`;
           console.log(evento.concurrencia);
+          let calculoConcurrencia=false;
           if(evento.concurrencia){
             evento.concurrencia.forEach((dia:any) => {
               this.checkDia[dia.dia-1]=dia.checked;
+              calculoConcurrencia=calculoConcurrencia||dia.checked;
             });
           }
+          this.selectedTipoEvento=`${(calculoConcurrencia)?'1':'2'}`;
           evento.fechaFin=formatDate(evento.fechaFin, "yyyy-MM-dd",'es');
           evento.fechaInicio=formatDate(evento.fechaInicio, "yyyy-MM-dd",'es');
           evento.horaFin=formatDate(evento.horaFin, "HH:mm",'es');

@@ -58,6 +58,8 @@ export class EventoService {
   }
   //servicio para guardar evento
   postEvento(form:any):Observable<ResponseI> {
+    this.authService.checkSesion();
+    form.idUsuario=sessionStorage.getItem('idUsuario');
     return this.httpClient.post<ResponseI>(environment.evento_url+'/new', form)
   }
   //servicio para editar la sala de eventos

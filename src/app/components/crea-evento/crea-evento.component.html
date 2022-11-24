@@ -1,88 +1,123 @@
 <div class="contenedor">
-  <br><br>
-<!--titulo de pagina-->
-<div style="margin-top: 20px;width: 100%;background-color: rgb(255, 255, 255);">
-  <h1><b>Crear tu Evento</b></h1>
-</div>
+  <!--titulo de pagina-->
+  <div style="margin-top: 20px;width: 100%;background-color: rgb(255, 255, 255);">
+    <h1><b>Crear tu Evento</b></h1>
+  </div>
 
-<form [formGroup]="creaEventoForms" (ngSubmit)="guardarEvento(creaEventoForms.value)">
-  <!--titulo y organizador del evento-->
-<div style="margin-top: 50px; text-align: center;" ><br>
-  <mat-form-field class="largo" style="width: 75%;margin-left: 50px;margin-bottom: 5px;" appearance="fill">    
-    <input formControlName="nombre" matInput placeholder="Titulo del evento">     
-  </mat-form-field>
-  <br>   
-  <mat-form-field class="largo" style="width: 75%;margin-left: 50px;margin-top: 5px;"appearance="fill">   
-    <input formControlName="descripcion" matInput placeholder="Descripción">    
-  </mat-form-field>
-</div>
-<!--tipo , categorias y subcategorias del evento-->
-<div style="text-align: center;"><br>
-    <mat-form-field style="margin-left: 40px;margin-top: 5px;width: 36%;"appearance="fill">
+  <form [formGroup]="creaEventoForms" (ngSubmit)="guardarEvento(creaEventoForms.value)">
+    <!--titulo y organizador del evento-->
+    <div style="margin-top: 50px; text-align: center;">
+      <mat-form-field class="largo" style="width: 75%;margin-left: 50px;margin-bottom: 5px;" appearance="fill">
+        <input formControlName="nombre" matInput placeholder="Titulo del evento">
+      </mat-form-field>
+      <mat-form-field class="largo" style="width: 75%;margin-left: 50px;margin-top: 5px;" appearance="fill">
+        <input formControlName="descripcion" matInput placeholder="Descripción">
+      </mat-form-field>
+    </div>
+    <!--tipo , categorias y subcategorias del evento-->
+    <div style="text-align: center;">
+      <mat-form-field style="margin-left: 40px;margin-top: 5px;width: 36%;" appearance="fill">
         <input formControlName="tipoDeEvento" matInput placeholder="Tipo del Evento">
-    </mat-form-field>
-    
-    <mat-form-field style="margin-left: 25px;margin-top: 5px;width: 36%"appearance="fill">
-      <mat-label>Categoria evento</mat-label>
+      </mat-form-field>
 
-      <mat-select [(value)]="selectedCategoria"  formControlName="categoria">
-        <mat-option>Seleccionar</mat-option>
-        <mat-option value=1>Tecnología</mat-option>
-        <mat-option value=2>Cocina</mat-option>
-        <mat-option value=3>Carpinteria</mat-option>
-        <mat-option value=4>Restaurante</mat-option>
-        <mat-option value=5>Aire Libre</mat-option>
-      </mat-select>
-    </mat-form-field> 
+      <mat-form-field style="margin-left: 25px;margin-top: 5px;width: 36%" appearance="fill">
+        <mat-label>Categoria evento</mat-label>
+
+        <mat-select [(value)]="selectedCategoria" formControlName="categoria">
+          <mat-option>Seleccionar</mat-option>
+          <mat-option value=1>Tecnología</mat-option>
+          <mat-option value=2>Cocina</mat-option>
+          <mat-option value=3>Carpinteria</mat-option>
+          <mat-option value=4>Restaurante</mat-option>
+          <mat-option value=5>Aire Libre</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <!--fechas y horas del evento-->
+    <div >
+      <table style="text-align: center;margin: auto;">
+        <thead>
+          <tr>
+            <th>Fecha Inicio</th>
+            <th>Hora Inicio</th>
+            <th>Fecha Fin</th>
+            <th>Hora Fin</th>
+          </tr>
+
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <mat-form-field appearance="fill">
+                <input formControlName="fechaInicio" type="date" matInput placeholder="Fecha">
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field style="margin-left: 30px;" appearance="fill">
+                <input formControlName="horaInicio" type="time" matInput placeholder="Hora">
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field style="margin-left: 30px;" appearance="fill">
+                <input formControlName="fechaFin" type="date" matInput placeholder="Fecha">
+              </mat-form-field>
+
+            </td>
+            <td>
+              <mat-form-field style="margin-left: 30px;" appearance="fill">
+                <input formControlName="horaFin" type="time" matInput placeholder="Hora">
+              </mat-form-field>
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+
+
+    </div>
+
+    <!--tipo y dias del evento-->
+    <div class="example-section">
+      <section>
+        <mat-form-field appearance="fill">
+          <mat-label>tipo de evento</mat-label>
+          <mat-select [(value)]="selectedTipoEvento" formControlName="concurrencia">
+            <mat-option value="1">Recurrente</mat-option>
+            <mat-option value="2">No recurrente</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-checkbox [(ngModel)]=checkDia[0] [disabled]="creaEventoForms.value.concurrencia=='2'"
+          formControlName="lunes" style="margin: 10px;">lunes</mat-checkbox>
+        <mat-checkbox [(ngModel)]=checkDia[1] [disabled]="creaEventoForms.value.concurrencia=='2'"
+          formControlName="martes" style="margin: 10px;">martes</mat-checkbox>
+        <mat-checkbox [(ngModel)]=checkDia[2] [disabled]="creaEventoForms.value.concurrencia=='2'"
+          formControlName="miercoles" style="margin: 10px;">miercoles</mat-checkbox>
+        <mat-checkbox [(ngModel)]=checkDia[3] [disabled]="creaEventoForms.value.concurrencia=='2'"
+          formControlName="jueves" style="margin: 10px;">jueves</mat-checkbox>
+        <mat-checkbox [(ngModel)]=checkDia[4] [disabled]="creaEventoForms.value.concurrencia=='2'"
+          formControlName="viernes" style="margin: 10px;">viernes</mat-checkbox>
+        <mat-checkbox [(ngModel)]=checkDia[5] [disabled]="creaEventoForms.value.concurrencia=='2'"
+          formControlName="sabado" style="margin: 10px;">sabado</mat-checkbox>
+        <mat-checkbox [(ngModel)]=checkDia[6] [disabled]="creaEventoForms.value.concurrencia=='2'"
+          formControlName="domingo" style="margin: 10px;">domingo</mat-checkbox>
+      </section>
+    </div>
+    <!--botones-->
+    <div style="margin-top: 25px;text-align: center;">
+      <section>
+        <div class="example-button-row">
+          <button [routerLink]="['/misEventos']" type="button"
+            style="width: 200px;background-color: rgb(26, 142, 174);color: white;" mat-raised-button
+            color="primary">REGRESAR</button>
+          <button [disabled]="!creaEventoForms.valid " type="submit"
+            style="margin:0.5rem;width: 200px;background-color: rgb(55, 174, 26);color: white;" mat-raised-button
+            color="primary">GUARDAR</button>
+          <button *ngIf="idEvento" style="width: 200px;background-color:#7250c0;color: white;"
+            [routerLink]="['/verSalas',idEvento]" mat-raised-button>SIGUIENTE</button>
+
+        </div>
+      </section>
+    </div>
+  </form>
 </div>
-<!--fechas y horas del evento-->
-<div style="margin-left: 50px;"><br>
-  <span>Fecha Inicio</span><span style="margin-left: 160px;">Hora Inicio</span><span style="margin-left: 160px;">Fecha Fin</span><span style="margin-left: 170px;">Hora Fin</span><br><br>
-  <mat-form-field appearance="fill">    
-    <input formControlName="fechaInicio" type="date"  matInput placeholder="Fecha">     
-  </mat-form-field>
-  <mat-form-field style="margin-left: 30px;" appearance="fill">    
-    <input formControlName="horaInicio" type="time" matInput placeholder="Hora">     
-  </mat-form-field>  
-  <mat-form-field style="margin-left: 30px;" appearance="fill">    
-    <input formControlName="fechaFin"type="date"  matInput placeholder="Fecha">     
-  </mat-form-field>  <mat-form-field style="margin-left: 30px;" appearance="fill">    
-    <input formControlName="horaFin" type="time" matInput placeholder="Hora">    
-  </mat-form-field>  
-</div>
-
-<!--tipo y dias del evento-->
-<div class="example-section"><br>
-    <section  >
-      <mat-form-field style="margin-left: 10px;margin-top: 5px;"appearance="fill">
-        <mat-label>tipo de evento</mat-label>
-        <mat-select [(value)]="selectedTipoEvento"  formControlName="concurrencia">
-          <mat-option value="1">Recurrente</mat-option>
-          <mat-option value="2">No recurrente</mat-option>
-        </mat-select>    
-    </mat-form-field>
-      <mat-checkbox [(ngModel)]=checkDia[0] [disabled]="creaEventoForms.value.concurrencia=='2'" formControlName="lunes"  style="margin: 10px;">lunes</mat-checkbox>
-      <mat-checkbox [(ngModel)]=checkDia[1]  [disabled]="creaEventoForms.value.concurrencia=='2'" formControlName="martes"  style="margin: 10px;">martes</mat-checkbox>
-      <mat-checkbox [(ngModel)]=checkDia[2]  [disabled]="creaEventoForms.value.concurrencia=='2'" formControlName="miercoles"  style="margin: 10px;">miercoles</mat-checkbox>
-      <mat-checkbox [(ngModel)]=checkDia[3]  [disabled]="creaEventoForms.value.concurrencia=='2'" formControlName="jueves"  style="margin: 10px;">jueves</mat-checkbox>
-      <mat-checkbox [(ngModel)]=checkDia[4]  [disabled]="creaEventoForms.value.concurrencia=='2'" formControlName="viernes"  style="margin: 10px;">viernes</mat-checkbox>
-      <mat-checkbox [(ngModel)]=checkDia[5]  [disabled]="creaEventoForms.value.concurrencia=='2'" formControlName="sabado"  style="margin: 10px;">sabado</mat-checkbox>
-      <mat-checkbox [(ngModel)]=checkDia[6]  [disabled]="creaEventoForms.value.concurrencia=='2'" formControlName="domingo"  style="margin: 10px;">domingo</mat-checkbox>
-    </section>
-</div>
-  <!--botones-->
-  <div style="margin-top: 25px;margin-top:50px;"><br>
-    <section>
-      <div class="example-button-row">
-        <button [routerLink]="['/misEventos']" type="button" style="left: 25%;width: 200px;background-color: rgb(26, 142, 174);color: white;" mat-raised-button color="primary">REGRESAR</button>
-        <button [disabled]="!creaEventoForms.valid " type="submit" style="left: 25%;width: 200px;background-color: rgb(55, 174, 26);color: white;" mat-raised-button color="primary">GUARDAR</button>
-
-          <button *ngIf="idEvento" style="left: 30%;width: 200px;background-color:#7250c0;color: white;" [routerLink]="['/verSalas',idEvento]"  mat-raised-button>SIGUIENTE</button>    
-
-      </div>
-    </section>
-  </div><br>
-</form>
-</div>
-
-
