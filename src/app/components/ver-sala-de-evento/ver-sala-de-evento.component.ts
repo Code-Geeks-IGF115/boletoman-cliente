@@ -84,6 +84,12 @@ export class VerSalaDeEventoComponent implements OnInit {
         verticalPosition: this.verticalPosition,
       });
     })
+    this.eventosApiService.postSalaEvento(this.idEvento, idSalaDeEventos).subscribe(data =>{
+      this._snackBar.open(data.message, 'Cerrar', {
+        horizontalPosition: this.horizontalPosition,
+        verticalPosition: this.verticalPosition,
+      });
+    });
     // this.getListSala(); 
   }
 

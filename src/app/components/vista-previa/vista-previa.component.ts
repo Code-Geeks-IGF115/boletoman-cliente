@@ -12,7 +12,6 @@ export class VistaPreviaComponent implements OnInit, OnChanges {
   @Input() filaCategoria:any;
   @Input() butacas:any;
   @Input() formaSala:any;
-
   cols:number[]=[];
   filas:number[]=[];
   butacaArray: number[] = [];

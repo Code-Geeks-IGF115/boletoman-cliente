@@ -93,9 +93,12 @@ export class EventoService {
   }
   //metodo para guardar la celda
   postCelda(form:any, id:any):Observable<ResponseI>{
-    return this.httpClient.post<ResponseI>(environment.celda_url+ '/'+id+'/new', form)
+    return this.httpClient.post<ResponseI>(environment.celda_url+ '/categoria/'+id, form)
   }
-  
+  //metodo para asignar una sala a un evento
+  postSalaEvento(idEvento:any, idSala:any):Observable<ResponseI>{
+    return this.httpClient.post<ResponseI>(environment.reservaciones_host+ '/evento/'+idEvento+'/sala/'+idSala,{})
+  }
   async getMisEventos():Promise<any>{  
       await this.authService.checkSesion();
       let id=this.authService.getUsuarioId();

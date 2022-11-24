@@ -23,6 +23,7 @@ import {GalleriaModule} from 'primeng/galleria';
 import {ImageModule} from 'primeng/image';
 import {MessagesModule} from 'primeng/messages';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatGridListModule} from '@angular/material/grid-list';
 // Importando componentes
 import { AuthModule } from '@auth0/auth0-angular';
 import { CreaEventoComponent } from './components/crea-evento/crea-evento.component';
@@ -99,7 +100,8 @@ import {  LOCALE_ID} from '@angular/core';
     GalleriaModule,
     ImageModule,
     MessagesModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatGridListModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'es' },
