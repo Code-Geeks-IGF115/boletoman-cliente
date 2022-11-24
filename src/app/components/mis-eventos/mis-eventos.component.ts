@@ -20,7 +20,7 @@ export interface Evento {
 export class MisEventosComponent implements OnInit{
   
   idEvento:any;
-  displayedColumns: string[] = ['nombreDeEvento', 'fecha', 'hora', 'listaDeAsistentes'];
+  displayedColumns: string[] = ['nombreDeEvento', 'fecha', 'hora', 'editar' ,'listaDeAsistentes'];
   dataSource:any[]=[];
   constructor( 
     private router:Router,
@@ -38,12 +38,14 @@ export class MisEventosComponent implements OnInit{
         if(eventos){
           eventos.forEach((evento:any) => {
             this.dataSource.push({
+              id:evento.id,
               nombre: evento.nombre,
               fecha:evento.fechaInicio,
               hora:evento.horaInicio
             })
-            this.dataSource=[...this.dataSource]
           });
+          this.dataSource=[...this.dataSource]
+          // console.log(this.dataSource);
         }
       })
     });

@@ -23,6 +23,10 @@ export class CreaEventoComponent implements OnInit {
   //definiendo variable
   eventosList: any;
   idEvento: any;
+  selectedCategoria:any;
+  selectedTipoEvento:any;
+  checkDia:boolean[]=[false,true,false,false,false,false,false];
+  categorias: any[] = [{'nombre':'Tecnología', 'value': 1}, {'nombre':'USA', 'value': 1}, {'nombre':'USA2', 'value': 1}];
   creaEventoForms = new FormGroup({
     // evento_id: new FormControl(''),
     nombre: new FormControl('', Validators.required),
@@ -67,13 +71,15 @@ export class CreaEventoComponent implements OnInit {
         this.eventosApiService.obtenerDetalleEvento(this.idEvento).subscribe((resultado: any) => {
           console.log(resultado);
           let evento=resultado.evento;
-          evento.concurrencia = evento.concurrencia;
-          evento.categoria = evento.categoria.id;
+          this.selectedCategoria =`${evento.categoria.id}`;
+          this.selectedTipoEvento=`${(evento.concurrencia)?'1':'2'}`;
+          console.log(evento.concurrencia);
           evento.fechaFin=formatDate(evento.fechaFin, "yyyy-MM-dd",'es');
           evento.fechaInicio=formatDate(evento.fechaInicio, "yyyy-MM-dd",'es');
           evento.horaFin=formatDate(evento.horaFin, "HH:mm",'es');
           evento.horaInicio=formatDate(evento.horaInicio, "HH:mm",'es');
           this.creaEventoForms.patchValue(evento);
+          // this.creaEventoForms.controls['categoria'].setValue(evento.categoria, {onlySelf: true});
         });
       }
     } catch (e: any) {
@@ -83,6 +89,7 @@ export class CreaEventoComponent implements OnInit {
 
   //Método para guardar el evento
   guardarEvento(eventoform: any) {
+    
     if (this.idEvento) {
       eventoform.concurrencia = Number(eventoform.concurrencia);
       eventoform.categoria = Number(eventoform.categoria);

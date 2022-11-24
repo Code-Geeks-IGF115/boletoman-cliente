@@ -24,10 +24,12 @@
     
     <mat-form-field style="margin-left: 25px;margin-top: 5px;width: 36%"appearance="fill">
       <mat-label>Categoria evento</mat-label>
-      <mat-select formControlName="categoria">
-        <mat-option value=1 >Tecnología</mat-option>
+
+      <mat-select [(value)]="selectedCategoria"  formControlName="categoria">
+        <mat-option>Seleccionar</mat-option>
+        <mat-option value=1>Tecnología</mat-option>
         <mat-option value=2>Cocina</mat-option>
-        <mat-option value=2>Carpinteria</mat-option>
+        <mat-option value=3>Carpinteria</mat-option>
         <mat-option value=4>Restaurante</mat-option>
         <mat-option value=5>Aire Libre</mat-option>
       </mat-select>
@@ -54,24 +56,25 @@
     <section  >
       <mat-form-field style="margin-left: 10px;margin-top: 5px;"appearance="fill">
         <mat-label>tipo de evento</mat-label>
-        <mat-select formControlName="concurrencia">
+        <mat-select [(value)]="selectedTipoEvento"  formControlName="concurrencia">
           <mat-option value="1">Recurrente</mat-option>
           <mat-option value="2">No recurrente</mat-option>
         </mat-select>    
     </mat-form-field>
-      <mat-checkbox [disabled]="creaEventoForms.value.concurrencia=='2'" formControlName="lunes"  style="margin: 10px;">lunes</mat-checkbox>
-      <mat-checkbox [disabled]="creaEventoForms.value.concurrencia=='2'" formControlName="martes"  style="margin: 10px;">martes</mat-checkbox>
-      <mat-checkbox [disabled]="creaEventoForms.value.concurrencia=='2'" formControlName="miercoles"  style="margin: 10px;">miercoles</mat-checkbox>
-      <mat-checkbox [disabled]="creaEventoForms.value.concurrencia=='2'" formControlName="jueves"  style="margin: 10px;">jueves</mat-checkbox>
-      <mat-checkbox [disabled]="creaEventoForms.value.concurrencia=='2'" formControlName="viernes"  style="margin: 10px;">viernes</mat-checkbox>
-      <mat-checkbox [disabled]="creaEventoForms.value.concurrencia=='2'" formControlName="sabado"  style="margin: 10px;">sabado</mat-checkbox>
-      <mat-checkbox [disabled]="creaEventoForms.value.concurrencia=='2'" formControlName="domingo"  style="margin: 10px;">domingo</mat-checkbox>
+      <mat-checkbox [(ngModel)]=checkDia[0] [disabled]="creaEventoForms.value.concurrencia=='2'" formControlName="lunes"  style="margin: 10px;">lunes</mat-checkbox>
+      <mat-checkbox [(ngModel)]=checkDia[1]  [disabled]="creaEventoForms.value.concurrencia=='2'" formControlName="martes"  style="margin: 10px;">martes</mat-checkbox>
+      <mat-checkbox [(ngModel)]=checkDia[2]  [disabled]="creaEventoForms.value.concurrencia=='2'" formControlName="miercoles"  style="margin: 10px;">miercoles</mat-checkbox>
+      <mat-checkbox [(ngModel)]=checkDia[3]  [disabled]="creaEventoForms.value.concurrencia=='2'" formControlName="jueves"  style="margin: 10px;">jueves</mat-checkbox>
+      <mat-checkbox [(ngModel)]=checkDia[4]  [disabled]="creaEventoForms.value.concurrencia=='2'" formControlName="viernes"  style="margin: 10px;">viernes</mat-checkbox>
+      <mat-checkbox [(ngModel)]=checkDia[5]  [disabled]="creaEventoForms.value.concurrencia=='2'" formControlName="sabado"  style="margin: 10px;">sabado</mat-checkbox>
+      <mat-checkbox [(ngModel)]=checkDia[6]  [disabled]="creaEventoForms.value.concurrencia=='2'" formControlName="domingo"  style="margin: 10px;">domingo</mat-checkbox>
     </section>
 </div>
   <!--botones-->
   <div style="margin-top: 25px;margin-top:50px;"><br>
     <section>
       <div class="example-button-row">
+        <button [routerLink]="['/misEventos']" type="button" style="left: 25%;width: 200px;background-color: rgb(26, 142, 174);color: white;" mat-raised-button color="primary">REGRESAR</button>
         <button [disabled]="!creaEventoForms.valid " type="submit" style="left: 25%;width: 200px;background-color: rgb(55, 174, 26);color: white;" mat-raised-button color="primary">GUARDAR</button>
 
           <button *ngIf="idEvento" style="left: 30%;width: 200px;background-color:#7250c0;color: white;" [routerLink]="['/verSalas',idEvento]"  mat-raised-button>SIGUIENTE</button>    
