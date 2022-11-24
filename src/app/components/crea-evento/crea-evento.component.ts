@@ -25,7 +25,7 @@ export class CreaEventoComponent implements OnInit {
   idEvento: any;
   selectedCategoria:any;
   selectedTipoEvento:any;
-  checkDia:boolean[]=[false,true,false,false,false,false,false];
+  checkDia:boolean[]=[false,false,false,false,false,false,false];
   categorias: any[] = [{'nombre':'Tecnología', 'value': 1}, {'nombre':'USA', 'value': 1}, {'nombre':'USA2', 'value': 1}];
   creaEventoForms = new FormGroup({
     // evento_id: new FormControl(''),
@@ -69,11 +69,15 @@ export class CreaEventoComponent implements OnInit {
       this.idEvento = this.activatedRoute.snapshot.paramMap.get('idEvento');
       if (this.idEvento) {
         this.eventosApiService.obtenerDetalleEvento(this.idEvento).subscribe((resultado: any) => {
-          console.log(resultado);
           let evento=resultado.evento;
           this.selectedCategoria =`${evento.categoria.id}`;
           this.selectedTipoEvento=`${(evento.concurrencia)?'1':'2'}`;
           console.log(evento.concurrencia);
+          if(evento.concurrencia){
+            evento.concurrencia.forEach((dia:any) => {
+              this.checkDia[dia.dia-1]=dia.checked;
+            });
+          }
           evento.fechaFin=formatDate(evento.fechaFin, "yyyy-MM-dd",'es');
           evento.fechaInicio=formatDate(evento.fechaInicio, "yyyy-MM-dd",'es');
           evento.horaFin=formatDate(evento.horaFin, "HH:mm",'es');
@@ -102,6 +106,7 @@ export class CreaEventoComponent implements OnInit {
     } else {
       eventoform.concurrencia = Number(eventoform.concurrencia);
       eventoform.categoria = Number(eventoform.categoria);
+      console.log(eventoform);
       this.eventosApiService.postEvento(eventoform).subscribe(data => {
         this.idEvento = data.id;
         sessionStorage.setItem('message', data.message);

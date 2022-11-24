@@ -76,6 +76,10 @@ export class EventoService {
   eliminarSala(id:any):Observable<ResponseI>{
     return this.httpClient.post<ResponseI>(environment.salas_url+ '/' + id,"")
   }
+  //servicio para eliminar la sala
+  seleccionarSala(idEvento:any,idSalaDeEventos:any):Observable<ResponseI>{
+    return this.httpClient.post<ResponseI>(environment.evento_url+ '/' + idEvento+"/sala/de/eventos",{"salaDeEventosId":idSalaDeEventos});
+  }
   //servicio para guardar la categoría 
   postCategoria(form:any):Observable<ResponseI>{
     return this.httpClient.post<ResponseI>(environment.categoria_url+ '/new', form)

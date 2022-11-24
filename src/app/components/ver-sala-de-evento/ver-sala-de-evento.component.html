@@ -37,9 +37,9 @@
         <mat-icon>more_vert</mat-icon>
       </button>
       <mat-menu #menu="matMenu">
-        <button mat-menu-item>
+        <button mat-menu-item (click)="seleccionarSala(element.id_sala)">
           <mat-icon>save_alt</mat-icon>
-          <span>Guardar sala</span>
+          <span>Seleccionar Sala</span>
         </button>
         <button [routerLink]="['/verSalaEvento/editar/',element.id_sala]" mat-menu-item >
           <mat-icon >create</mat-icon>

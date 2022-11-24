@@ -21,8 +21,11 @@
 				"Angular.ng-template",
 				"dbaeumer.vscode-eslint",
 				"johnpapa.Angular2",
+				"Angular.ng-template",
+				"BracketPairColorDLW.bracket-pair-color-dlw",
 				"christian-kohler.npm-intellisense",
-				"idered.npm"
+				"idered.npm",
+				"donjayamanne.githistory"
 			]
 		}
 	},
