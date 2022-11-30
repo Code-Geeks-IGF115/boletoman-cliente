@@ -1,9 +1,9 @@
-name: CI
+name: CI-ANDREA-2
 
 on:
   push:
     branches:
-    - main
+    - andrea
 
 jobs:
   firebase-deploy:
@@ -21,4 +21,4 @@ jobs:
       with:
         args: deploy --only hosting
       env:
-        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+        FIREBASE_TOKEN: ${{ secrets.ANDREA_FIREBASE_TOKEN }}
